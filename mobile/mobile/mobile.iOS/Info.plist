@@ -34,5 +34,11 @@
     <string>mobile</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome5Regular400.otf</string>
+		<string>FontAwesomeRegular400.otf</string>
+		<string>FontAwesomeSolid900.otf</string>
+	</array>
 </dict>
 </plist>

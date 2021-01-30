@@ -987,11 +987,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.iOS\\mobile.iOS.csproj",
+      "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.iOS\\mobile.iOS.csproj",
       "projectName": "mobile.iOS",
-      "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.iOS\\mobile.iOS.csproj",
+      "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.iOS\\mobile.iOS.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.iOS\\obj\\",
+      "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1012,8 +1012,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj": {
-              "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj"
+            "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj": {
+              "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj"
             }
           }
         }

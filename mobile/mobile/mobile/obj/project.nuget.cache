@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dhGQZxSbaU90K+BbCObNF/RDIcNMW8EfbL9/5aQtuVGveK3RbZNXAiNQmx3IME9DTKYNn8pT2Jk+ZHXHLbJb9Q==",
+  "dgSpecHash": "PDckiveYPZJajEnDnIEZBJQu3a0fTSFt8Ro8dNm9z6/7enpOOQLbhZmUIt9hc7QOXdB9W0v8KaBnLtNCMJ+H4g==",
   "success": true,
-  "projectFilePath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj",
+  "projectFilePath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

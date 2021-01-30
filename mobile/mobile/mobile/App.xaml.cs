@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mobile.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,10 @@ namespace mobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Main())
+            {
+                BarBackgroundColor = Color.FromHex("#FD6474"),
+            };
         }
 
         protected override void OnStart()

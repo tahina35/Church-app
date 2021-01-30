@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DxmyarFWW3rWGrHyO3Lv/bSA/KZOA1pXVxot1D6MCSrtT5OSz3piIjfl3xvzicdkdpY3sNxc+NmlMqiCBghWww==",
+  "dgSpecHash": "rTzb4C152N4d7TAz9MefSEqxzVEg7vw3SrYHJvhdrABS5k9FQx/5Zo5mJ3qwYT9hJdFwcDup/f6wkZJfe921cw==",
   "success": true,
-  "projectFilePath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
+  "projectFilePath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",

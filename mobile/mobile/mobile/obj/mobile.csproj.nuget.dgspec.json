@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj": {}
+    "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj": {}
   },
   "projects": {
-    "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj": {
+    "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj",
+        "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj",
         "projectName": "mobile",
-        "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj",
+        "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\obj\\",
+        "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -69,7 +69,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

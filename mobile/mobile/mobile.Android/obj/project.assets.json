@@ -1939,11 +1939,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
+      "projectUniqueName": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
       "projectName": "mobile.Android",
-      "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
+      "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.Android\\mobile.Android.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile.Android\\obj\\",
+      "outputPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1964,8 +1964,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj": {
-              "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church app\\mobile\\mobile\\mobile\\mobile.csproj"
+            "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj": {
+              "projectPath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj"
             }
           }
         }

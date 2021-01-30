@@ -1,0 +1,15 @@
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\bin\Debug\netstandard2.0\mobile.deps.json
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\bin\Debug\netstandard2.0\mobile.dll
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\bin\Debug\netstandard2.0\ref\mobile.dll
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\bin\Debug\netstandard2.0\mobile.pdb
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.csprojAssemblyReference.cache
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\Pages\Main.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.AssemblyInfoInputs.cache
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.AssemblyInfo.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.csproj.CoreCompileInputs.cache
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.dll
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\ref\mobile.dll
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\mobile.pdb

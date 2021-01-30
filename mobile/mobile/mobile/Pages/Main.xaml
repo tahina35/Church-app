@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobile.Pages.Main" Title="Church App" >
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Sign in" Priority="0" Order="Primary" Clicked="Login_Clicked" IconImageSource="signin.png"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid Margin="30, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="calendar_btn" FontFamily="sourcebold" Image="calendar.png" Text="Calendar" ContentLayout="Top,0" BackgroundColor="Transparent"  VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button x:Name="sermon_btn" FontFamily="sourcebold" Grid.Column="1" Image="sermon.png" Text="Sermons" ContentLayout="Top,0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button x:Name="news_btn" FontFamily="sourcebold" Grid.Row="1" Image="news.png" Text="News" ContentLayout="Top,0"  VerticalOptions="Center" BackgroundColor="Transparent" HorizontalOptions="Center"/>
+
+        <Button x:Name="worship_service_btn" FontFamily="sourcebold" Grid.Row="1" Grid.Column="1" Image="worshipservice.png" Text="Worship Service" BackgroundColor="Transparent" ContentLayout="Top,0"  VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button x:Name="materials_btn" FontFamily="sourcebold" Grid.Row="2" Image="materials.png" Text="Materials" ContentLayout="Top,0" BackgroundColor="Transparent"  VerticalOptions="Center" HorizontalOptions="Center"/>
+
+        <Button x:Name="notifications_btn" FontFamily="sourcebold" Grid.Row="2" Grid.Column="1" Image="notifications.png" Text="Notifications" BackgroundColor="Transparent" ContentLayout="Top,0" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </Grid>
+
+</ContentPage>
