@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("mobile.MainPage.xaml", "MainPage.xaml", typeof(global::mobile.MainPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("mobile.Pages.News.xaml", "Pages/News.xaml", typeof(global::mobile.Pages.News))]
 
-namespace mobile {
+namespace mobile.Pages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MainPage.xaml")]
-    public partial class MainPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages\\News.xaml")]
+    public partial class News : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(News));
         }
     }
 }

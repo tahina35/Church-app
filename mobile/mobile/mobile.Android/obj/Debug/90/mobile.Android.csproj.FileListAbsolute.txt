@@ -497,3 +497,5 @@ E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\re
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\res\drawable\worshipservice.png
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\res\drawable\materials.png
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\res\drawable\notifications.png
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\android\src\crc6446542dbf5e37217f\CustomEntryRenderer.java
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile.Android\obj\Debug\90\res\drawable\signin2.png

@@ -8397,13 +8397,16 @@ namespace mobile.Droid
 			public const int signin = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int tooltip_frame_dark = 2131165300;
+			public const int signin2 = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int tooltip_frame_light = 2131165301;
+			public const int tooltip_frame_dark = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int worshipservice = 2131165302;
+			public const int tooltip_frame_light = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int worshipservice = 2131165303;
 			
 			static Drawable()
 			{

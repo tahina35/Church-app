@@ -17,10 +17,39 @@ namespace mobile.Pages
             InitializeComponent();
         }
 
-        private void Login_Clicked(object sender, EventArgs e)
+        private async void Login_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new LoginPage());
         }
 
+        private async void calendar_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Calendar());
+        }
+
+        private async void sermon_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Sermons());
+        }
+
+        private async void news_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new News());
+        }
+
+        private async void worship_service_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WorshipService());
+        }
+
+        private async void materials_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Materials());
+        }
+
+        private async void notifications_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Notifications());
+        }
     }
 }

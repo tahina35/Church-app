@@ -4,29 +4,35 @@
              x:Class="mobile.App">
     <Application.Resources>
         <ResourceDictionary>
-            <OnPlatform x:TypeArguments="x:String" 
-                x:Key="FontAwesomeBrands">
-                <On Platform="Android" 
-          Value="FontAwesome5Regular400.otf#Regular" />
-                <On Platform="iOS" 
-          Value="FontAwesome5Regular400-Regular" />
-            </OnPlatform>
+            <Color x:Key="primary">#FFCC00</Color>
+            <Color x:Key="secondary">#FD6474</Color>
+            <Color x:Key="BorderColor">#D8D8D8</Color>
 
-            <OnPlatform x:TypeArguments="x:String" 
-                x:Key="FontAwesomeSolid">
-                <On Platform="Android" 
-          Value="FontAwesomeRegular400.otf#Regular" />
-                <On Platform="iOS" 
-          Value="FontAwesomeRegular400-Regular" />
-            </OnPlatform>
+            <Style x:Key="LableStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#666666" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontFamily" Value="sourcebold" />
+            </Style>
+            
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+            
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="HeightRequest" Value="50"></Setter>
+                <Setter Property="Margin" Value="5,0,0,0"></Setter>
+            </Style>
 
-            <OnPlatform x:TypeArguments="x:String" 
-                x:Key="FontAwesomeRegular">
-                <On Platform="Android" 
-          Value="FontAwesomeSolid900.otf#Regular" />
-                <On Platform="iOS" 
-          Value="FontAwesomeSolid900-Solid" />
-            </OnPlatform>
+            <Style x:Key="MainPageButton" TargetType="Button">
+                <Setter Property="FontFamily" Value="sourcebold" />
+                <Setter Property="ContentLayout" Value="Top, 0" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

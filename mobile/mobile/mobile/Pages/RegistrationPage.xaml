@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:mobile.CustomComponent"
+             x:Class="mobile.Pages.RegistrationPage"
+             Title="Register"
+             BackgroundColor="White">
+    
+    <ContentPage.Content>
+        <Grid Margin="30, 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="1" Spacing="10" Padding="20">
+                <Frame HasShadow="False" CornerRadius="5" BorderColor="{StaticResource BorderColor}" BackgroundColor="#F7F7F7">
+                    <StackLayout Spacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Style="{StaticResource LableStyle}" Text="Create a new account" HorizontalOptions="Center"/>
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <controls:CustomEntry x:Name="txtUserId" Style="{StaticResource EntryStyle}" Placeholder="Email Address"></controls:CustomEntry>
+                        </Frame>
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <controls:CustomEntry IsPassword="True" x:Name="txtPassword" Style="{StaticResource EntryStyle}" Placeholder="Password"></controls:CustomEntry>
+                        </Frame>
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <controls:CustomEntry IsPassword="True" x:Name="txtPasswordVerify" Style="{StaticResource EntryStyle}" Placeholder="Verify password"></controls:CustomEntry>
+                        </Frame>
+                        <Button Margin="50,20" BorderRadius="6" WidthRequest="200" x:Name="ShopIDSubmit" TextColor="White" BackgroundColor="{StaticResource primary}" Text="Register" Clicked="register_Clicked"></Button>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

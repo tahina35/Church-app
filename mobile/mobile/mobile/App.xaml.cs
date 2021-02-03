@@ -13,7 +13,8 @@ namespace mobile
 
             MainPage = new NavigationPage(new Main())
             {
-                BarBackgroundColor = Color.FromHex("#FD6474"),
+                BarBackgroundColor = Color.Transparent,
+                BarTextColor = Color.Black  
             };
         }
 
