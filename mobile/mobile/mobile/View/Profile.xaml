@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" 
+             xmlns:local="clr-namespace:mobile.ViewModel"
+             x:Class="mobile.View.Profile"
+             Title="Profile">
+        <ContentPage.BindingContext>
+            <local:ProfileViewModel/>
+        </ContentPage.BindingContext>
+        
+        <sfPopup:SfPopupLayout x:Name="popupLayout" IsOpen="{Binding PopupOpen}">
+            <sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:PopupView HeaderTitle="Log Out" HeightRequest ="200" AppearanceMode="TwoButton" 
+                               AcceptCommand="{Binding PopupAcceptCommand}"
+                               DeclineCommand="{Binding PopupDeclineCommand}" >
+                    <sfPopup:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <Label Text="Are you sure you want to log out?" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                                   FontSize="16"/>
+                        </DataTemplate>
+                    </sfPopup:PopupView.ContentTemplate>
+                    
+                </sfPopup:PopupView>
+            </sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:SfPopupLayout.Content>
+                <StackLayout>
+                    <Frame HeightRequest="80">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <sfavatar:SfAvatarView ContentType="Initials"
+                            InitialsType="DoubleCharacter"
+                            AvatarName="Tahina Andriantomanga"
+                            AvatarSize="ExtraLarge"
+                            InitialsColor="#bfbfbf"                     
+                            WidthRequest="80"
+                            FontAttributes="Bold"                     
+                            HeightRequest="80"                                                      
+                            BackgroundColor="#f2f2f2" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            CornerRadius="40" />
+
+                            <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label Text="Full Name" FontAttributes="Bold" FontSize="18" FontFamily="source"/>
+                                <Label Text="Church Of Philippi" FontFamily="sourceregular" />
+                            </StackLayout>
+                        </Grid>
+
+                    </Frame>
+                    <Frame HeightRequest="50" Margin="5,0">
+                        <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label Text="Email" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                            <Label Text="andriantomangat@gmail.com" FontFamily="sourceregular" FontSize="16"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HeightRequest="50" Margin="5,0">
+                        <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label Text="Address" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                            <Label Text="1701 East W Highway, Silver Spring, MD 20910" FontFamily="sourceregular" FontSize="16"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HeightRequest="50" Margin="5,0">
+                        <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label Text="Phone number" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                            <Label Text="202 389 7802" FontFamily="sourceregular" FontSize="16"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame HeightRequest="40" Margin="5,5,0,0" Padding="0">
+                        <buttons:SfButton x:Name="reset_password" Text="Reset Password"
+                            BackgroundColor = "#f2f2f2"
+                            TextColor="#404040" FontFamily="sourceregular" Clicked="reset_password_Clicked"/>
+                    </Frame>
+                    <Frame HeightRequest="40" Margin="5,5,0,0" Padding="0">
+                        <buttons:SfButton x:Name="edit_profile" Text="Edit Profile"
+                            BackgroundColor = "#f2f2f2"
+                            TextColor="#404040" FontFamily="sourceregular" Clicked="edit_profile_Clicked"/>
+                    </Frame>
+
+                    <Frame HeightRequest="50" Margin="5,15,0,0" Padding="0">
+                        <buttons:SfButton x:Name="logout" Text="Log Out"
+                              BackgroundColor = "White"
+                              TextColor="red" FontFamily="sourceregular" Clicked="logout_Clicked"/>
+                    </Frame>
+                </StackLayout>
+            </sfPopup:SfPopupLayout.Content>
+        </sfPopup:SfPopupLayout>
+
+</ContentPage>

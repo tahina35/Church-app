@@ -1,4 +1,10 @@
 FormsViewGroup
+Syncfusion.Buttons.XForms.Android
+Syncfusion.Core.XForms.Android
+Syncfusion.SfCalendar.XForms.Android
+Syncfusion.SfListView.XForms.Android
+Syncfusion.SfPopupLayout.XForms.Android
+Xam.Forms.VideoPlayer.Android
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

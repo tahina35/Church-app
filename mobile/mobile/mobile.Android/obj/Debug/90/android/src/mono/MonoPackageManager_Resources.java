@@ -3,8 +3,29 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "mobile.Android.dll" comes first in this list. */
 		"mobile.Android.dll",
+		"AngleSharp.dll",
 		"FormsViewGroup.dll",
+		"MediaManager.dll",
+		"MediaManager.Forms.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"mobile.dll",
+		"Syncfusion.Buttons.XForms.Android.dll",
+		"Syncfusion.Buttons.XForms.dll",
+		"Syncfusion.Core.XForms.Android.dll",
+		"Syncfusion.Core.XForms.dll",
+		"Syncfusion.DataSource.Portable.dll",
+		"Syncfusion.GridCommon.Portable.dll",
+		"Syncfusion.Licensing.dll",
+		"Syncfusion.SfCalendar.XForms.Android.dll",
+		"Syncfusion.SfCalendar.XForms.dll",
+		"Syncfusion.SfListView.XForms.Android.dll",
+		"Syncfusion.SfListView.XForms.dll",
+		"Syncfusion.SfPopupLayout.XForms.Android.dll",
+		"Syncfusion.SfPopupLayout.XForms.dll",
+		"System.Text.Encodings.Web.dll",
+		"System.Text.Json.dll",
+		"Xam.Forms.VideoPlayer.Android.dll",
+		"Xam.Forms.VideoPlayer.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
@@ -47,6 +68,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"YoutubeExplode.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

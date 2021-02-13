@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="mobile.View.EditProfile"
+             Title="Edit Profile"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center"  Spacing="10">
+            <ImageButton Source="xwhite.png"
+                         x:Name="close"
+                         HorizontalOptions="Start"
+                         BackgroundColor="Transparent"
+                         Clicked="close_Clicked"/>
+            <Label Text="Edit Profile" TextColor="White" FontSize="20"  Margin="22,0" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame HeightRequest="80">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <sfavatar:SfAvatarView ContentType="Initials"
+                            InitialsType="DoubleCharacter"
+                            AvatarName="Tahina Andriantomanga"
+                            AvatarSize="ExtraLarge"
+                            InitialsColor="#bfbfbf"                     
+                            WidthRequest="80"
+                            FontAttributes="Bold"                     
+                            HeightRequest="80"                                                      
+                            BackgroundColor="#f2f2f2" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            CornerRadius="40" />
+
+                        <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                            <Label Text="Full Name" FontAttributes="Bold" FontSize="18" FontFamily="source"/>
+                            <Label Text="Church Of Philippi" FontFamily="sourceregular" />
+                        </StackLayout>
+                    </Grid>
+
+                </Frame>
+                <Frame HeightRequest="70" Margin="5,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label Text="Email" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                        <Entry HorizontalOptions="FillAndExpand" Text="andriantomangat@gmail.com"/>
+                    </StackLayout>
+                </Frame>
+                <Frame HeightRequest="70" Margin="5,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label Text="Address" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                        <Entry HorizontalOptions="FillAndExpand" Text="1701 East West Highway, Silver Spring, MD 20910"/>
+                    </StackLayout>
+                </Frame>
+                <Frame HeightRequest="70" Margin="5,0">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <Label Text="Phone number" FontAttributes="Bold" FontSize="16" FontFamily="source"/>
+                        <Entry HorizontalOptions="FillAndExpand" Text="2023897802"/>
+                    </StackLayout>
+                </Frame>
+                <Frame HeightRequest="50" Margin="5,15,0,0" Padding="0">
+                    <buttons:SfButton x:Name="update_profile" Text="UPDATE"
+                              BackgroundColor = "White"
+                              TextColor="#00cc00" FontFamily="source" Clicked="update_profile_Clicked"/>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

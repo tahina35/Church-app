@@ -13,41 +13,70 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\SourceSansPro-Black.ttf" />
     <None Remove="Resources\Fonts\SourceSansPro-Bold.ttf" />
+    <None Remove="Resources\Fonts\SourceSansPro-Light.ttf" />
+    <None Remove="Resources\Fonts\SourceSansPro-Regular.ttf" />
+    <None Remove="Resources\Fonts\SourceSansPro-SemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Black.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SourceSansPro-SemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="1.0.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.4.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="18.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.4.0.42" />
+    <PackageReference Include="Xam.Forms.VideoPlayer" Version="1.0.8" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="YoutubeExplode" Version="5.1.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\Calendar.xaml">
+    <EmbeddedResource Update="View\Calendar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\LoginPage.xaml">
+    <EmbeddedResource Update="View\EditProfile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Main.xaml">
+    <EmbeddedResource Update="View\ForgotPassword.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Materials.xaml">
+    <EmbeddedResource Update="View\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\News.xaml">
+    <EmbeddedResource Update="View\Main.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Notifications.xaml">
+    <EmbeddedResource Update="View\Materials.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Sermons.xaml">
+    <EmbeddedResource Update="View\News.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\WorshipService.xaml">
+    <EmbeddedResource Update="View\Notifications.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\PlaySermon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Profile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ResetPassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Sermons.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\WorshipService.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,14 +1,35 @@
 {
   "version": 2,
-  "dgSpecHash": "PDckiveYPZJajEnDnIEZBJQu3a0fTSFt8Ro8dNm9z6/7enpOOQLbhZmUIt9hc7QOXdB9W0v8KaBnLtNCMJ+H4g==",
+  "dgSpecHash": "9zs2YljMXHHRuL10UfvIyDopmSAgaCzXAE6z7gKHmN3go7wal+ssk2eIyCLLhIyEb76ew2z3BJWYyVcy8fGOmA==",
   "success": true,
   "projectFilePath": "E:\\Tahina\\Visual Studio\\repo\\Church\\mobile\\mobile\\mobile\\mobile.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\andri\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\plugin.mediamanager\\1.0.0\\plugin.mediamanager.1.0.0.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\plugin.mediamanager.forms\\1.0.0\\plugin.mediamanager.forms.1.0.0.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.licensing\\18.4.0.42\\syncfusion.licensing.18.4.0.42.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.buttons\\18.4.0.42\\syncfusion.xamarin.buttons.18.4.0.42.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.core\\18.4.0.42\\syncfusion.xamarin.core.18.4.0.42.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.datasource\\18.4.0.41\\syncfusion.xamarin.datasource.18.4.0.41.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\18.4.0.41\\syncfusion.xamarin.gridcommon.18.4.0.41.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.sfcalendar\\18.4.0.41\\syncfusion.xamarin.sfcalendar.18.4.0.41.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.sflistview\\18.4.0.41\\syncfusion.xamarin.sflistview.18.4.0.41.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\syncfusion.xamarin.sfpopuplayout\\18.4.0.42\\syncfusion.xamarin.sfpopuplayout.18.4.0.42.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.text.encoding.codepages\\4.5.0\\system.text.encoding.codepages.4.5.0.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.text.encodings.web\\4.7.1\\system.text.encodings.web.4.7.1.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\xam.forms.videoplayer\\1.0.8\\xam.forms.videoplayer.1.0.8.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\youtubeexplode\\5.1.9\\youtubeexplode.5.1.9.nupkg.sha512"
   ],
   "logs": []
 }

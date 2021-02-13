@@ -22,7 +22,11 @@ namespace mobile.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Xam.Forms.VideoPlayer.iOS.VideoPlayerRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
+            Syncfusion.XForms.iOS.Core.SfAvatarViewRenderer.Init();
+            Syncfusion.XForms.iOS.Buttons.SfButtonRenderer.Init();
+            Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

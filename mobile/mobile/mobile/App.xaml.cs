@@ -9,12 +9,14 @@ namespace mobile
     {
         public App()
         {
+            Device.SetFlags(new String[] { "MediaElement_Experimental" });
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzkzODM4QDMxMzgyZTM0MmUzMFVVbWI2OGxtR3dMVm8yeEd1UVg5NDdSZU9BV2EzR3pzMGovOTZsRVpiOE09");
             InitializeComponent();
 
             MainPage = new NavigationPage(new Main())
             {
-                BarBackgroundColor = Color.Transparent,
-                BarTextColor = Color.Black  
+                BarBackgroundColor = Color.FromHex("FD6474"),
+                BarTextColor = Color.White  
             };
         }
 
