@@ -6,6 +6,7 @@
         <ResourceDictionary>
             <Color x:Key="primary">#FFCC00</Color>
             <Color x:Key="secondary">#FD6474</Color>
+            <Color x:Key="tertiary">#ffeecc</Color>
             <Color x:Key="BorderColor">#D8D8D8</Color>
 
             <Style x:Key="LableStyle" TargetType="Label">

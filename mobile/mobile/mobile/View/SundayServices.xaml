@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:mobile.ViewModel"
+             x:Class="mobile.View.SundayServices"
+             Title="Sunday Services">
+   
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="key">
+                <Setter Property="FontFamily" Value="source"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+            <Style TargetType="Label"  x:Key="value">
+                <Setter Property="FontFamily" Value="sourceregular"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:SundayServicesViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <StackLayout>
+            <Frame Padding="0" Margin="10">
+                <StackLayout>
+                    <Frame CornerRadius="0" BackgroundColor="{StaticResource tertiary}" Margin="0">
+                        <Label Text="Korean Service (8:15 AM)" FontSize="18" FontFamily="source" HorizontalOptions="Center"></Label>
+                    </Frame>
+                    <Grid RowSpacing="0" Padding="10,5">
+                        <Grid.RowDefinitions >
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Worship and praise" Style="{StaticResource key}"></Label>
+                        <Label Text="Confession of faith" Grid.Row="1" Style="{StaticResource key}"></Label>
+                        <Label Text="Prayer"  Grid.Row="2" Style="{StaticResource key}"></Label>
+                        <Label Text="Church news"  Grid.Row="3" Style="{StaticResource key}"></Label>
+                        <Label Text="Offering"  Grid.Row="4" Style="{StaticResource key}"></Label>
+                        <Label Text="Word of the Day"  Grid.Row="5" Style="{StaticResource key}"></Label>
+                        <Label Text="Hymn"  Grid.Row="6" Style="{StaticResource key}"></Label>
+                        <Label Text="Bendiction"  Grid.Row="7" Style="{StaticResource key}"></Label>
+
+                        <Label Text="Together" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                        <Label Text="Apostle's Creed" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                        <Label Text="Shepherd Choi Choi" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Text="Video advertisement" Grid.Row="3" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Text="Together" Grid.Row="4" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Grid.Row="5" Text="{Binding Str}" Grid.Column="1" Style="{StaticResource value}"     />
+                        <Label Text="How much love" Grid.Row="6" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Text="Pastor Donghoon Park" Grid.Row="7" Grid.Column="1" Style="{StaticResource value}"></Label>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Frame Padding="0" Margin="10">
+                <StackLayout>
+                    <Frame CornerRadius="0" BackgroundColor="{StaticResource tertiary}" Margin="0">
+                        <Label Text="English Service (11:45 AM)" FontSize="18" FontFamily="source" HorizontalOptions="Center"></Label>
+                    </Frame>
+                    <Grid RowSpacing="0" Padding="10,5" >
+                        <Grid.RowDefinitions >
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Worship and praise" Style="{StaticResource key}"></Label>
+                        <Label Text="Offering" Grid.Row="1" Style="{StaticResource key}"></Label>
+                        <Label Text="Church news"  Grid.Row="2" Style="{StaticResource key}"></Label>
+                        <Label Text="Word of the Day"  Grid.Row="3" Style="{StaticResource key}"></Label>
+                        <Label Text="Hymn"  Grid.Row="4" Style="{StaticResource key}"></Label>
+                        <Label Text="Closing prayer"  Grid.Row="5" Style="{StaticResource key}"></Label>
+
+                        <Label Text="Together" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                        <Label Text="Togethercddccd" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                        <Label Text="Video advertisement" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Grid.Row="3" Text="{Binding Str}" Grid.Column="1" Style="{StaticResource value}"     />
+                        <Label Text="Your mercy is endless" Grid.Row="4" Grid.Column="1" Style="{StaticResource value}"></Label>
+                        <Label Text="Pastor Il-guk Eom" Grid.Row="5" Grid.Column="1" Style="{StaticResource value}"></Label>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

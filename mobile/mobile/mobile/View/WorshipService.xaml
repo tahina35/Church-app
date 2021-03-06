@@ -1,7 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:mobile.ViewModel" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="mobile.Pages.WorshipService"
-             Title="Worship Service"
-             BackgroundColor="White">
+             Title="Worship Service">
+
+
+    <StackLayout Spacing="15" Padding="5,10">
+        <Frame HeightRequest="50" Padding="0">
+            <buttons:SfButton x:Name="sunday_services" Text="SUNDAY SERVICES"
+                              BackgroundColor = "White"
+                              TextColor="Black" FontFamily="sourceregular" FontSize="16"
+                              Clicked="sunday_services_Clicked"/>
+        </Frame>
+        <Frame HeightRequest="50" Padding="0">
+            <buttons:SfButton x:Name="wednesday_services" Text="WEDNESDAY SERVICES"
+                              BackgroundColor = "White"
+                              TextColor="Black" FontFamily="sourceregular" FontSize="16"
+                              Clicked="wednesday_services_Clicked"/>
+        </Frame>
+        <Frame HeightRequest="50" Padding="0">
+            <buttons:SfButton x:Name="morning_services" Text="EARLY MORNING SERVICES"
+                              BackgroundColor = "White"
+                              TextColor="Black" FontFamily="sourceregular" FontSize="16"
+                              Clicked="morning_services_Clicked"/>
+        </Frame>
+    </StackLayout>
 </ContentPage>

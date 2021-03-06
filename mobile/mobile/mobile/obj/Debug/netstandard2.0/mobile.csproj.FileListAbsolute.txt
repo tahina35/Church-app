@@ -25,3 +25,6 @@ E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\Profile.xaml.g.cs
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\EditProfile.xaml.g.cs
 E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\ResetPassword.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\EarlyMorningServices.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\SundayServices.xaml.g.cs
+E:\Tahina\Visual Studio\repo\Church\mobile\mobile\mobile\obj\Debug\netstandard2.0\View\WednesdayService.xaml.g.cs
