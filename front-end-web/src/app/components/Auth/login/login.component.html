@@ -1,0 +1,40 @@
+<div class="login-page">
+    <div class="login-box">
+        <div class="login-logo">
+          <a href=""><b>Church Of Philippi</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <p class="login-box-msg">Log in</p>
+            <p *ngIf="error" class="error">{{error}}</p>
+            <p *ngIf="success" class="success">{{success}}</p>
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+              <div class="input-group mb-3">
+                <input type="email" name="username" #username="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="credentials.username" placeholder="Email" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input name="password" #password="ngModel" type="password" class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="credentials.password" placeholder="Password" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.form.valid">Log In</button>
+            </form>
+      
+            <br>
+            <p class="mb-1">
+              <a routerLink="/forgot-password" class="link-style">I forgot my password</a>
+            </p>
+          </div>
+          <!-- /.login-card-body -->
+        </div>
+    </div>
+</div>

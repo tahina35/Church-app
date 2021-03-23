@@ -11,10 +11,9 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 public class SundayServiceService implements BaseService<SundayService> {
 
-    private SundayServiceRepository sundayServiceRepository;
+    private final SundayServiceRepository sundayServiceRepository;
 
     @Override
     public List<SundayService> getAll() {

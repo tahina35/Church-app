@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.model.Dept;
 import com.churchofphilippi.webserver.model.DeptMember;
 import com.churchofphilippi.webserver.repository.DeptMemberRepository;
 import lombok.AllArgsConstructor;
@@ -11,10 +12,13 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 public class DeptMemberService implements BaseService<DeptMember> {
 
-    private DeptMemberRepository deptMemberRepository;
+    private final DeptMemberRepository deptMemberRepository;
+
+    public List<DeptMember> findByMemberId(Long id) {
+        return deptMemberRepository.findDeptsByMemberId(id);
+    }
 
     @Override
     public List<DeptMember> getAll() {

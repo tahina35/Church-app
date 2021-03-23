@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    // .content-wrapper {
+    //     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    // }
+}
+
+.link-style {
+    font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.success {
+    color: #28a745;
+    text-align: center;
+}
+
+.cyan {
+    background-color: #26c6da;
+    color: white;
+}
+
+.disabled {
+    opacity: 0.5;
+    color: grey;
+    pointer-events: none;
+
+    :hover, :focus, :active {
+        text-decoration: none;
+    }
+}
+
+.custompagination {
+    height: 39px;
+    float: right;
+}
+
+.addbutton {
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.table-link {
+    color: black;
+}
+
+.h350 {
+    height: 315px;
+}
+
+.w270 {
+    width: 270px;
+}
+
+.select2-container {
+    width: auto !important;
+}
+
+.select2-selection__rendered {
+    padding: 0 !important;
+    height: 26px !important;
+    margin-top: -4px !important
+}
+

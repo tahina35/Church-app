@@ -18,7 +18,7 @@ public class RegistrationService {
     private final MemberService memberService;
     private final EmailSender emailSender;
 
-    public String register(RegistrationRequest request){
+    public Member register(RegistrationRequest request){
         boolean isValidEMail = emailValidator.test(request.getEmail());
         if(!isValidEMail) {
             throw new IllegalStateException("Email not valid");
@@ -26,10 +26,10 @@ public class RegistrationService {
 
         String password = generatePassword();
 
-        String ret = memberService.registerMember(
+        Member ret = memberService.registerMember(
                         new Member(
-                                request.getFirstName(),
-                                request.getLastName(),
+                                request.getFname(),
+                                request.getLname(),
                                 request.getEmail(),
                                 password,
                                 request.getGender(),
@@ -39,11 +39,11 @@ public class RegistrationService {
                                 request.getCity(),
                                 request.getState(),
                                 request.getZipCode(),
-                                request.getPhoneNumber()
+                                formatPhoneNumber(request.getPhoneNumber())
                         )
         );
 
-        emailSender.send(request.getEmail(), buildHtml(request.getFirstName(), password));
+        emailSender.send(request.getEmail(), buildHtml(request.getFname(), password));
 
         return ret;
 
@@ -68,6 +68,14 @@ public class RegistrationService {
             password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
         }
         return String.valueOf(password);
+    }
+
+    private static String formatPhoneNumber(String phoneNumber) {
+        StringBuilder sb = new StringBuilder(phoneNumber);
+        sb.insert(0, "(");
+        sb.insert(4, ") ");
+        sb.insert(9, "-");
+        return sb.toString();
     }
 
     private String buildHtml(String firstname, String password) {

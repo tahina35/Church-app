@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,12 +13,12 @@ import java.time.LocalDate;
 @Table(name = "dept_member")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class DeptMember {
 
     @EmbeddedId
-    private DeptMemberKey id;
+    private DeptMemberKey id = new DeptMemberKey();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("deptId")
@@ -25,6 +26,7 @@ public class DeptMember {
             name = "dept_id",
             nullable = false
     )
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Dept department;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,6 +35,7 @@ public class DeptMember {
             name = "member_id",
             nullable = false
     )
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Member member;
 
     @Column(

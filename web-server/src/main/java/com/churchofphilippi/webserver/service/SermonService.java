@@ -11,10 +11,9 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 public class SermonService implements BaseService<Sermon> {
 
-    private SermonRepository sermonRepository;
+    private final SermonRepository sermonRepository;
 
     @Override
     public List<Sermon> getAll() {

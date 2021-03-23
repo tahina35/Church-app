@@ -3,13 +3,19 @@ package com.churchofphilippi.webserver.service;
 import com.churchofphilippi.webserver.exception.exceptionModel.EmailTakenException;
 import com.churchofphilippi.webserver.exception.exceptionModel.MemberNotFoundException;
 import com.churchofphilippi.webserver.model.Member;
+import com.churchofphilippi.webserver.model.searchSpecification.MemberSpecification;
 import com.churchofphilippi.webserver.repository.MemberRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -25,7 +31,7 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
         return memberRepository.findByEmail(email).orElseThrow(() -> new MemberNotFoundException(String.format(MEMBER_NOT_FOUND, email)));
     }
 
-    public String registerMember(Member member) {
+    public Member registerMember(Member member) {
         boolean memberExists = memberRepository.findByEmail(member.getEmail()).isPresent();
         if(memberExists) {
             throw new EmailTakenException("Email already Taken");
@@ -36,7 +42,13 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
 
         memberRepository.save(member);
 
-        return "It works";
+        return member;
+    }
+
+    public Member resetPassword(Member member) {
+        String encodedPassword = bCryptPasswordEncoder.encode(member.getPassword());
+        member.setPassword(encodedPassword);
+        return memberRepository.save(member);
     }
 
     @Override
@@ -52,5 +64,22 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
     @Override
     public void delete(Member entity) {
         memberRepository.delete(entity);
+    }
+
+    public Page<Member> findPaginated(int pageNo, int pageSize) {
+        Sort sort = Sort.by("fname").ascending();
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        return memberRepository.findAll(pageable);
+    }
+
+    public Page<Member> findAllWithFilters(String searchValue, int pageNo, int pageSize) {
+        Sort sort = Sort.by("fname").ascending();
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        MemberSpecification specification = new MemberSpecification(searchValue);
+        return memberRepository.findAll(specification, pageable);
+    }
+
+    public Member getById(Long id) {
+        return memberRepository.findById(id).orElseThrow(() -> new MemberNotFoundException("User not found"));
     }
 }

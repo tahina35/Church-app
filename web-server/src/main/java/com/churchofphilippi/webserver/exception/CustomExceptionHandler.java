@@ -23,6 +23,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     private int NOT_FOUND = 404;
     private int BAD_REQUEST = 400;
+    private int INVALID_TOKEN = 500;
     private String RESOURCE_NOT_FOUND = "Resource not found";
     private String AUTHENTICATION = "Authentication";
 
@@ -54,7 +55,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     public final ResponseEntity<ErrorResponse> handleAuthenticationException
             (TokenNotTrustedException ex, WebRequest request) {
         String message = ex.getLocalizedMessage();
-        ErrorResponse error = new ErrorResponse(BAD_REQUEST, AUTHENTICATION, message);
+        ErrorResponse error = new ErrorResponse(INVALID_TOKEN, AUTHENTICATION, message);
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 

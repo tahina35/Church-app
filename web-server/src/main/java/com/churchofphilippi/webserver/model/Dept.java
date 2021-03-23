@@ -1,17 +1,17 @@
 package com.churchofphilippi.webserver.model;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "dept")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Dept {
     @Id
@@ -32,6 +32,7 @@ public class Dept {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="parent_dept_id")
+    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
     private Dept parentDept;
 
     @Column(
@@ -40,9 +41,13 @@ public class Dept {
     )
     private String name;
 
-    public Dept(Dept parentDept, String name) {
+    @Column(nullable = false)
+    private LocalDate creationDate;
+
+    public Dept(String name, LocalDate creationDate, Dept parentDept) {
         this.parentDept = parentDept;
         this.name = name;
+        this.creationDate = creationDate;
     }
 
     public Dept(String name) {

@@ -1,0 +1,164 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Register a new member</h1>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    
+    <section class="content">
+        <div class="container-fluid">
+          <div *ngIf="error" class="callout callout-danger">
+            <p>{{error}}</p>
+          </div>
+          <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+              <div class="row">
+                <!-- left column -->
+                <div class="col-md-6">
+                  <!-- general form elements -->
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>General information</strong></h3>
+                    </div>
+    
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>First name</label>
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': firstname.touched && !firstname.valid}" name="firstname" #firstname="ngModel" [(ngModel)]="member.fname"  placeholder="First name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': lastname.touched && !lastname.valid}" name="lastname" #lastname="ngModel" [(ngModel)]="member.lname" placeholder="Last name" required>
+                        </div>  
+                        
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select type="text" class="custom-select" [ngClass]="{'is-invalid': gender.touched && !gender.valid}" name="gender" #gender="ngModel" [(ngModel)]="member.gender" placeholder="Gender" required>
+                              <option></option>
+                              <option>M</option>
+                              <option>F</option>
+                            </select>
+                        </div>   
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" [ngClass]="{'is-invalid': email.touched && !email.valid}" name="email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="member.email" placeholder="Email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input type="number" class="form-control" [ngClass]="{'is-invalid': phonenumber.touched && !phonenumber.valid}" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="member.phoneNumber" placeholder="Phone number" required>
+                        </div>           
+                      </div>
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <div class="col-md-6">
+                  <!-- general form elements disabled -->
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>Address</strong></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label >Street address line 1</label>
+                            <input type="email" class="form-control" [ngClass]="{'is-invalid': address1.touched && !address1.valid}" name="address1" #address1="ngModel" [(ngModel)]="member.streetAddressLine1" placeholder="Street address line 1" maxlength="200" required>
+                        </div>
+                        <div class="form-group">
+                            <label >Street address line 2 (optional)</label>
+                            <input type="email" class="form-control" name="address2"  #address2="ngModel" [(ngModel)]="member.streetAddressLine2" placeholder="Street address line 2 (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label >City</label>
+                            <input type="email" class="form-control" [ngClass]="{'is-invalid': city.touched && !city.valid}" name="city" #city="ngModel" [(ngModel)]="member.city" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <select class="custom-select" [ngClass]="{'is-invalid': state.touched && !state.valid}" name="state" #state="ngModel" [(ngModel)]="member.state" required>
+                              <option></option>
+                              <option>AL</option>
+                              <option>AK</option>
+                              <option>AZ</option>
+                              <option>AR</option>
+                              <option>CA</option>
+                              <option>CO</option>
+                              <option>CT</option>
+                              <option>DC</option>
+                              <option>DE</option>
+                              <option>FL</option>
+                              <option>GA</option>
+                              <option>HI</option>
+                              <option>ID</option>
+                              <option>IL</option>
+                              <option>IN</option>
+                              <option>IA</option>
+                              <option>KS</option>
+                              <option>KY</option>
+                              <option>LA</option>
+                              <option>ME</option>
+                              <option>MD</option>
+                              <option>MA</option>
+                              <option>MI</option>
+                              <option>MN</option>
+                              <option>MS</option>
+                              <option>MO</option>
+                              <option>MT</option>
+                              <option>NE</option>
+                              <option>NV</option>
+                              <option>NH</option>
+                              <option>NJ</option>
+                              <option>NM</option>
+                              <option>NY</option>
+                              <option>NC</option>
+                              <option>ND</option>
+                              <option>OH</option>
+                              <option>OK</option>
+                              <option>OR</option>
+                              <option>PA</option>
+                              <option>RI</option>
+                              <option>SC</option>
+                              <option>SD</option>
+                              <option>TN</option>
+                              <option>TX</option>
+                              <option>UT</option>
+                              <option>VT</option>
+                              <option>VA</option>
+                              <option>WA</option>
+                              <option>WV</option>
+                              <option>WI</option>
+                              <option>WY</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Zip/Postal code</label>
+                            <input type="number" class="form-control" name="zipcode" #zipcode="ngModel" [(ngModel)]="member.zipCode" placeholder="Zip/Postal code" required>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                 
+                </div>
+                <!--/.col (right) -->
+              </div>
+              <!-- /.row -->
+              <div class="row">
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-block btn-primary" [disabled]="!registerForm.form.valid">
+                      <i *ngIf="submitted" class="fas fa-circle-notch fa-spin" style="text-align: right;"></i>
+                      Register
+                    </button>
+                </div>
+              </div> 
+          </form>  
+        </div><!-- /.container-fluid -->
+    </section>
+
+</div>
+

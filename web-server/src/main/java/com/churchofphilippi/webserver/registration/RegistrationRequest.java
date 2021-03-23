@@ -9,8 +9,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RegistrationRequest {
 
-    private final String firstName;
-    private final String lastName;
+    private final String fname;
+    private final String lname;
     private final String email;
     private final char gender;
     private final String streetAddressLine1;

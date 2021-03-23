@@ -1,0 +1,95 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Members</h1>
+            </div>
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-2" style="padding-top: 6px;">
+                  <strong>Filter by:</strong>
+                </div>
+                <div class="col-sm-5">
+                  <ng-select2 [(ngModel)]="deptFilterValue" [data]="deptFilterData" [placeholder]="'Department'">		
+                  </ng-select2>
+                </div>
+                <div class="col-sm-5">
+                  <ng-select2 [(ngModel)]="positionFilterValue" [data]="positionFilterData" [placeholder]="'Position'">		
+                  </ng-select2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+          
+            <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>All Members</strong></h3>
+      
+                      <div class="card-tools">
+                        <form (ngSubmit)="onSubmit()" >
+                          <div class="input-group input-group-sm" style="width: 200px;">
+                            <input type="text" name="search" [(ngModel)]="searchValue" class="form-control float-right" placeholder="Search">
+                            <div class="input-group-append">
+                              <button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Phone number</th>
+                            <th>Member Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let member of members">
+                            <td> <a class="table-link" [routerLink]="['/member/update', member.memberId]"> {{member.fname}} </a></td>
+                            <td><a class="table-link" [routerLink]="['/member/update', member.memberId]"> {{member.lname}} </a></td>
+                            <td><a class="table-link" [routerLink]="['/member/update', member.memberId]"> {{member.email}} </a></td>
+                            <td>{{member.gender}}</td>
+                            <td>{{member.streetAddressLine1}} {{member.streetAddressLine2}}, {{member.city}}, {{member.state}} {{member.zipCode}}</td>
+                            <td>{{member.phoneNumber}}</td>
+                            <td>{{member.memberDate}}</td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div *ngIf="totalPages > 1" class="card-footer clearfix">
+                      <div class="custompagination">
+                        <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
+                      </div>
+                    </div>
+                    
+                    <!-- /.card-footer -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+</div>

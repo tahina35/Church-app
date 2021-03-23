@@ -11,10 +11,9 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 public class NewsService implements BaseService<News> {
 
-    private NewsRepository newsRepository;
+    private final NewsRepository newsRepository;
 
     @Override
     public List<News> getAll() {

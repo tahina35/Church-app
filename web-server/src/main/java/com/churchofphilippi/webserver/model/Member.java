@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "member")
@@ -70,7 +72,7 @@ public class Member implements UserDetails {
     )
     private String email;
 
-    @Column(length = 10)
+    @Column(length = 30)
     private String phoneNumber;
 
     @Column(nullable = false)
@@ -80,6 +82,7 @@ public class Member implements UserDetails {
     private String password;
 
     private String accessToken;
+
 
     public Member(String fname, String lname, String email, String password, char gender, LocalDate memberDate, String streetAddressLine1, String streetAddressLine2, String city, String state, int zipCode, String phoneNumber) {
         this.fname = fname;

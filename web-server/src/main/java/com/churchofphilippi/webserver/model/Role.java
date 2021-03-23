@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import java.time.LocalDate;
 public class Role {
 
     @EmbeddedId
-    private RoleKey id;
+    private RoleKey id = new RoleKey();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("memberId")
@@ -25,6 +26,7 @@ public class Role {
             name = "member_id",
             nullable = false
     )
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,6 +35,7 @@ public class Role {
             name = "position_id",
             nullable = false
     )
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Position position;
 
     @Column(nullable = false)

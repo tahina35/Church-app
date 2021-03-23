@@ -1,0 +1,193 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Update member</h1>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                  <div class="card h350">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>General information</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <h5><strong>{{memberDetails.member.fname}} {{memberDetails.member.lname}}</strong></h5>
+                        <span>{{memberDetails.member.streetAddressLine1}} {{memberDetails.member.streetAddressLine2}}</span>
+                        <br>
+                        <span>{{memberDetails.member.city}}, {{memberDetails.member.state}} {{memberDetails.member.zipCode}}</span>
+                        <br>
+                        <span *ngIf="memberDetails.member.gender == 'M'"><strong>Gender:</strong> Male</span>
+                        <span *ngIf="memberDetails.member.gender == 'F'"><strong>Gender:</strong> Female</span>
+                        <br>
+                        <span><strong>Phone number:</strong>  {{memberDetails.member.phoneNumber}}</span>
+                        <br>
+                        <span><strong>Email:</strong>  {{memberDetails.member.email}}</span>
+                    </div>
+                    <div class="card-footer clearfix" style="display: grid;">
+                        <div class="btn-group">
+                            <button type="button" class="btn bg-gradient-primary" (click)="open(department)">Add to a Department</button>
+                            <button type="button" class="btn bg-gradient-primary" (click)="open(position)">Assign a new position</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>  
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="card h350">
+                  <div class="card-header">
+                    <h3 class="card-title"><strong>Departments</strong></h3>
+                  </div>
+                  <div class="card-body table-responsive p-0">
+                    <table class="table table-hover table-head-fixed">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th class="w270">Remark</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let dept of memberDetails.memberDepts">
+                            <td>{{dept.department.name}}</td>
+                            <td>{{dept.startDate}}</td>
+                            <td>{{dept.endDate}}</td>
+                            <td class="w270">{{dept.remark}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                  </div>         
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card h350">
+                  <div class="card-header">
+                    <h3 class="card-title"><strong>Positions</strong></h3>
+                  </div>
+                  <div class="card-body table-responsive p-0">
+                    <table class="table table-hover table-head-fixed">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th class="w270">Remark</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let position of memberDetails.memberPositions">
+                            <td>{{position.position.name}}</td>
+                            <td>{{position.startDate}}</td>
+                            <td>{{position.endDate}}</td>
+                            <td class="w270">{{position.remark}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>    
+    </section>
+
+    <ng-template #department let-modal>
+        <form (ngSubmit)="updateDept()" #deptForm="ngForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Add {{memberDetails.member.fname}} to a department</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p *ngIf="error" class="error">{{error}}</p>
+            <div class="form-group">
+                <label>Department</label>
+                <select class="custom-select" [ngClass]="{'is-invalid': dept.touched && !dept.valid}" name="dept" #dept="ngModel" [(ngModel)]="deptMember.department.deptId" required>
+                        <option></option>
+                        <option *ngFor="let dept of memberDetails.allDepts; let i = index" value="{{dept.deptId}}">{{dept.name}}</option>
+                </select>
+            </div>   
+            <div class="input-group mb-3">
+                <!-- <label>Start date</label> -->
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': startDate.touched && !startDate.valid}" name="startDate" #startDate="ngModel" [(ngModel)]="start" ngbDatepicker #sddp="ngbDatepicker"  placeholder="Start date" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="sddp.toggle()" type="button">
+                        <i class="far fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <!-- <label>End date</label> -->
+                <input type="text" class="form-control"  [ngClass]="{'is-invalid': endDate.touched && !endDate.valid}" name="endDate" #endDate="ngModel" [(ngModel)]="end" ngbDatepicker #eddp="ngbDatepicker" placeholder="End date" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="eddp.toggle()" type="button">
+                        <i class="far fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label>Remark</label>
+                <textarea type="text" maxlength="120" class="form-control" rows="3" name="remark" #remark="ngModel" [(ngModel)]="deptMember.remark" placeholder="Remark"></textarea>
+            </div>         
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-primary" [disabled]="!deptForm.form.valid">Add</button>
+          </div>
+        </form>
+    </ng-template>
+
+
+    <ng-template #position let-modal>
+        <form (ngSubmit)="updatePosition()" #positionForm="ngForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Assign {{memberDetails.member.fname}} a new position</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p *ngIf="error" class="error">{{error}}</p>
+            <div class="form-group">
+                <label>Position</label>
+                <select class="custom-select" [ngClass]="{'is-invalid': position.touched && !position.valid}" name="position" #position="ngModel" [(ngModel)]="role.position.positionId" required>
+                    <option></option>
+                    <option *ngFor="let position of memberDetails.allPositions; let i = index" value="{{position.positionId}}">{{position.name}}</option>
+                </select>
+            </div>   
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': startDate.touched && !startDate.valid}" name="startDate" #startDate="ngModel" [(ngModel)]="start" ngbDatepicker #sddp="ngbDatepicker"  placeholder="Start date" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="sddp.toggle()" type="button">
+                        <i class="far fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': endDate.touched && !endDate.valid}"  name="endDate" #endDate="ngModel" [(ngModel)]="end" ngbDatepicker #eddp="ngbDatepicker" placeholder="End date" required>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" (click)="eddp.toggle()" type="button">
+                        <i class="far fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>  
+            <div class="form-group">
+                <label>Remark</label>
+                <textarea type="text" maxlength="120" class="form-control" rows="3" name="remark" #remark="ngModel" [(ngModel)]="role.remark"  placeholder="Remark"></textarea>
+            </div>  
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-primary" [disabled]="!positionForm.form.valid">Add</button>
+          </div>
+        </form>
+    </ng-template>
+
+</div>

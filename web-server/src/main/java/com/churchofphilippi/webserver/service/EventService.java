@@ -11,10 +11,9 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-@NoArgsConstructor
 public class EventService implements BaseService<Event> {
 
-    private EventRepository eventRepository;
+    private final EventRepository eventRepository;
 
     @Override
     public List<Event> getAll() {

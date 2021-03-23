@@ -1,0 +1,32 @@
+<div class="login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <p class="login-box-msg">Please enter your email here.</p>
+            <p *ngIf="error" class="error">{{error}}</p>
+            <form (ngSubmit)="onSubmit()" #emailForm="ngForm">
+              <div class="input-group mb-3">
+                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="email" class="form-control" placeholder="Email" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-block" [disabled]="!emailForm.form.valid">Request new password</button>
+                </div>
+                <!-- /.col -->
+              </div>
+            </form>
+      
+            <p class="mt-3 mb-1">
+              <a routerLink="/login">Login</a>
+            </p>
+          </div>
+          <!-- /.login-card-body -->
+        </div>
+    </div>
+</div>
