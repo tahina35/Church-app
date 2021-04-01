@@ -1,9 +1,6 @@
 package com.churchofphilippi.webserver.exception;
 
-import com.churchofphilippi.webserver.exception.exceptionModel.AuthenticationException;
-import com.churchofphilippi.webserver.exception.exceptionModel.EmailTakenException;
-import com.churchofphilippi.webserver.exception.exceptionModel.MemberNotFoundException;
-import com.churchofphilippi.webserver.exception.exceptionModel.TokenNotTrustedException;
+import com.churchofphilippi.webserver.exception.exceptionModel.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
@@ -26,6 +23,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     private int INVALID_TOKEN = 500;
     private String RESOURCE_NOT_FOUND = "Resource not found";
     private String AUTHENTICATION = "Authentication";
+    private String DATABASE = "Database operation";
 
     @ExceptionHandler(MemberNotFoundException.class)
     public final ResponseEntity<ErrorResponse> handleMemberNotFoundException
@@ -56,6 +54,14 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
             (TokenNotTrustedException ex, WebRequest request) {
         String message = ex.getLocalizedMessage();
         ErrorResponse error = new ErrorResponse(INVALID_TOKEN, AUTHENTICATION, message);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ForeignKeyConstraintException.class)
+    public final ResponseEntity<ErrorResponse> handleForeignKeyConstraintException
+            (ForeignKeyConstraintException ex, WebRequest request) {
+        String message = ex.getLocalizedMessage();
+        ErrorResponse error = new ErrorResponse(BAD_REQUEST, DATABASE, message);
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 

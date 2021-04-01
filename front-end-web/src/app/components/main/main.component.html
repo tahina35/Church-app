@@ -46,7 +46,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
@@ -102,29 +102,21 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a routerLink="/dashboard" class="nav-link">
+                  <a routerLink="/sunday-service" class="nav-link">
                     <p>Sunday Services</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/dashboard" class="nav-link">
+                  <a routerLink="/wednesday-service" class="nav-link">
                     <p>Wednesday Services</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/dashboard" class="nav-link">
+                  <a routerLink="/morning-service" class="nav-link">
                     <p>Early Morning Services</p>
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a routerLink="/dashboard" class="nav-link ">
-                <i class="nav-icon fas fa-bible"></i>
-                <p>
-                  Sermons
-                </p>
-              </a>
             </li>
             <li class="nav-header">Other</li>
             <li class="nav-item">
@@ -140,6 +132,14 @@
                 <i class="nav-icon fas fa-calendar"></i>
                 <p>
                   Events
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/dashboard" class="nav-link ">
+                <i class="nav-icon fas fa-bell"></i>
+                <p>
+                  Notifications
                 </p>
               </a>
             </li>

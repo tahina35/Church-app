@@ -1,10 +1,15 @@
 package com.churchofphilippi.webserver.service;
 
 import com.churchofphilippi.webserver.model.SundayService;
+import com.churchofphilippi.webserver.model.keys.SundayServicekey;
 import com.churchofphilippi.webserver.repository.SundayServiceRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,4 +34,15 @@ public class SundayServiceService implements BaseService<SundayService> {
     public void delete(SundayService entity) {
         sundayServiceRepository.delete(entity);
     }
+
+    public Page<SundayService> findAllPaginated(int pageNo, int pageSize) {
+        Sort sort = Sort.by("date").descending();
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        return sundayServiceRepository.findAll(pageable);
+    }
+
+    public void deleteById(SundayServicekey id) {
+        sundayServiceRepository.deleteById(id);
+    }
+
 }

@@ -1,11 +1,10 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.exception.exceptionModel.ForeignKeyConstraintException;
 import com.churchofphilippi.webserver.model.Position;
-import com.churchofphilippi.webserver.model.searchSpecification.DeptSpecification;
-import com.churchofphilippi.webserver.model.searchSpecification.PositionSpecification;
+import com.churchofphilippi.webserver.model.specification.PositionSpecification;
 import com.churchofphilippi.webserver.repository.PositionRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +34,15 @@ public class PositionService implements BaseService<Position> {
 
     public List<Position> findPositionsMemberNotAssignedTo(Long id) {
         return positionRepository.findPositionsMemberNotAssignedTo(id);
+    }
+
+    public void deleteById(Long id) {
+        try {
+            positionRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new ForeignKeyConstraintException("Some members are still assigned to this position. Please remove them before proceeding to this action.");
+        }
+
     }
 
     @Override

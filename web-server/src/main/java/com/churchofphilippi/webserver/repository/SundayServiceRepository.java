@@ -1,7 +1,11 @@
 package com.churchofphilippi.webserver.repository;
 
 import com.churchofphilippi.webserver.model.SundayService;
+import com.churchofphilippi.webserver.model.keys.SundayServicekey;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SundayServiceRepository extends JpaRepository<SundayService, Long> {
+import java.time.LocalDate;
+
+public interface SundayServiceRepository extends JpaRepository<SundayService, SundayServicekey> {
+
 }

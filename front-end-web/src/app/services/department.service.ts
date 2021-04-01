@@ -28,4 +28,8 @@ export class DepartmentService extends BaseService {
   findAll() {
     return this.http.get(this.baseUrl + '/api/department');
   }
+
+  delete(id: number) {
+    return this.http.delete(this.baseUrl + '/api/department/delete/' + id);
+  }
 }

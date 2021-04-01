@@ -11,8 +11,9 @@ public interface DeptRepository extends JpaRepository<Dept, Long>, JpaSpecificat
 
     //All depts that member does not belong to
     @Query(
-            value = "select * from dept d where d.dept_id NOT IN (select dm.dept_id from  dept_member dm where member_id = ?1)",
+            value = "select * from dept d where d.dept_id NOT IN (select dm.dept_id from dept_member dm where dm.member_id = ?1 AND dm.end_date IS NULL)",
             nativeQuery = true
     )
     List<Dept> findDeptsMemberNotBelongTo(Long id);
+
 }

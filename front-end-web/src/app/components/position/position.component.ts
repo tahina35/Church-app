@@ -4,6 +4,7 @@ import { Position } from 'src/app/model/Position';
 import { Page } from 'src/app/model/Page';
 import { PositionService } from 'src/app/services/position.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeletePositionModal } from './delete-position.modal';
 
 @Component({
   selector: 'app-position',
@@ -95,6 +96,27 @@ export class PositionComponent implements OnInit {
       },
       (err) => {
         this.error = err;
+      }
+    )
+  }
+
+  deletePosition(position: Position) {
+    const modalRef  = this.modalService.open(DeletePositionModal, {ariaLabelledBy: 'modal-basic-title'});
+    modalRef.componentInstance.position = position;
+    modalRef.result.then(
+      () => {
+        this.positionService.delete(position.positionId).subscribe(
+          () => {
+            this.currentPage = 1;
+            this.findAllPositions();
+          },
+          (err) => {
+            this.error = err;
+            setTimeout(()=>{                           //<<<---using ()=> syntax
+              this.error = '';
+            }, 8000);
+          }
+        )
       }
     )
   }

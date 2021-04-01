@@ -12,7 +12,16 @@
 
     <section class="content">
         <div class="container-fluid">
-            <div class="row">                
+            <div class="row">     
+                <div class="col-8" *ngIf="error">
+                  <div class="alert alert-danger alert-dismissible">
+                    <h5>
+                      <i class="icon fas fa-ban"></i>
+                      Action denied
+                    </h5> 
+                    {{error}}
+                  </div>
+                </div>                  
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
@@ -36,12 +45,14 @@
                           <tr>
                             <th>ID</th>
                             <th>Position Name</th>
+                            <th class="align-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let position of positions; let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{position.name}}</td>
+                            <td class="align-center"><a class="danger" (click)="deletePosition(position)" ngbTooltip="Delete"><i class="fas fa-trash "></i></a></td>
                           </tr>
                         </tbody>
                       </table>

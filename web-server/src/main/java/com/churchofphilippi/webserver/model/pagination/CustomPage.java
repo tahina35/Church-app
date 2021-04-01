@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class BasePage<T> {
+public class CustomPage<T> {
 
     private int pageNo;
     private int totalPages;

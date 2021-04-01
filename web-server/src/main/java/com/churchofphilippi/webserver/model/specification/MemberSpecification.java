@@ -1,4 +1,4 @@
-package com.churchofphilippi.webserver.model.searchSpecification;
+package com.churchofphilippi.webserver.model.specification;
 
 import com.churchofphilippi.webserver.model.Member;
 import lombok.AllArgsConstructor;

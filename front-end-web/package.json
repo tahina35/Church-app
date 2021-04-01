@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "@angular/youtube-player": "^11.2.6",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "admin-lte": "^3.0.5",
     "angular2-toaster": "^11.0.1",

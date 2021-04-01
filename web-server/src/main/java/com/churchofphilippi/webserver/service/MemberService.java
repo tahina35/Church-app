@@ -3,7 +3,7 @@ package com.churchofphilippi.webserver.service;
 import com.churchofphilippi.webserver.exception.exceptionModel.EmailTakenException;
 import com.churchofphilippi.webserver.exception.exceptionModel.MemberNotFoundException;
 import com.churchofphilippi.webserver.model.Member;
-import com.churchofphilippi.webserver.model.searchSpecification.MemberSpecification;
+import com.churchofphilippi.webserver.model.specification.MemberSpecification;
 import com.churchofphilippi.webserver.repository.MemberRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
@@ -66,10 +65,18 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
         memberRepository.delete(entity);
     }
 
-    public Page<Member> findPaginated(int pageNo, int pageSize) {
+    public Page<Member> findPaginated(int pageNo, int pageSize, String dept, String position) {
         Sort sort = Sort.by("fname").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-        return memberRepository.findAll(pageable);
+        if(dept.compareTo("-1") != 0 && dept.compareTo("") != 0 && position.compareTo("-1") != 0 && position.compareTo("") != 0) {
+            return memberRepository.findByDeptAndPosition(Long.parseLong(dept), Long.parseLong(position), pageable);
+        } else if(dept.compareTo("-1") != 0 && dept.compareTo("") != 0) {
+            return memberRepository.findByDept(Long.parseLong(dept), pageable);
+        } else if(position.compareTo("-1") != 0 && position.compareTo("") != 0) {
+            return memberRepository.findByPosition(Long.parseLong(position), pageable);
+        } else {
+            return memberRepository.findAll(pageable);
+        }
     }
 
     public Page<Member> findAllWithFilters(String searchValue, int pageNo, int pageSize) {
@@ -81,5 +88,9 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
 
     public Member getById(Long id) {
         return memberRepository.findById(id).orElseThrow(() -> new MemberNotFoundException("User not found"));
+    }
+
+    public List<Member> getPreachers() {
+        return memberRepository.getPreachers();
     }
 }

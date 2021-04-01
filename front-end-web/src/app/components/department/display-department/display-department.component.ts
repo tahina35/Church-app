@@ -4,6 +4,7 @@ import { Dept } from 'src/app/model/Dept';
 import { Page } from 'src/app/model/Page';
 import { DepartmentService } from 'src/app/services/department.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteDeptModal } from './delete-department.modal';
 
 @Component({
   selector: 'app-display-department',
@@ -105,6 +106,27 @@ export class DisplayDepartmentComponent implements OnInit {
       }
     )
     
+  }
+
+  deleteDepartment(dept: Dept) {
+    const modalRef  = this.modalService.open(DeleteDeptModal, {ariaLabelledBy: 'modal-basic-title'});
+    modalRef.componentInstance.dept = dept;
+    modalRef.result.then(
+      () => {
+        this.deptService.delete(dept.deptId).subscribe(
+          () => {
+            this.currentPage = 1;
+            this.findAllDepts();
+          },
+          (err) => {
+            this.error = err;
+            setTimeout(()=>{                           //<<<---using ()=> syntax
+              this.error = '';
+            }, 8000);
+          }
+        )
+      }
+    )
   }
 
 }

@@ -28,8 +28,8 @@ export class MemberService extends BaseService {
     return this.http.post(this.baseUrl + '/api/registration', member);
   }
 
-  findPaginated(page: number) {
-    return this.http.get(this.baseUrl + '/api/member/page/' + page);
+  findPaginated(page: number, dept: string, position: string) {
+    return this.http.get(this.baseUrl + '/api/member/page/' + page + '?dept=' + dept + '&pos=' + position);
   }
 
   search(searchValue: string, page: number) {
@@ -46,6 +46,14 @@ export class MemberService extends BaseService {
 
   getFiltersData() {
     return this.http.get(this.baseUrl + '/api/member/filters');
+  }
+
+  removeFromDepartment(dept: DeptMember) {
+    return this.http.post(this.baseUrl + '/api/member/remove-from-department', dept)
+  }
+
+  removePosition(role: Role) {
+    return this.http.post(this.baseUrl + '/api/member/remove-position', role)
   }
 
 }

@@ -5,9 +5,9 @@ export class DeptMember {
 
     department: Dept = <Dept>{}
     member: Member = <Member>{}
-    startDate: Date = new Date();
-    endDate: Date = new Date();
-    remark: string = "";
+    startDate: Date
+    endDate: Date
+    remark: string
 
     constructor() {
 

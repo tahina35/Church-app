@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,19 +35,23 @@ public class Sermon {
     @Column(nullable = false)
     private String mainVerse;
 
-    @Column(nullable = false)
     private String url;
 
-    @Column(nullable = false)
     private String thumbnail;
 
     @Column(nullable = false)
     private Boolean isUploaded = false;
 
-    public Sermon(String url, String thumbnail, String mainVerse) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="member_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+    private Member preacher;
+
+    public Sermon(String url, String thumbnail, String mainVerse, Member preacher) {
         this.mainVerse = mainVerse;
         this.url = url;
         this.thumbnail = thumbnail;
+        this.preacher = preacher;
     }
 
 }

@@ -11,7 +11,7 @@ public interface PositionRepository extends JpaRepository<Position, Long>, JpaSp
 
     //All positions that member is not assigned to
     @Query(
-            value = "select * from position p where p.position_id NOT IN (select r.position_id from  role r where member_id = ?1)",
+            value = "select * from position p where p.position_id NOT IN (select r.position_id from  role r where r.member_id = ?1 AND r.end_date IS NULL)",
             nativeQuery = true
     )
     List<Position> findPositionsMemberNotAssignedTo(Long id);

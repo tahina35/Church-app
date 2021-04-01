@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/model/Member';
 import { Page } from 'src/app/model/Page';
 import { MemberService } from 'src/app/services/member.service';
-import { ActivatedRoute } from '@angular/router';
 import { MemberFilters } from 'src/app/model/MemberFilters';
 import { Select2OptionData } from 'ng-select2';
 import { Dept } from 'src/app/model/Dept';
@@ -18,7 +17,6 @@ export class DisplayMemberComponent implements OnInit {
 
   totalPages:number;
   members: Member[];
-  allMembers: Member[];
   error?: string;
   currentPage: number = 1;
   searchValue:string = '';
@@ -37,21 +35,8 @@ export class DisplayMemberComponent implements OnInit {
   }
 
   findAllMembers() {
-    this.memberService.findPaginated(this.currentPage).subscribe(
-      (data: Page<Member>) => {
-        this.totalPages = data.totalPages;
-        this.totalItems = data.totalItems;
-        this.members = data.content;
-        this.allMembers = data.content;;
-      },
-      (err) => {
-        this.error = err;
-      }
-    )
-  }
-
-  findAllMembersPaginated() {
-    this.memberService.findPaginated(this.currentPage).subscribe(
+    this.searchValue = '';
+    this.memberService.findPaginated(this.currentPage, this.deptFilterValue, this.positionFilterValue).subscribe(
       (data: Page<Member>) => {
         this.totalPages = data.totalPages;
         this.totalItems = data.totalItems;
@@ -69,6 +54,8 @@ export class DisplayMemberComponent implements OnInit {
   }
 
   search() {
+    this.deptFilterValue = '';
+    this.positionFilterValue = '';
     this.memberService.search(this.searchValue, this.currentPage).subscribe(
       (data: Page<Member>) => {
         this.totalPages = data.totalPages;
@@ -83,7 +70,7 @@ export class DisplayMemberComponent implements OnInit {
 
   onPageChange() {
     if(this.searchValue === '') {
-      this.findAllMembersPaginated();
+      this.findAllMembers();
     } else {
       this.search();
     }
@@ -103,17 +90,32 @@ export class DisplayMemberComponent implements OnInit {
   }
 
   setFilters(filters: MemberFilters) {
+    
     this.deptFilterData = filters.depts.map(
       (dept: Dept) => {
         return ({id: dept.deptId.toString(), text: dept.name});
       }
     );
-
+    this.deptFilterData.unshift({id: '-1', text: 'All departments'});
+    
     this.positionFilterData = filters.positions.map(
       (position: Position) => {
         return ({id: position.positionId.toString(), text: position.name});
       }
     );
+    this.positionFilterData.unshift({id: '-1', text: 'All positions'});
+  }
+
+  filterByDept(event) {
+    this.deptFilterValue = event;
+    this.currentPage = 1;
+    this.findAllMembers()
+  }
+
+  filterByPos(event) {
+    this.positionFilterValue = event;
+    this.currentPage = 1;
+    this.findAllMembers()
   }
 
 }

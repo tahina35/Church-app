@@ -1,7 +1,8 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.exception.exceptionModel.ForeignKeyConstraintException;
 import com.churchofphilippi.webserver.model.Dept;
-import com.churchofphilippi.webserver.model.searchSpecification.DeptSpecification;
+import com.churchofphilippi.webserver.model.specification.DeptSpecification;
 import com.churchofphilippi.webserver.repository.DeptRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -31,6 +32,15 @@ public class DeptService implements BaseService<Dept>{
     @Override
     public void delete(Dept entity) {
         deptRepository.delete(entity);
+    }
+
+    public void deleteById(Long id) {
+        try {
+            deptRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new ForeignKeyConstraintException("Some members still belong to this department. Please remove them before proceeding to this action.");
+        }
+
     }
 
     public Page<Dept> findPaginated(int pageNo, int pageSize) {

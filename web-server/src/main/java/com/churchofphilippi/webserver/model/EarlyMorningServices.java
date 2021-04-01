@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,36 +18,12 @@ import java.time.LocalDate;
 public class EarlyMorningServices {
 
     @Id
-    @SequenceGenerator(
-            name = "morning_service_sequence",
-            sequenceName = "morning_service_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "morning_service_sequence"
-    )
-    @Column(
-            name = "morning_service_id",
-            updatable = false
-    )
-    private Long morningServiceId;
-
     @Column(nullable = false)
     private LocalDate date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="sermon_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Sermon sermon;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="member_id")
-    private Member member;
-
-    public EarlyMorningServices(Sermon sermon, LocalDate date, Member member) {
-        this.sermon = sermon;
-        this.date = date;
-        this.member = member;
-    }
 
 }

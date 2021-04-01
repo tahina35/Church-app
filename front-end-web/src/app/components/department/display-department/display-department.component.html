@@ -12,7 +12,16 @@
 
     <section class="content">
         <div class="container-fluid">
-            <div class="row">                
+            <div class="row">  
+                <div class="col-8" *ngIf="error">
+                  <div class="alert alert-danger alert-dismissible">
+                     <h5>
+                       <i class="icon fas fa-ban"></i>
+                       Action denied
+                     </h5> 
+                     {{error}}
+                  </div>
+                </div>              
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
@@ -37,6 +46,7 @@
                             <th>ID</th>
                             <th>Department Name</th>
                             <th>Creation date</th>
+                            <th class="align-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -44,6 +54,7 @@
                             <td>{{i + 1}}</td>
                             <td>{{dept.name}}</td>
                             <td>{{dept.creationDate}}</td>
+                            <td class="align-center"><a class="danger" (click)="deleteDepartment(dept)" ngbTooltip="Delete"><i class="fas fa-trash "></i></a></td>
                           </tr>
                         </tbody>
                       </table>

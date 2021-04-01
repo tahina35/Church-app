@@ -11,6 +11,9 @@ import { DisplayMemberComponent } from './components/member/display-member/displ
 import { DisplayDepartmentComponent } from './components/department/display-department/display-department.component';
 import { PositionComponent } from './components/position/position.component';
 import { UpdateMemberComponent } from './components/member/update-member/update-member.component';
+import { SundayServiceComponent } from './components/worshipServices/sunday-service/sunday-service.component';
+import { WednesdayServiceComponent } from './components/worshipServices/wednesday-service/wednesday-service.component';
+import { MorningServiceComponent } from './components/worshipServices/morning-service/morning-service.component';
 
 const routes: Routes = [
   { 
@@ -22,7 +25,10 @@ const routes: Routes = [
       { path: 'member', component: DisplayMemberComponent },
       { path: 'member/update/:id', component: UpdateMemberComponent },
       { path: 'department', component: DisplayDepartmentComponent },
-      { path: 'position', component: PositionComponent }
+      { path: 'position', component: PositionComponent },
+      { path: 'sunday-service', component: SundayServiceComponent },
+      { path: 'wednesday-service', component: WednesdayServiceComponent },
+      { path: 'morning-service', component: MorningServiceComponent }
     ]
   }, 
   { path: 'login', component: LoginComponent }, 

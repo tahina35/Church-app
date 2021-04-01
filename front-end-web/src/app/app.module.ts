@@ -14,14 +14,21 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DisplayMemberComponent } from './components/member/display-member/display-member.component';
 import { DisplayDepartmentComponent } from './components/department/display-department/display-department.component';
 import { RegisterMemberComponent } from './components/member/register-member/register-member.component';
+import { SundayServiceComponent } from './components/worshipServices/sunday-service/sunday-service.component';
 
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgSelect2Module } from 'ng-select2';
-import { NgbPaginationModule, NgbModalModule, NgbDatepickerModule  } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbModalModule, NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthInterceptor } from './helper/auth.interceptor';
 import { AuthGuard } from './helper/authGuard';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceTypePipe } from './pipe/ServiceTypePipe';
+import { WednesdayServiceComponent } from './components/worshipServices/wednesday-service/wednesday-service.component';
+import { GenderPipe } from './pipe/GenderPipe';
+import { MorningServiceComponent } from './components/worshipServices/morning-service/morning-service.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { VideoPlayerModal } from './components/worshipServices/video-player.modal';
 
 
 @NgModule({
@@ -36,7 +43,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DisplayMemberComponent,
     DisplayDepartmentComponent,
     PositionComponent,
-    UpdateMemberComponent
+    UpdateMemberComponent,
+    SundayServiceComponent,
+    WednesdayServiceComponent,
+    ServiceTypePipe,
+    GenderPipe,
+    MorningServiceComponent,
+    VideoPlayerModal
   ],
   imports: [
     BrowserModule,
@@ -47,7 +60,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbPaginationModule,
     NgbModalModule,
     NgbDatepickerModule,
-    NgbModule
+    NgbTooltipModule,
+    NgbModule,
+    YouTubePlayerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

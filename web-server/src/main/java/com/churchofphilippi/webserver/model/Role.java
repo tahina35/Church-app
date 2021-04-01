@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.churchofphilippi.webserver.model.keys.RoleKey;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,8 +41,7 @@ public class Role {
 
     @Column(nullable = false)
     private LocalDate startDate;
-
-    @Column(nullable = false)
+    
     private LocalDate endDate;
 
     private String remark;

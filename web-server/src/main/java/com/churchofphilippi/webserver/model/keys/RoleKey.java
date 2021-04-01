@@ -1,4 +1,4 @@
-package com.churchofphilippi.webserver.model;
+package com.churchofphilippi.webserver.model.keys;
 
 import lombok.*;
 

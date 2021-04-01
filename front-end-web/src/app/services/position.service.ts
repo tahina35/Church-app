@@ -30,4 +30,8 @@ export class PositionService extends BaseService {
     return this.http.post(this.baseUrl + '/api/position', position);
   }
 
+  delete(id: number) {
+    return this.http.delete(this.baseUrl + '/api/position/delete/' + id);
+  }
+
 }
