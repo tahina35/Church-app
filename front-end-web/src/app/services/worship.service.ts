@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { MorningService } from '../model/MorningService';
 import { SundayService } from '../model/SundayService';
 import { WednesdayService } from '../model/WednesdayService';
+import { YouthService } from '../model/YouthService';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class WorshipService extends BaseService{
 
   sundayServiceUrl: string = this.baseUrl + '/api/worship/sunday-service';
   wednesdayServiceUrl: string = this.baseUrl + '/api/worship/wednesday-service';
+  youthServiceUrl: string = this.baseUrl + '/api/worship/youth-service';
   moringServiceUrl: string = this.baseUrl + '/api/worship/morning-service';
 
   constructor(private http: HttpClient) {
@@ -52,6 +54,21 @@ export class WorshipService extends BaseService{
   deleteWednesdayService(date: Date) {
     const formattedDate = formatDate(date, 'yyyy-MM-dd', 'en_US')
     return this.http.delete(this.wednesdayServiceUrl + '/delete?date=' + formattedDate);
+  }
+
+  // Youth service operations
+
+  saveOrUpdateYouthService(service: YouthService) {
+    return this.http.post(this.youthServiceUrl, service);
+  }
+
+  getYouthServices(page: number) {
+    return this.http.get(this.youthServiceUrl + '/page/' + page);
+  }
+
+  deleteYouthService(date: Date) {
+    const formattedDate = formatDate(date, 'yyyy-MM-dd', 'en_US')
+    return this.http.delete(this.youthServiceUrl + '/delete?date=' + formattedDate);
   }
 
   // Morning service operations

@@ -1,5 +1,6 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 @Table(name = "news")
@@ -35,23 +35,19 @@ public class News {
 
     @Column(
             nullable = false,
-            length = 100
-    )
-    private String title;
-
-    @Column(
-            nullable = false,
             columnDefinition = "TEXT"
     )
     private String content;
 
     @Column(nullable = false)
-    private LocalDate date_created;
+    private LocalDate startDate;
 
-    public News(String title, String content, LocalDate date_created) {
-        this.title = title;
-        this.content = content;
-        this.date_created = date_created;
-    }
+    @Column(nullable = false)
+    private LocalDate endDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dept_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Dept department;
 
 }

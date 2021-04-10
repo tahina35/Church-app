@@ -1,4 +1,4 @@
-export interface Member {
+export class Member {
 
     memberId: number
     fname: string
@@ -13,5 +13,6 @@ export interface Member {
     email: string
     phoneNumber: string
     password: string
+    admin: boolean
 
 }

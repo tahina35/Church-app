@@ -32,35 +32,16 @@ public class SundayService {
             nullable = false,
             length = 150
     )
-    private String confessionOfFaith;
-
-
-    @Column(
-            nullable = false,
-            length = 150
-    )
     private String hymn;
 
-    @Column(
-            nullable = false,
-            length = 150
-    )
-    private String benediction;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="member_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Member prayer;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="sermon_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Sermon sermon;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "sunday_service_news",
-            joinColumns = {
-                    @JoinColumn(name = "date"),
-                    @JoinColumn(name = "service_type"),
-            },
-            inverseJoinColumns = @JoinColumn(name = "news_id"))
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    Set<News> news;
 
 }

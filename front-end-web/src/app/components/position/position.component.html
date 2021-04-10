@@ -45,14 +45,19 @@
                           <tr>
                             <th>ID</th>
                             <th>Position Name</th>
-                            <th class="align-center">Action</th>
+                            <th class="text-right">Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let position of positions; let i = index">
                             <td>{{i + 1}}</td>
                             <td>{{position.name}}</td>
-                            <td class="align-center"><a class="danger" (click)="deletePosition(position)" ngbTooltip="Delete"><i class="fas fa-trash "></i></a></td>
+                            <td class="text-right">
+                              <div class="btn-group btn-group-sm">
+                                <a class="btn btn-warning pointer" (click)="updatePosition(updatePos, position)"  ngbTooltip="edit"><i class="fas fa-edit "></i></a> 
+                                <a class="btn btn-danger pointer"  (click)="deletePosition(position)" ngbTooltip="delete"><i class="fas fa-trash "></i></a>
+                              </div>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -93,6 +98,28 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-outline-primary" [disabled]="!positionForm.form.valid">Add</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <ng-template #updatePos let-modal>
+      <form (ngSubmit)="addPosition()" #positionForm="ngForm">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Update position</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="deptname">Position name</label>
+            <div class="input-group">
+              <input type="text" id="deptname" class="form-control" [ngClass]="{'is-invalid': name.touched && !name.valid}" #name="ngModel"  [(ngModel)]="position.name" placeholder="Position name" name="name" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!positionForm.form.valid">Update</button>
         </div>
       </form>
     </ng-template>

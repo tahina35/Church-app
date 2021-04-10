@@ -1,0 +1,31 @@
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:286px;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.color {
+	
+    border-radius: 50%;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+	display: flex;
+}
+
+.dropdown-menu {
+	padding: 0 !important;
+	border: 0 !important;
+	margin-top: 11px;
+}
+
+.fc-content .fc-event {
+    cursor: pointer !important; 
+}

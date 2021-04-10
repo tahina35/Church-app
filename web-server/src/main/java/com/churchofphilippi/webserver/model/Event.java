@@ -1,12 +1,13 @@
 package com.churchofphilippi.webserver.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "event")
@@ -33,24 +34,23 @@ public class Event {
     private Long eventId;
 
     @Column(nullable = false)
-    private LocalDate startDate;
+    private LocalDateTime startDate;
 
     @Column(nullable = false)
-    private LocalDate endDate;
+    private LocalDateTime endDate;
 
     @Column(nullable = false)
-    private String subject;
+    private String title;
+
+    @Column(nullable = false)
+    private String color;
+
+    @Column(nullable = false)
+    private boolean allDay;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="dept_id")
-    private Dept dept;
-
-
-    public Event(LocalDate startDate, LocalDate endDate, String subject) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.subject = subject;
-    }
-
+    @JoinColumn(name = "dept_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Dept department;
 
 }

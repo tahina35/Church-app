@@ -15,7 +15,7 @@
     <ul class="navbar-nav ml-auto">
       
       <li class="nav-item" >
-        <a class="nav-link" href="" (click)="logout()">
+        <a class="nav-link pointer" (click)="logout()">
           Log out
         </a>
       </li>
@@ -29,7 +29,7 @@
       <!-- Brand Logo -->
       <a routerLink="/dashboard" class="brand-link">
         <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-        <span class="brand-text font-weight-light">Church Of Philippi</span>
+        <span class="brand-text font-weight-light"> Church Of Philippi</span>
       </a>
   
       <!-- Sidebar -->
@@ -40,7 +40,7 @@
             <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
           </div>
           <div class="info">
-            <a routerLink="/dashboard" class="d-block">Tahina Andriantomanga</a>
+            <a routerLink="/member" class="d-block">{{name}}</a>
           </div>
         </div>
 
@@ -49,16 +49,9 @@
           <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
+        
             <li class="nav-item">
-              <a routerLink="/dashboard" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">
+              <a [class.active]="member.isActive || position.isActive"  href="/home" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Members
@@ -67,24 +60,24 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a routerLink="/member" class="nav-link">
+                  <a routerLinkActive #member="routerLinkActive" routerLink="/member" class="nav-link">
                     <p>Display members</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/member/register" class="nav-link">
+                  <a routerLinkActive #member="routerLinkActive" routerLink="/member/register" class="nav-link">
                     <p>Register a new member</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/position" class="nav-link"> 
+                  <a routerLinkActive #position="routerLinkActive" routerLink="/position" class="nav-link"> 
                     <p>Position</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a routerLink="/department" class="nav-link ">
+              <a routerLinkActive="active" routerLink="/department" class="nav-link ">
                 <i class="nav-icon fas fa-building"></i>
                 <p>
                   Department
@@ -93,7 +86,7 @@
             </li>
             <li class="nav-header">Worship</li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a [class.active]="sunday.isActive || wednesday.isActive || youth.isActive || morning.isActive" href="" class="nav-link">
                 <i class="nav-icon fas fa-cross"></i>
                 <p>
                   Worship Services
@@ -102,17 +95,22 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a routerLink="/sunday-service" class="nav-link">
+                  <a routerLinkActive #sunday="routerLinkActive" routerLink="/sunday-service" class="nav-link">
                     <p>Sunday Services</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/wednesday-service" class="nav-link">
+                  <a routerLinkActive #wednesday="routerLinkActive" routerLink="/youth-service" class="nav-link">
+                    <p>Youth Services</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLinkActive #youth="routerLinkActive" routerLink="/wednesday-service" class="nav-link">
                     <p>Wednesday Services</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a routerLink="/morning-service" class="nav-link">
+                  <a routerLinkActive #morning="routerLinkActive" routerLink="/morning-service" class="nav-link">
                     <p>Early Morning Services</p>
                   </a>
                 </li>
@@ -120,7 +118,7 @@
             </li>
             <li class="nav-header">Other</li>
             <li class="nav-item">
-              <a routerLink="/dashboard" class="nav-link ">
+              <a routerLinkActive="active" routerLink="/news" class="nav-link ">
                 <i class="nav-icon fas fa-newspaper"></i>
                 <p>
                   News
@@ -128,7 +126,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a routerLink="/dashboard" class="nav-link ">
+              <a routerLinkActive="active" routerLink="/event" class="nav-link ">
                 <i class="nav-icon fas fa-calendar"></i>
                 <p>
                   Events
@@ -136,7 +134,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a routerLink="/dashboard" class="nav-link ">
+              <a routerLinkActive="active" routerLink="/notification" class="nav-link ">
                 <i class="nav-icon fas fa-bell"></i>
                 <p>
                   Notifications

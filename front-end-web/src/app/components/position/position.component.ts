@@ -83,7 +83,12 @@ export class PositionComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+      () => {},
+      (reason) => {
+        this.position = {} as Position;
+      }
+    )
   }
 
   addPosition() {
@@ -96,6 +101,17 @@ export class PositionComponent implements OnInit {
       },
       (err) => {
         this.error = err;
+      }
+    )
+  }
+
+  updatePosition(content, pos: Position) {
+    this.position.positionId = pos.positionId;
+    this.position.name = pos.name;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+      () => {},
+      (reason) => {
+        this.position = {} as Position;
       }
     )
   }

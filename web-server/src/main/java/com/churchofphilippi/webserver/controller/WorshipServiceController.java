@@ -4,6 +4,7 @@ import com.churchofphilippi.webserver.config.PageConfig;
 import com.churchofphilippi.webserver.model.EarlyMorningServices;
 import com.churchofphilippi.webserver.model.SundayService;
 import com.churchofphilippi.webserver.model.WednesdayService;
+import com.churchofphilippi.webserver.model.YouthService;
 import com.churchofphilippi.webserver.model.keys.SundayServicekey;
 import com.churchofphilippi.webserver.model.pagination.CustomPage;
 import com.churchofphilippi.webserver.service.*;
@@ -23,7 +24,7 @@ public class WorshipServiceController {
     private final SundayServiceService sundayServiceService;
     private final WednesdayServiceService wednesdayServiceService;
     private final EarlyMorningServicesService earlyMorningServicesService;
-    private final SermonService sermonService;
+    private final YouthServiceService youthServiceService;
     private final MemberService memberService;
     private final PageConfig pageConfig;
 
@@ -71,6 +72,27 @@ public class WorshipServiceController {
     public ResponseEntity<?> deleteWednesdayService(@RequestParam(name = "date") String date) {
         LocalDate serviceDate = LocalDate.parse(date);
         wednesdayServiceService.deleteByDate(serviceDate);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    // youth service operations
+
+    @GetMapping("/youth-service/page/{pageNo}")
+    public ResponseEntity<?> getYouthServices(@PathVariable("pageNo")int pageNo) {
+        Page<YouthService> paginated = youthServiceService.findAllPaginated(pageNo, pageConfig.getSize());
+        CustomPage<YouthService> page = new CustomPage<YouthService>(pageNo, paginated.getTotalPages(), paginated.getTotalElements(), paginated.getContent());
+        return ResponseEntity.ok(page);
+    }
+
+    @PostMapping("/youth-service")
+    public ResponseEntity<?> addYouthService(@RequestBody YouthService service) {
+        return ResponseEntity.ok(youthServiceService.save(service));
+    }
+
+    @DeleteMapping("/youth-service/delete")
+    public ResponseEntity<?> deleteYouthService(@RequestParam(name = "date") String date) {
+        LocalDate serviceDate = LocalDate.parse(date);
+        youthServiceService.deleteByDate(serviceDate);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

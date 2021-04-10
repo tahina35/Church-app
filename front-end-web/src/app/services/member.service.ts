@@ -16,6 +16,10 @@ export class MemberService extends BaseService {
     super();
   }
 
+  findByUsername(username: string) {
+    return this.http.get(this.baseUrl + '/api/member/username/' + username);
+  }
+
   findById(id: number) {
     return this.http.get(this.baseUrl + '/api/member/' + id);
   }

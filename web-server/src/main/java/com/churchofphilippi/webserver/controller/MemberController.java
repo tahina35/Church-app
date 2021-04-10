@@ -37,6 +37,11 @@ public class MemberController {
         return ResponseEntity.ok(memberService.getById(id));
     }
 
+    @GetMapping("/username/{username}")
+    public ResponseEntity<?> getMemberById(@PathVariable("username") String username) {
+        return ResponseEntity.ok(memberService.loadUserByUsername(username));
+    }
+
     @GetMapping("/{id}/departments")
     public ResponseEntity<?> getDeptsByMemberId(@PathVariable("id") Long id) {
         return ResponseEntity.ok(deptMemberService.findByMemberId(id));

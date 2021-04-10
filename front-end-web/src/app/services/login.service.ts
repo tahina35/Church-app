@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { BaseService } from './base.service';
+import { Member } from '../model/Member';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class LoginService extends BaseService {
   }
 
   logout() {
+    localStorage.removeItem('username');
     this.cookieService.delete('access-token');
     this.router.navigate(['/login']);
   }

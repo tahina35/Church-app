@@ -44,13 +44,13 @@ public class DeptService implements BaseService<Dept>{
     }
 
     public Page<Dept> findPaginated(int pageNo, int pageSize) {
-        Sort sort = Sort.by("name").ascending();
+        Sort sort = Sort.by("deptId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return deptRepository.findAll(pageable);
     }
 
     public Page<Dept> findAllWithFilters(String searchValue, int pageNo, int pageSize) {
-        Sort sort = Sort.by("name").ascending();
+        Sort sort = Sort.by("deptId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         DeptSpecification specification = new DeptSpecification(searchValue);
         return deptRepository.findAll(specification, pageable);

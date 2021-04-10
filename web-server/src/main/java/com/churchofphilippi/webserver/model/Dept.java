@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "dept")
@@ -30,7 +32,7 @@ public class Dept {
     )
     private Long deptId;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="parent_dept_id")
     @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
     private Dept parentDept;

@@ -39,7 +39,7 @@ public class RegistrationService {
                                 request.getCity(),
                                 request.getState(),
                                 request.getZipCode(),
-                                formatPhoneNumber(request.getPhoneNumber())
+                                request.getPhoneNumber()
                         )
         );
 
@@ -68,14 +68,6 @@ public class RegistrationService {
             password[i] = combinedChars.charAt(random.nextInt(combinedChars.length()));
         }
         return String.valueOf(password);
-    }
-
-    private static String formatPhoneNumber(String phoneNumber) {
-        StringBuilder sb = new StringBuilder(phoneNumber);
-        sb.insert(0, "(");
-        sb.insert(4, ") ");
-        sb.insert(9, "-");
-        return sb.toString();
     }
 
     private String buildHtml(String firstname, String password) {

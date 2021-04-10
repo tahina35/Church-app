@@ -35,7 +35,7 @@ export class ResetPasswordComponent implements OnInit {
         this.member.password = this.data.password;
         this.authService.resetPassword(this.member).subscribe(
           () => {
-            this.router.navigateByUrl('/login', { state : { message: "Session expired. Please log in!", status: "success" } });
+            this.router.navigateByUrl('/login', { state : { message: "Password successfuly changed!", status: "success" } });
           },
           (err) => {
             this.error = err;

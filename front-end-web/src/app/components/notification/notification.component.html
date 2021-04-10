@@ -1,0 +1,141 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Notifications</h1>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8" *ngIf="error">
+                    <div class="alert alert-danger alert-dismissible">
+                       <h5>
+                         <i class="icon fas fa-ban"></i>
+                         Action denied
+                       </h5> 
+                       {{error}}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card d-flex" style="max-height: 650px;">
+                      <div class="card-header">
+                        <h3 class="card-title"><strong>Notifications (Last 30 days)</strong></h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body" style="overflow-y: auto;">
+                        <div *ngFor="let notif of notifications; let i = index">
+                            <div class="row">
+                                <div class="col-11" >
+                                    <strong *ngIf="notif.department">{{notif.department.name}}</strong>
+                                    <br *ngIf="notif.department">
+                                    <br *ngIf="notif.department">
+                                    <p>{{notif.content}}</p>
+                                    <span class="text-muted">{{notif.creationDate | fromNow}}</span>
+                                </div>
+                                <div class="col-1 text-center">
+                                   <div class="btn-group btn-group-sm">
+                                        <a class="btn btn-warning pointer" ngbTooltip="edit" (click)="update(updateNotification, notif)">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a class="btn btn-danger pointer" ngbTooltip="delete" (click)="deleteNotification(notif)">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                   </div>
+                                </div>
+                            </div>
+                            <hr *ngIf="i < notifications.length - 1">
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Create Notification</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <ng-template #content let-modal>
+        <form (ngSubmit)="saveNotification()" #saveNotificationForm="ngForm">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Create notification</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="formErrors" class="callout callout-danger text-danger">
+                    <p>{{formErrors}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="churchwide" [(ngModel)] = "isChurchwide" (change)="onChange()" name="churchwide">
+                                <label for="churchwide" class="custom-control-label">Churchwide</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Select department</label>
+                            <ng-select2 [class.disabled]="isChurchwide" [(ngModel)]="selectedDept" [data]="allDepts" [placeholder]="'Department'"  name="dept" >		
+                            </ng-select2>
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea class="form-control" [ngClass]="{'is-invalid': content.touched && !content.valid}" [(ngModel)]="notification.content" name="content"  #content="ngModel" rows="3" placeholder="Content" required></textarea>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="modal-footer">
+                <button type="submit" [disabled]="(!isChurchwide && (!selectedDept || !content.valid)) || !saveNotificationForm.form.valid" class="btn btn-outline-primary">Send</button>
+            </div>
+        </form>
+    </ng-template>
+
+    <ng-template #updateNotification let-modal>
+        <form (ngSubmit)="saveNotification()" #updateNotificationForm="ngForm">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Update notification</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="formErrors" class="callout callout-danger text-danger">
+                    <p>{{formErrors}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="churchwide" [(ngModel)] = "isChurchwide" (change)="onChange()" name="churchwide">
+                                <label for="churchwide" class="custom-control-label">Churchwide</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Select department</label>
+                            <ng-select2 [class.disabled]="isChurchwide" [(ngModel)]="selectedDept" [data]="allDepts" [placeholder]="'Department'"  name="dept">		
+                            </ng-select2>
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea class="form-control" [ngClass]="{'is-invalid': content.touched && !content.valid}" [(ngModel)]="notification.content" name="content"  #content="ngModel" rows="3" placeholder="Content" required></textarea>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="modal-footer">
+                <button type="submit" [disabled]="(!isChurchwide && (!selectedDept || !content.valid)) || !updateNotificationForm.form.valid" class="btn btn-outline-primary">Update</button>
+            </div>
+        </form>
+    </ng-template>
+
+    
+</div>

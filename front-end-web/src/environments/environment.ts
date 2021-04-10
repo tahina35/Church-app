@@ -7,8 +7,7 @@ export const environment = {
   apiBaseUrl: 'http://localhost:8080',
   sundayServiceType: [
     {id: 1, name: 'Korean Service'},
-    {id: 2, name: 'English Service'},
-    {id: 3, name: 'Youth Service'}
+    {id: 2, name: 'English Service'}
   ]
 };
 

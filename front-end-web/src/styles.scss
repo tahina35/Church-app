@@ -67,17 +67,17 @@ body {
     margin-top: -4px !important
 }
 
-.align-center {
-    text-align: center;
-}
-
 // .select2-selection__clear {
 //     margin-right: 15px;
 // }
 .fa-trash {
-    color: #dc3545;
+    color: white !important;
 }
 
-.fa-edit {
-    color: #ffc107;
+.pointer {
+    cursor: pointer;
+}
+
+.ck-editor__editable_inline {
+    min-height: 270px;
 }

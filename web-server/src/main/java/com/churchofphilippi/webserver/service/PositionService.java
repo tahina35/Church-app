@@ -20,14 +20,14 @@ public class PositionService implements BaseService<Position> {
     private final PositionRepository positionRepository;
 
     public Page<Position> findAllWithFilters(String searchValue, int pageNo, int pageSize) {
-        Sort sort = Sort.by("name").ascending();
+        Sort sort = Sort.by("positionId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         PositionSpecification specification = new PositionSpecification(searchValue);
         return positionRepository.findAll(specification, pageable);
     }
 
     public Page<Position> findPaginated(int pageNo, int pageSize) {
-        Sort sort = Sort.by("name").ascending();
+        Sort sort = Sort.by("positionId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return positionRepository.findAll(pageable);
     }

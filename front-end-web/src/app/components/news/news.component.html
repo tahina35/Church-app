@@ -1,0 +1,273 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>News</h1>
+            </div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-sm-4" style="padding-top: 6px;">
+                        <strong>Time range:</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        <select type="text" class="custom-select" name="timeRange" [(ngModel)]="timeRange" (change)="onTimeRangeChange()">
+                            <option value="1">Recent</option>
+                            <option value="2">Last week</option>
+                            <option value="3">Last Month</option>
+                            <!-- <option *ngFor="let dept of AllDepts" [value]="dept.deptId">{{ dept.name }}</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8" *ngIf="error">
+                    <div class="alert alert-danger alert-dismissible">
+                       <h5>
+                         <i class="icon fas fa-ban"></i>
+                         Action denied
+                       </h5> 
+                       {{error}}
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card d-flex" style="max-height: 650px;">
+                      <div class="card-header">
+                        <h3 class="card-title"><strong>News</strong></h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body" style="overflow-y: auto;">
+                        <div *ngFor="let new of newsList; let i = index">
+                            <div class="row">
+                                <div class="col-11" >
+                                    <strong *ngIf="new.department">{{new.department.name}}</strong>
+                                    <br *ngIf="new.department">
+                                    <br *ngIf="new.department">
+                                    <div [innerHTML]="new.content"></div>
+                                    <span class="text-muted">From {{new.startDate | date: 'mediumDate'}} - To {{new.endDate | date: 'mediumDate'}}</span>
+                                </div>
+                                <div class="col-1 text-center">
+                                   <div class="btn-group btn-group-sm">
+                                        <a class="btn btn-warning pointer" ngbTooltip="edit" (click)="update(editNews, new)">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a class="btn btn-danger pointer" ngbTooltip="delete" (click)="deleteNews(new)">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                   </div>
+                                </div>
+                            </div>
+                            <hr *ngIf="i < newsList.length - 1">
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Add News</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <ng-template #content let-modal>
+        <form (ngSubmit)="saveNews()" #newsForm="ngForm">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add news</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="formErrors" class="callout callout-danger text-danger">
+                    <p>{{formErrors}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="churchwide" [(ngModel)] = "isChurchwide" (change)="onChange()" name="churchwide">
+                                <label for="churchwide" class="custom-control-label">Churchwide</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Select department</label>
+                            <ng-select2 [class.disabled]="isChurchwide" [(ngModel)]="selectedDept" [data]="allDepts" [placeholder]="'Department'"  name="dept" #dept="ngModel"  required>		
+                            </ng-select2>
+                        </div>
+                        <label>Duration</label>
+                        <div class="form-inline">
+                            <div class="form-group hidden">
+                                <div class="input-group">
+                                  <input name="datepicker"
+                                         class="form-control"
+                                         ngbDatepicker
+                                         #datepicker="ngbDatepicker"
+                                         [autoClose]="'outside'"
+                                         (dateSelect)="onDateSelection($event)"
+                                         [displayMonths]="2"
+                                         [dayTemplate]="t"
+                                         outsideDays="hidden"
+                                         [startDate]="fromDate!"
+                                         tabindex="-1">
+                                  <ng-template #t let-date let-focused="focused">
+                                    <span class="custom-day"
+                                          [class.focused]="focused"
+                                          [class.range]="isRange(date)"
+                                          [class.faded]="isHovered(date) || isInside(date)"
+                                          (mouseenter)="hoveredDate = date"
+                                          (mouseleave)="hoveredDate = null">
+                                      {{ date.day }}
+                                    </span>
+                                  </ng-template>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input #dpFromDate
+                                            class="form-control" placeholder="yyyy-mm-dd"
+                                            [ngClass]="{'is-invalid': dpFromDate.touched}"
+                                            name="dpFromDate"
+                                            [value]="formatter.format(fromDate)"
+                                            (input)="fromDate = validateInput(fromDate, dpFromDate.value)" readonly>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ml-2">
+                                <div class="input-group">
+                                    <input #dpToDate
+                                            class="form-control" placeholder="yyyy-mm-dd"
+                                            name="dpToDate"
+                                            [value]="formatter.format(toDate)"
+                                            (input)="toDate = validateInput(toDate, dpToDate.value)" readonly>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Content</label>
+                            <ckeditor [editor]="Editor" [(ngModel)]="news.content" name="content"></ckeditor>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-primary">Add</button>
+            </div>
+        </form>
+    </ng-template>
+
+    <ng-template #editNews let-modal>
+        <form (ngSubmit)="saveNews()" #newsForm="ngForm">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Update news</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="formErrors" class="callout callout-danger text-danger">
+                    <p>{{formErrors}}</p>
+                </div>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="churchwide" [(ngModel)] = "isChurchwide" (change)="onChange()" name="churchwide">
+                                <label for="churchwide" class="custom-control-label">Churchwide</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Select department</label>
+                            <ng-select2 [class.disabled]="isChurchwide" [(ngModel)]="selectedDept" [data]="allDepts" [placeholder]="'Department'"  name="dept" #dept="ngModel"  required>		
+                            </ng-select2>
+                        </div>
+                        <label>Duration</label>
+                        <div class="form-inline">
+                            <div class="form-group hidden">
+                                <div class="input-group">
+                                  <input name="datepicker"
+                                         class="form-control"
+                                         ngbDatepicker
+                                         #datepicker="ngbDatepicker"
+                                         [autoClose]="'outside'"
+                                         (dateSelect)="onDateSelection($event)"
+                                         [displayMonths]="2"
+                                         [dayTemplate]="t"
+                                         outsideDays="hidden"
+                                         [startDate]="fromDate!"
+                                         tabindex="-1">
+                                  <ng-template #t let-date let-focused="focused">
+                                    <span class="custom-day"
+                                          [class.focused]="focused"
+                                          [class.range]="isRange(date)"
+                                          [class.faded]="isHovered(date) || isInside(date)"
+                                          (mouseenter)="hoveredDate = date"
+                                          (mouseleave)="hoveredDate = null">
+                                      {{ date.day }}
+                                    </span>
+                                  </ng-template>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input #dpFromDate
+                                            class="form-control" placeholder="yyyy-mm-dd"
+                                            [ngClass]="{'is-invalid': dpFromDate.touched}"
+                                            name="dpFromDate"
+                                            [value]="formatter.format(fromDate)"
+                                            (input)="fromDate = validateInput(fromDate, dpFromDate.value)" readonly>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ml-2">
+                                <div class="input-group">
+                                    <input #dpToDate
+                                            class="form-control" placeholder="yyyy-mm-dd"
+                                            name="dpToDate"
+                                            [value]="formatter.format(toDate)"
+                                            (input)="toDate = validateInput(toDate, dpToDate.value)" readonly>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Content</label>
+                            <ckeditor [editor]="Editor" [(ngModel)]="news.content" name="content"></ckeditor>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-primary">Update</button>
+            </div>
+        </form>
+    </ng-template>
+</div>

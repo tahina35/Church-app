@@ -15,7 +15,7 @@ namespace mobile.ViewModel
             event1.StartTime = new DateTime(2021, 2, 15, 5, 0, 0);
             event1.EndTime = new DateTime(2021, 2, 15, 7, 0, 0);
             event1.Subject = "Go to Meeting";
-            event1.Color = Color.Fuchsia;
+            event1.Color = Color.Azure;
 
             CalendarInlineEvent event2 = new CalendarInlineEvent();
             event2.StartTime = new DateTime(2021, 2, 20, 10, 0, 0);

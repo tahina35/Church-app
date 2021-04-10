@@ -9,7 +9,7 @@ import { BaseService } from './base.service';
 })
 export class DepartmentService extends BaseService {
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient) {
     super();
   }
 

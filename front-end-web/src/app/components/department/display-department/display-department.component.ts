@@ -83,29 +83,60 @@ export class DisplayDepartmentComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+      () => {},
+      (reason) => {
+        this.resetModal();
+      }
+    )
+  }
+
+  resetModal() {
+    this.selectedDept = 0;
+    this.dept = {} as Dept;
   }
 
   addDept() {
-    console.log('new DEPT ' + this.dept.name, 'id= ' + this.selectedDept );
-    if(this.selectedDept !== 0) {
+    if(this.selectedDept) {
       this.dept.parentDept = { deptId: this.selectedDept} as Dept;
     } else {
       this.dept.parentDept = null;
     }
-    this.dept.creationDate = new Date();
+
+    if(!this.dept.creationDate) {
+      this.dept.creationDate = new Date();
+    }
+
     this.deptService.add(this.dept).subscribe(
       (data) => {
         this.currentPage = 1;
         this.findAllDepts();
-        this.dept = {} as Dept;
+        this.resetModal
         this.modalService.dismissAll();
       },
       (err) => {
         this.error = err;
       }
     )
+  }
+
+  updateDepartment(content, department: Dept) {
     
+    if(department.parentDept) {
+      this.selectedDept = department.parentDept.deptId;
+    } else {
+      this.selectedDept = 0;
+    }
+    this.dept.deptId = department.deptId;
+    this.dept.creationDate = department.creationDate;
+    this.dept.name = department.name;
+    console.log(this.dept)
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+      () => {},
+      (reason) => {
+        this.resetModal();
+      }
+    )
   }
 
   deleteDepartment(dept: Dept) {

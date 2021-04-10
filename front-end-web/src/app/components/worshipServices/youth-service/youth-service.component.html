@@ -1,0 +1,187 @@
+<div class="content-wrapper">
+
+    <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Youth Service</h1>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">  
+                <div class="col-8" *ngIf="error">
+                  <div class="alert alert-danger alert-dismissible">
+                     <h5>
+                       <i class="icon fas fa-ban"></i>
+                       Action denied
+                     </h5> 
+                     {{error}}
+                  </div>
+                </div>              
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title"><strong>All Youth Services</strong></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Hymn</th>
+                            <th>Main verse</th>
+                            <th>Preacher</th>
+                            <th>Sermon</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let service of services; let i = index">
+                            <td>{{service.date}}</td>
+                            <td>{{service.hymn}}</td>
+                            <td>{{service.sermon.mainVerse}}</td>
+                            <td>{{service.sermon.preacher.fname}} {{service.sermon.preacher.lname}}</td>
+                            <td *ngIf="!service.sermon.isUploaded" class="disabled">video not available</td>
+                            <td *ngIf="service.sermon.isUploaded"><a href="javascript:void(0)" (click)="playSermon(service)">Watch sermon</a></td>
+                            <td class="text-right">
+                              <div class="btn-group btn-group-sm">
+                                <a class="btn btn-warning pointer"  (click)="update(updateService, service)" ngbTooltip="edit"><i class="fas fa-edit "></i></a> 
+                                <a class="btn btn-danger pointer"  (click)="deleteService(service)" ngbTooltip="delete"><i class="fas fa-trash "></i></a>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer clearfix">
+                      <button type="button" class="btn bg-gradient-primary" (click)="open(addService)">Add new youth service</button>
+                      <div *ngIf="totalPages > 1" class="custompagination">
+                        <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
+                      </div>
+                    </div>
+                    
+                    <!-- /.card-footer -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <ng-template #addService let-modal>
+      <form (ngSubmit)="saveOrUpdateYouthService()" #newYouthServiceForm="ngForm">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Add youth service</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group">
+                    <input class="form-control" [ngClass]="{'is-invalid': date.touched && !date.valid}" #date="ngModel"  [(ngModel)]="selectedDate" ngbDatepicker #d="ngbDatepicker" placeholder="Date" name="date" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"> 
+                        <i class="far fa-calendar-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Hymn</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="youthService.hymn" placeholder="Hymn" name="hymn" required>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Main verse</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" [ngClass]="{'is-invalid': mainverse.touched && !mainverse.valid}" #mainverse="ngModel"  [(ngModel)]="youthService.sermon.mainVerse" placeholder="Main Verse" name="mainverse" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Preacher</label>
+                  <ng-select2 [(ngModel)]="youthService.sermon.preacher.memberId" [data]="preachers" [placeholder]="'Preacher'" name="preacher" #preacher="ngModel"  required>		
+                  </ng-select2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!newYouthServiceForm.form.valid">Add</button>
+        </div>
+      </form>
+    </ng-template>
+
+    <ng-template #updateService let-modal>
+      <form (ngSubmit)="saveOrUpdateYouthService()" #updateYouthServiceForm="ngForm">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Update youth service</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group">
+                    <input class="form-control" [ngClass]="{'is-invalid': date.touched && !date.valid}" #date="ngModel"  [(ngModel)]="selectedDate" ngbDatepicker #d="ngbDatepicker" placeholder="Date" name="date" disabled>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"> 
+                        <i class="far fa-calendar-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Hymn</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="youthService.hymn" placeholder="Hymn" name="hymn" required>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Main verse</label>
+                  <div class="input-group">
+                      <input type="text" class="form-control" [ngClass]="{'is-invalid': mainverse.touched && !mainverse.valid}" #mainverse="ngModel"  [(ngModel)]="youthService.sermon.mainVerse" placeholder="Main Verse" name="mainverse" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label>Preacher</label>
+                  <ng-select2 [(ngModel)]="youthService.sermon.preacher.memberId" [data]="preachers" [placeholder]="'Preacher'" name="preacher" #preacher="ngModel"  required>		
+                  </ng-select2>
+              </div>
+              <div class="form-group">
+                <label>Sermon (video URL)</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" #url="ngModel"  [(ngModel)]="youthService.sermon.url" placeholder="Sermon (video URL)" name="url" >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!updateYouthServiceForm.form.valid">Update</button>
+        </div>
+      </form>
+    </ng-template>
+
+</div>
+
+

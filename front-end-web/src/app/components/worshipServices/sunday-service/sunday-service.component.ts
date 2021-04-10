@@ -23,6 +23,7 @@ export class SundayServiceComponent implements OnInit {
   serviceTypes: any = environment.sundayServiceType;
   sundayService: SundayService = new SundayService();
   preachers: Array<Select2OptionData> = [];
+  prayer: Array<Select2OptionData> = [];
   selectedDate: NgbDateStruct;
   services: SundayService[] = [];
 
@@ -50,11 +51,12 @@ export class SundayServiceComponent implements OnInit {
   getPreachers() {
     this.worshipService.getPreachers().subscribe(
       (data: Member[]) => {
-        this.preachers = data.map(
+        const members = data.map(
           (preacher: Member) => {
             return ({id: preacher.memberId.toString(), text: preacher.fname + ' ' + preacher.lname});
           }
         );
+        this.preachers = members;
       },
       (err) => {
         this.error = err;
@@ -84,7 +86,13 @@ export class SundayServiceComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg' }).result.then(
+      () => {},
+      (reason) => {
+        this.selectedDate = null;
+        this.sundayService = new SundayService();
+      }
+    )
   }
 
   update(content, service: SundayService) {

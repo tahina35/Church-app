@@ -81,7 +81,13 @@ export class WednesdayServiceComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg' }).result.then(
+      () => {},
+      (reason) => {
+        this.selectedDate = null;
+        this.wednesdayService = new WednesdayService();
+      }
+    )
   }
 
   update(content, service: WednesdayService) {

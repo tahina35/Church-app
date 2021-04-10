@@ -45,23 +45,27 @@
                           <tr>
                             <th>Service</th>
                             <th>Date</th>
+                            <th>Prayer</th>
                             <th>Main verse</th>
                             <th>Preacher</th>
                             <th>Sermon</th>
-                            <th class="align-center">Action</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let service of services; let i = index">
                             <td>{{service.serviceType | servicetype}}</td>
                             <td>{{service.date}}</td>
+                            <td>{{service.prayer.fname}} {{service.prayer.lname}}</td>
                             <td>{{service.sermon.mainVerse}}</td>
                             <td>{{service.sermon.preacher.fname}} {{service.sermon.preacher.lname}}</td>
                             <td *ngIf="!service.sermon.isUploaded" class="disabled">video not available</td>
                             <td *ngIf="service.sermon.isUploaded"><a href="javascript:void(0)" (click)="playSermon(service)">Watch sermon</a></td>
-                            <td class="align-center">
-                              <a class="danger mr-1" (click)="update(updateService, service)" ngbTooltip="edit"><i class="fas fa-edit "></i></a> 
-                              <a class="danger ml-1" (click)="deleteService(service)" ngbTooltip="delete"><i class="fas fa-trash "></i></a>
+                            <td class="text-right">
+                              <div class="btn-group btn-group-sm">
+                                <a class="btn btn-warning pointer"  (click)="update(updateService, service)" ngbTooltip="edit"><i class="fas fa-edit "></i></a> 
+                                <a class="btn btn-danger pointer"  (click)="deleteService(service)" ngbTooltip="delete"><i class="fas fa-trash "></i></a>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -115,21 +119,14 @@
                   </div>
               </div>
               <div class="form-group">
-                  <label>Confession of faith</label>
-                  <div class="input-group">
-                      <input type="text" class="form-control" [ngClass]="{'is-invalid': cof.touched && !cof.valid}" #cof="ngModel"  [(ngModel)]="sundayService.confessionOfFaith"  placeholder="Confession Of Faith" name="cof" required>
-                  </div>
+                <label>Prayer</label>
+                <ng-select2 [(ngModel)]="sundayService.prayer.memberId" [data]="preachers" [placeholder]="'Prayer'" name="prayer" #prayer="ngModel"  required>		
+                </ng-select2>
               </div>
               <div class="form-group">
                   <label>Hymn</label>
                   <div class="input-group">
                       <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="sundayService.hymn" placeholder="Hymn" name="hymn" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label>Benediction</label>
-                  <div class="input-group">
-                      <input type="text" class="form-control" [ngClass]="{'is-invalid': benediction.touched && !benediction.valid}" #benediction="ngModel"  [(ngModel)]="sundayService.benediction"  placeholder="Benediction" name="benediction" required>
                   </div>
               </div>
             </div>
@@ -184,21 +181,14 @@
                   </div>
               </div>
               <div class="form-group">
-                  <label>Confession of faith</label>
-                  <div class="input-group">
-                      <input type="text" class="form-control" [ngClass]="{'is-invalid': cof.touched && !cof.valid}" #cof="ngModel"  [(ngModel)]="sundayService.confessionOfFaith"  placeholder="Confession Of Faith" name="cof" required>
-                  </div>
+                <label>Prayer</label>
+                <ng-select2 [(ngModel)]="sundayService.prayer.memberId" [data]="preachers" [placeholder]="'Prayer'" name="prayer" #prayer="ngModel"  required>		
+                </ng-select2>
               </div>
               <div class="form-group">
                   <label>Hymn</label>
                   <div class="input-group">
                       <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="sundayService.hymn" placeholder="Hymn" name="hymn" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label>Benediction</label>
-                  <div class="input-group">
-                      <input type="text" class="form-control" [ngClass]="{'is-invalid': benediction.touched && !benediction.valid}" #benediction="ngModel"  [(ngModel)]="sundayService.benediction"  placeholder="Benediction" name="benediction" required>
                   </div>
               </div>
             </div>
