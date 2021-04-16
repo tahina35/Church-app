@@ -19,7 +19,7 @@ export class PositionComponent implements OnInit {
   error?: string;
   currentPage: number = 1;
   searchValue:string = '';
-  position: Position = {} as Position;
+  position: Position = new Position();
   totalItems:number = 0;
   selectedPosition:number = 0;
 
@@ -86,7 +86,7 @@ export class PositionComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
       () => {},
       (reason) => {
-        this.position = {} as Position;
+        this.position = new Position();
       }
     )
   }
@@ -96,7 +96,7 @@ export class PositionComponent implements OnInit {
       (data) => {
         this.currentPage = 1;
         this.findAllPositions();
-        this.position = {} as Position;
+        this.position = new Position();
         this.modalService.dismissAll();
       },
       (err) => {
@@ -111,7 +111,7 @@ export class PositionComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
       () => {},
       (reason) => {
-        this.position = {} as Position;
+        this.position = new Position();
       }
     )
   }

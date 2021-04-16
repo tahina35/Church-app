@@ -10,6 +10,8 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,6 +22,11 @@ public class PositionSpecification implements Specification<Position> {
 
     @Override
     public Predicate toPredicate(Root<Position> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
-        return builder.like(builder.lower(root.get("name")), "%" + getSearchValue().toLowerCase() + "%");
+        List<Predicate> predicates = new ArrayList<>();
+
+        predicates.add(builder.isTrue(root.get("editable")));
+        predicates.add(builder.like(builder.lower(root.get("name")), "%" + getSearchValue().toLowerCase() + "%"));
+
+        return builder.and(predicates.toArray(new Predicate[0]));
     }
 }

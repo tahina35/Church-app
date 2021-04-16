@@ -101,7 +101,7 @@
             <label for="deptname">Parent department (optional)</label>
             <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department">
               <option></option>
-              <option *ngFor="let dept of AllDepts" [value]="dept.deptId">{{ dept.name }}</option>
+              <option *ngFor="let dept of parentDepts" [value]="dept.deptId">{{ dept.name }}</option>
             </select>
           </div>
         </div>
@@ -130,7 +130,7 @@
             <label for="deptname">Parent department (optional)</label>
             <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department">
               <option></option>
-              <option *ngFor="let dept of AllDepts" [value]="dept.deptId">{{ dept.name }}</option>
+              <option *ngFor="let dept of parentDepts" [value]="dept.deptId">{{ dept.name }}</option>
             </select>
           </div>
         </div>

@@ -14,19 +14,16 @@
           "lib/netstandard2.0/AngleSharp.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.5.2"
-        },
         "compile": {
-          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Plugin.MediaManager/1.0.0": {
+      "Plugin.MediaManager/1.0.8": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -35,10 +32,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/1.0.0": {
+      "Plugin.MediaManager.Forms/1.0.8": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "1.0.0",
+          "Plugin.MediaManager": "1.0.8",
           "Xamarin.Forms": "4.5.0.657"
         },
         "compile": {
@@ -48,7 +45,24 @@
           "lib/xamarinios10/MediaManager.Forms.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.4.0.42": {
+      "Refit/6.0.38": {
+        "type": "package",
+        "dependencies": {
+          "System.Net.Http.Json": "5.0.0",
+          "System.Text.Json": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -57,10 +71,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.4.0.42": {
+      "Syncfusion.Xamarin.Buttons/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -72,10 +86,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.4.0.42": {
+      "Syncfusion.Xamarin.Core/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.4.0.42",
+          "Syncfusion.Licensing": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -87,7 +101,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/18.4.0.41": {
+      "Syncfusion.Xamarin.DataSource/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -96,7 +110,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/18.4.0.41": {
+      "Syncfusion.Xamarin.GridCommon/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -105,10 +119,10 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfCalendar/18.4.0.41": {
+      "Syncfusion.Xamarin.SfCalendar/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -120,12 +134,12 @@
           "lib/Xamarin.iOS10/Syncfusion.SfCalendar.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/18.4.0.41": {
+      "Syncfusion.Xamarin.SfListView/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
-          "Syncfusion.Xamarin.DataSource": "18.4.0.41",
-          "Syncfusion.Xamarin.GridCommon": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.DataSource": "19.1.0.55",
+          "Syncfusion.Xamarin.GridCommon": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -137,10 +151,10 @@
           "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPopupLayout/18.4.0.42": {
+      "Syncfusion.Xamarin.SfPopupLayout/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -161,10 +175,32 @@
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -185,7 +221,7 @@
           }
         }
       },
-      "System.Text.Encodings.Web/4.7.1": {
+      "System.Text.Encodings.Web/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
@@ -194,28 +230,19 @@
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
         }
       },
-      "System.Text.Json/4.7.2": {
+      "System.Text.Json/5.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
-          "System.Text.Encodings.Web": "4.7.1"
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encodings.Web": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.2": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Forms.VideoPlayer/1.0.8": {
@@ -232,11 +259,33 @@
           "lib/Xamarin.iOS10/Xam.Forms.VideoPlayer.iOS.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.CommunityToolkit/1.1.0": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1874"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
-          "System.Drawing.Common.dll"
+          "System.Drawing.Common.dll",
+          "System.Numerics"
         ],
         "compile": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
@@ -245,16 +294,18 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1451": {
+      "Xamarin.Forms/5.0.0.2012": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "resource": {
@@ -383,15 +434,17 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Plugin.MediaManager.Forms": "1.0.0",
-          "Syncfusion.Xamarin.Buttons": "18.4.0.42",
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
-          "Syncfusion.Xamarin.SfCalendar": "18.4.0.41",
-          "Syncfusion.Xamarin.SfListView": "18.4.0.41",
-          "Syncfusion.Xamarin.SfPopupLayout": "18.4.0.42",
+          "Plugin.MediaManager.Forms": "1.0.8",
+          "Refit": "6.0.38",
+          "Syncfusion.Xamarin.Buttons": "19.1.0.55",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.SfCalendar": "19.1.0.55",
+          "Syncfusion.Xamarin.SfListView": "19.1.0.55",
+          "Syncfusion.Xamarin.SfPopupLayout": "19.1.0.55",
           "Xam.Forms.VideoPlayer": "1.0.8",
-          "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1451",
+          "Xamarin.CommunityToolkit": "1.1.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
           "YoutubeExplode": "5.1.9"
         },
         "compile": {
@@ -415,19 +468,16 @@
           "lib/netstandard2.0/AngleSharp.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.5.2"
-        },
         "compile": {
-          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Plugin.MediaManager/1.0.0": {
+      "Plugin.MediaManager/1.0.8": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -436,10 +486,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/1.0.0": {
+      "Plugin.MediaManager.Forms/1.0.8": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "1.0.0",
+          "Plugin.MediaManager": "1.0.8",
           "Xamarin.Forms": "4.5.0.657"
         },
         "compile": {
@@ -449,7 +499,24 @@
           "lib/xamarinios10/MediaManager.Forms.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.4.0.42": {
+      "Refit/6.0.38": {
+        "type": "package",
+        "dependencies": {
+          "System.Net.Http.Json": "5.0.0",
+          "System.Text.Json": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -458,10 +525,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.4.0.42": {
+      "Syncfusion.Xamarin.Buttons/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -473,10 +540,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.4.0.42": {
+      "Syncfusion.Xamarin.Core/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.4.0.42",
+          "Syncfusion.Licensing": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -488,7 +555,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/18.4.0.41": {
+      "Syncfusion.Xamarin.DataSource/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -497,7 +564,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/18.4.0.41": {
+      "Syncfusion.Xamarin.GridCommon/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -506,10 +573,10 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfCalendar/18.4.0.41": {
+      "Syncfusion.Xamarin.SfCalendar/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -521,12 +588,12 @@
           "lib/Xamarin.iOS10/Syncfusion.SfCalendar.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/18.4.0.41": {
+      "Syncfusion.Xamarin.SfListView/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
-          "Syncfusion.Xamarin.DataSource": "18.4.0.41",
-          "Syncfusion.Xamarin.GridCommon": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.DataSource": "19.1.0.55",
+          "Syncfusion.Xamarin.GridCommon": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -538,10 +605,10 @@
           "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPopupLayout/18.4.0.42": {
+      "Syncfusion.Xamarin.SfPopupLayout/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -562,10 +629,32 @@
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -580,7 +669,7 @@
           "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         }
       },
-      "System.Text.Encodings.Web/4.7.1": {
+      "System.Text.Encodings.Web/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
@@ -589,28 +678,19 @@
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
         }
       },
-      "System.Text.Json/4.7.2": {
+      "System.Text.Json/5.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
-          "System.Text.Encodings.Web": "4.7.1"
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encodings.Web": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.2": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Forms.VideoPlayer/1.0.8": {
@@ -627,11 +707,33 @@
           "lib/Xamarin.iOS10/Xam.Forms.VideoPlayer.iOS.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.CommunityToolkit/1.1.0": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1874"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
-          "System.Drawing.Common.dll"
+          "System.Drawing.Common.dll",
+          "System.Numerics"
         ],
         "compile": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
@@ -640,16 +742,18 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1451": {
+      "Xamarin.Forms/5.0.0.2012": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "resource": {
@@ -778,15 +882,17 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Plugin.MediaManager.Forms": "1.0.0",
-          "Syncfusion.Xamarin.Buttons": "18.4.0.42",
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
-          "Syncfusion.Xamarin.SfCalendar": "18.4.0.41",
-          "Syncfusion.Xamarin.SfListView": "18.4.0.41",
-          "Syncfusion.Xamarin.SfPopupLayout": "18.4.0.42",
+          "Plugin.MediaManager.Forms": "1.0.8",
+          "Refit": "6.0.38",
+          "Syncfusion.Xamarin.Buttons": "19.1.0.55",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.SfCalendar": "19.1.0.55",
+          "Syncfusion.Xamarin.SfListView": "19.1.0.55",
+          "Syncfusion.Xamarin.SfPopupLayout": "19.1.0.55",
           "Xam.Forms.VideoPlayer": "1.0.8",
-          "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1451",
+          "Xamarin.CommunityToolkit": "1.1.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
           "YoutubeExplode": "5.1.9"
         },
         "compile": {
@@ -810,19 +916,16 @@
           "lib/netstandard2.0/AngleSharp.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.5.2"
-        },
         "compile": {
-          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Plugin.MediaManager/1.0.0": {
+      "Plugin.MediaManager/1.0.8": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -831,10 +934,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/1.0.0": {
+      "Plugin.MediaManager.Forms/1.0.8": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "1.0.0",
+          "Plugin.MediaManager": "1.0.8",
           "Xamarin.Forms": "4.5.0.657"
         },
         "compile": {
@@ -844,7 +947,24 @@
           "lib/xamarinios10/MediaManager.Forms.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.4.0.42": {
+      "Refit/6.0.38": {
+        "type": "package",
+        "dependencies": {
+          "System.Net.Http.Json": "5.0.0",
+          "System.Text.Json": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -853,10 +973,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.4.0.42": {
+      "Syncfusion.Xamarin.Buttons/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -868,10 +988,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.4.0.42": {
+      "Syncfusion.Xamarin.Core/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.4.0.42",
+          "Syncfusion.Licensing": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -883,7 +1003,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/18.4.0.41": {
+      "Syncfusion.Xamarin.DataSource/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -892,7 +1012,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/18.4.0.41": {
+      "Syncfusion.Xamarin.GridCommon/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -901,10 +1021,10 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfCalendar/18.4.0.41": {
+      "Syncfusion.Xamarin.SfCalendar/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -916,12 +1036,12 @@
           "lib/Xamarin.iOS10/Syncfusion.SfCalendar.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/18.4.0.41": {
+      "Syncfusion.Xamarin.SfListView/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
-          "Syncfusion.Xamarin.DataSource": "18.4.0.41",
-          "Syncfusion.Xamarin.GridCommon": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.DataSource": "19.1.0.55",
+          "Syncfusion.Xamarin.GridCommon": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -933,10 +1053,10 @@
           "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPopupLayout/18.4.0.42": {
+      "Syncfusion.Xamarin.SfPopupLayout/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -957,10 +1077,32 @@
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -975,7 +1117,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Text.Encodings.Web/4.7.1": {
+      "System.Text.Encodings.Web/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
@@ -984,28 +1126,19 @@
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
         }
       },
-      "System.Text.Json/4.7.2": {
+      "System.Text.Json/5.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
-          "System.Text.Encodings.Web": "4.7.1"
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encodings.Web": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.2": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Forms.VideoPlayer/1.0.8": {
@@ -1022,11 +1155,33 @@
           "lib/Xamarin.iOS10/Xam.Forms.VideoPlayer.iOS.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.CommunityToolkit/1.1.0": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1874"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
-          "System.Drawing.Common.dll"
+          "System.Drawing.Common.dll",
+          "System.Numerics"
         ],
         "compile": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
@@ -1035,16 +1190,18 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1451": {
+      "Xamarin.Forms/5.0.0.2012": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "resource": {
@@ -1173,15 +1330,17 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Plugin.MediaManager.Forms": "1.0.0",
-          "Syncfusion.Xamarin.Buttons": "18.4.0.42",
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
-          "Syncfusion.Xamarin.SfCalendar": "18.4.0.41",
-          "Syncfusion.Xamarin.SfListView": "18.4.0.41",
-          "Syncfusion.Xamarin.SfPopupLayout": "18.4.0.42",
+          "Plugin.MediaManager.Forms": "1.0.8",
+          "Refit": "6.0.38",
+          "Syncfusion.Xamarin.Buttons": "19.1.0.55",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.SfCalendar": "19.1.0.55",
+          "Syncfusion.Xamarin.SfListView": "19.1.0.55",
+          "Syncfusion.Xamarin.SfPopupLayout": "19.1.0.55",
           "Xam.Forms.VideoPlayer": "1.0.8",
-          "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1451",
+          "Xamarin.CommunityToolkit": "1.1.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
           "YoutubeExplode": "5.1.9"
         },
         "compile": {
@@ -1205,19 +1364,16 @@
           "lib/netstandard2.0/AngleSharp.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.5.2"
-        },
         "compile": {
-          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Plugin.MediaManager/1.0.0": {
+      "Plugin.MediaManager/1.0.8": {
         "type": "package",
         "compile": {
           "lib/xamarinios10/MediaManager.dll": {}
@@ -1226,10 +1382,10 @@
           "lib/xamarinios10/MediaManager.dll": {}
         }
       },
-      "Plugin.MediaManager.Forms/1.0.0": {
+      "Plugin.MediaManager.Forms/1.0.8": {
         "type": "package",
         "dependencies": {
-          "Plugin.MediaManager": "1.0.0",
+          "Plugin.MediaManager": "1.0.8",
           "Xamarin.Forms": "4.5.0.657"
         },
         "compile": {
@@ -1239,7 +1395,24 @@
           "lib/xamarinios10/MediaManager.Forms.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.4.0.42": {
+      "Refit/6.0.38": {
+        "type": "package",
+        "dependencies": {
+          "System.Net.Http.Json": "5.0.0",
+          "System.Text.Json": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Refit.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
+      "Syncfusion.Licensing/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
@@ -1248,10 +1421,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Buttons/18.4.0.42": {
+      "Syncfusion.Xamarin.Buttons/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -1263,10 +1436,10 @@
           "lib/Xamarin.iOS10/Syncfusion.Buttons.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.4.0.42": {
+      "Syncfusion.Xamarin.Core/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.4.0.42",
+          "Syncfusion.Licensing": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -1278,7 +1451,7 @@
           "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.DataSource/18.4.0.41": {
+      "Syncfusion.Xamarin.DataSource/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
@@ -1287,7 +1460,7 @@
           "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.GridCommon/18.4.0.41": {
+      "Syncfusion.Xamarin.GridCommon/19.1.0.55": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
@@ -1296,10 +1469,10 @@
           "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfCalendar/18.4.0.41": {
+      "Syncfusion.Xamarin.SfCalendar/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -1311,12 +1484,12 @@
           "lib/Xamarin.iOS10/Syncfusion.SfCalendar.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfListView/18.4.0.41": {
+      "Syncfusion.Xamarin.SfListView/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.41",
-          "Syncfusion.Xamarin.DataSource": "18.4.0.41",
-          "Syncfusion.Xamarin.GridCommon": "18.4.0.41",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.DataSource": "19.1.0.55",
+          "Syncfusion.Xamarin.GridCommon": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -1328,10 +1501,10 @@
           "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll": {}
         }
       },
-      "Syncfusion.Xamarin.SfPopupLayout/18.4.0.42": {
+      "Syncfusion.Xamarin.SfPopupLayout/19.1.0.55": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
           "Xamarin.Forms": "4.5.0.617"
         },
         "compile": {
@@ -1352,10 +1525,32 @@
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "System.Net.Http.Json/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Text.Json": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -1370,7 +1565,7 @@
           "lib/xamarinios10/_._": {}
         }
       },
-      "System.Text.Encodings.Web/4.7.1": {
+      "System.Text.Encodings.Web/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
@@ -1379,28 +1574,19 @@
           "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
         }
       },
-      "System.Text.Json/4.7.2": {
+      "System.Text.Json/5.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
           "System.Buffers": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
-          "System.Text.Encodings.Web": "4.7.1"
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encodings.Web": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Json.dll": {}
-        }
-      },
-      "System.Threading.Tasks.Extensions/4.5.2": {
-        "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
         }
       },
       "Xam.Forms.VideoPlayer/1.0.8": {
@@ -1417,11 +1603,33 @@
           "lib/Xamarin.iOS10/Xam.Forms.VideoPlayer.iOS.dll": {}
         }
       },
-      "Xamarin.Essentials/1.5.3.2": {
+      "Xamarin.CommunityToolkit/1.1.0": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.1874"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.6.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
         "frameworkAssemblies": [
           "OpenTK-1.0",
-          "System.Drawing.Common.dll"
+          "System.Drawing.Common.dll",
+          "System.Numerics"
         ],
         "compile": {
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
@@ -1430,16 +1638,18 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.8.0.1451": {
+      "Xamarin.Forms/5.0.0.2012": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll": {},
           "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll": {}
         },
         "resource": {
@@ -1568,15 +1778,17 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Plugin.MediaManager.Forms": "1.0.0",
-          "Syncfusion.Xamarin.Buttons": "18.4.0.42",
-          "Syncfusion.Xamarin.Core": "18.4.0.42",
-          "Syncfusion.Xamarin.SfCalendar": "18.4.0.41",
-          "Syncfusion.Xamarin.SfListView": "18.4.0.41",
-          "Syncfusion.Xamarin.SfPopupLayout": "18.4.0.42",
+          "Plugin.MediaManager.Forms": "1.0.8",
+          "Refit": "6.0.38",
+          "Syncfusion.Xamarin.Buttons": "19.1.0.55",
+          "Syncfusion.Xamarin.Core": "19.1.0.55",
+          "Syncfusion.Xamarin.SfCalendar": "19.1.0.55",
+          "Syncfusion.Xamarin.SfListView": "19.1.0.55",
+          "Syncfusion.Xamarin.SfPopupLayout": "19.1.0.55",
           "Xam.Forms.VideoPlayer": "1.0.8",
-          "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.8.0.1451",
+          "Xamarin.CommunityToolkit": "1.1.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
           "YoutubeExplode": "5.1.9"
         },
         "compile": {
@@ -1610,13 +1822,14 @@
         "lib/netstandard2.0/AngleSharp.xml"
       ]
     },
-    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
-      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "sha512": "W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
       "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -1625,19 +1838,16 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
-        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
-        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
-        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-    "Plugin.MediaManager/1.0.0": {
-      "sha512": "Rmja0QIoD0rAxVMyrmbeQT2CcU1xlzwP0t6FsDUKDn2ELud7totzdwRzNdJikmW/6Fjs+OPVFNzBEtH2og5Ilw==",
+    "Plugin.MediaManager/1.0.8": {
+      "sha512": "iwWPkcPr4HqV98TarEEZDGLMKwPrKigCHm2VBgeICNjhmArZ+ju2oTi2GhwMVD1U3B1LFUx4HONPx2r7Qn7Zsw==",
       "type": "package",
-      "path": "plugin.mediamanager/1.0.0",
+      "path": "plugin.mediamanager/1.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1649,6 +1859,9 @@
         "lib/net472/MediaManager.dll",
         "lib/net472/MediaManager.pdb",
         "lib/net472/MediaManager.xml",
+        "lib/netcoreapp3.1/MediaManager.dll",
+        "lib/netcoreapp3.1/MediaManager.pdb",
+        "lib/netcoreapp3.1/MediaManager.xml",
         "lib/netstandard2.0/MediaManager.dll",
         "lib/netstandard2.0/MediaManager.pdb",
         "lib/netstandard2.0/MediaManager.xml",
@@ -1669,15 +1882,15 @@
         "lib/xamarintvos10/MediaManager.dll",
         "lib/xamarintvos10/MediaManager.pdb",
         "lib/xamarintvos10/MediaManager.xml",
-        "plugin.mediamanager.1.0.0.nupkg.sha512",
+        "plugin.mediamanager.1.0.8.nupkg.sha512",
         "plugin.mediamanager.nuspec",
         "readme.txt"
       ]
     },
-    "Plugin.MediaManager.Forms/1.0.0": {
-      "sha512": "ej5h0dSD1VydyTe/6VIuVyQtA56mgyhnyGDeikL2+MIRMj5ve7LHv3TD/gXEp569W38PeaTFeT+4s7BZhHEEIQ==",
+    "Plugin.MediaManager.Forms/1.0.8": {
+      "sha512": "OUKAyYRtvr0NgummQ6H8g17nDp+e78wxLjpz2/QFuJre0z6a4nwK0zR6e6B8CH0NtrNmhCWG4jYW9dwvKubiog==",
       "type": "package",
-      "path": "plugin.mediamanager.forms/1.0.0",
+      "path": "plugin.mediamanager.forms/1.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1689,6 +1902,9 @@
         "lib/net472/MediaManager.Forms.dll",
         "lib/net472/MediaManager.Forms.pdb",
         "lib/net472/MediaManager.Forms.xml",
+        "lib/netcoreapp3.1/MediaManager.Forms.dll",
+        "lib/netcoreapp3.1/MediaManager.Forms.pdb",
+        "lib/netcoreapp3.1/MediaManager.Forms.xml",
         "lib/netstandard2.0/MediaManager.Forms.dll",
         "lib/netstandard2.0/MediaManager.Forms.pdb",
         "lib/netstandard2.0/MediaManager.Forms.xml",
@@ -1708,15 +1924,39 @@
         "lib/xamarintvos10/MediaManager.Forms.dll",
         "lib/xamarintvos10/MediaManager.Forms.pdb",
         "lib/xamarintvos10/MediaManager.Forms.xml",
-        "plugin.mediamanager.forms.1.0.0.nupkg.sha512",
+        "plugin.mediamanager.forms.1.0.8.nupkg.sha512",
         "plugin.mediamanager.forms.nuspec",
         "readme.txt"
       ]
     },
-    "Syncfusion.Licensing/18.4.0.42": {
-      "sha512": "dlYBCpklcF+RHel6sD9itkAme0Tz4ZOqAnfySbul814iEiWJWDA8Y0hDST7M5ifr4S846VZXfZDYV9jebztLYw==",
+    "Refit/6.0.38": {
+      "sha512": "1wKjkHYDUp6TrQ0fK6w6CXguJ+kkGYj2IpPMfzyLQM+uinDYzYqWQ0kcsGxmTWGuWM4rYbUZN7IYFtSDD4x0Yw==",
       "type": "package",
-      "path": "syncfusion.licensing/18.4.0.42",
+      "path": "refit/6.0.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/cs/InterfaceStubGenerator.Core.dll",
+        "build/netstandard2.0/refit.targets",
+        "buildTransitive/netstandard2.0/refit.props",
+        "buildTransitive/netstandard2.0/refit.targets",
+        "lib/net461/Refit.dll",
+        "lib/net461/Refit.xml",
+        "lib/net5.0/Refit.dll",
+        "lib/net5.0/Refit.xml",
+        "lib/netstandard2.0/Refit.dll",
+        "lib/netstandard2.0/Refit.xml",
+        "lib/netstandard2.1/Refit.dll",
+        "lib/netstandard2.1/Refit.xml",
+        "refit.6.0.38.nupkg.sha512",
+        "refit.nuspec",
+        "refit_logo.png"
+      ]
+    },
+    "Syncfusion.Licensing/19.1.0.55": {
+      "sha512": "L2hVx42JzxwH/EyJue2nMfv0lAJlEQ4h+MDl15xuRCpQzXbRkzUFMxwy4o45jZ6ezKM06Gd4eaGU/f97MlnOig==",
+      "type": "package",
+      "path": "syncfusion.licensing/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1730,22 +1970,22 @@
         "lib/net45/Syncfusion.Licensing.dll",
         "lib/net451/Syncfusion.Licensing.dll",
         "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
         "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
-        "lib/netcoreapp5.0/Syncfusion.Licensing.dll",
         "lib/netstandard1.0/Syncfusion.Licensing.dll",
         "lib/netstandard1.2/Syncfusion.Licensing.dll",
         "lib/netstandard1.4/Syncfusion.Licensing.dll",
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.18.4.0.42.nupkg.sha512",
+        "syncfusion.licensing.19.1.0.55.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Buttons/18.4.0.42": {
-      "sha512": "dmEFt70O1aIi3e+EfUp92urW/RiUzgM3CbyWW1RcWrpS2fd4i2sPE+q2kcwLbdXaPP4tTGil53JVaV3Znhs56g==",
+    "Syncfusion.Xamarin.Buttons/19.1.0.55": {
+      "sha512": "gv384hUN56Fy4m1daNswTjBS3va+/FeMChT5Tg3jfM+IKd0ABMUUzm+PLFqWdrlHsimDSaeo9+9NETiZENUh2A==",
       "type": "package",
-      "path": "syncfusion.xamarin.buttons/18.4.0.42",
+      "path": "syncfusion.xamarin.buttons/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1772,14 +2012,14 @@
         "lib/uap10.0/Syncfusion.Buttons.XForms.UWP/Themes/Generic.xaml",
         "lib/uap10.0/Syncfusion.Buttons.XForms.dll",
         "lib/uap10.0/Syncfusion.Buttons.XForms.xml",
-        "syncfusion.xamarin.buttons.18.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.buttons.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.buttons.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Core/18.4.0.42": {
-      "sha512": "+hYZzp/NPH1l020tNMLHa/+CW5lY8deKw+XKs1FMTY+6H8wEkC50Sv1GUCqtsedTwM1GLUm6Y2tjpxWVLI3vXg==",
+    "Syncfusion.Xamarin.Core/19.1.0.55": {
+      "sha512": "YZIJ/KA+CQhVzjPeOM1GldWRuUnXcFbZ0b5EK7wbwOjH5mn/LXH7KZPM9/jZTL5p7Zp8sc/mXMFqUj5nP7U1mA==",
       "type": "package",
-      "path": "syncfusion.xamarin.core/18.4.0.42",
+      "path": "syncfusion.xamarin.core/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1807,14 +2047,14 @@
         "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
         "lib/uap10.0/Syncfusion.Core.XForms.dll",
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.18.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.core.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.DataSource/18.4.0.41": {
-      "sha512": "XRZVtywHcp8k57bfIBlfVlFlm3ry2kjkrM/+QWRja4lZcxqg1dHetDgB+HRsBI/Ct7Kq4N8HKFNEPUCBwLWV3g==",
+    "Syncfusion.Xamarin.DataSource/19.1.0.55": {
+      "sha512": "OcOUCAgmHyMSnknScCgadANSHzMJrCORWrvg8b5pVjCGFCYeS3qNYVkQLMLudobtT72lmwwF/r5IKLRrTJTTXA==",
       "type": "package",
-      "path": "syncfusion.xamarin.datasource/18.4.0.41",
+      "path": "syncfusion.xamarin.datasource/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1830,14 +2070,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.DataSource.Portable.dll",
         "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
         "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
-        "syncfusion.xamarin.datasource.18.4.0.41.nupkg.sha512",
+        "syncfusion.xamarin.datasource.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.datasource.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.GridCommon/18.4.0.41": {
-      "sha512": "paeavHSiHisQjNjYK+rYghEjzuqbtahvS54TDlYJOdKF/LV/kxpivjiMjvcuFDYRVElWixB/qoV3iUuRWXTePA==",
+    "Syncfusion.Xamarin.GridCommon/19.1.0.55": {
+      "sha512": "uoGy8ihG+pGWV6zopjrOYVQ5Xj8FovmMthtGHMQ0GTfu3hSP4LxZ6QLu5zEqXGnExyUX+e1Q1htwYmUh2OkI4w==",
       "type": "package",
-      "path": "syncfusion.xamarin.gridcommon/18.4.0.41",
+      "path": "syncfusion.xamarin.gridcommon/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1855,14 +2095,14 @@
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.GridCommon.Portable.dll",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
         "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
-        "syncfusion.xamarin.gridcommon.18.4.0.41.nupkg.sha512",
+        "syncfusion.xamarin.gridcommon.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.gridcommon.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfCalendar/18.4.0.41": {
-      "sha512": "UVFUFa8ArbVM1Ivuk0QaHYtlyr6m8MqxIA3gV1zs35CNdS4RYfHL0YiLVhPBu10zgBIKcsfrhlv0Q8uZECZdxQ==",
+    "Syncfusion.Xamarin.SfCalendar/19.1.0.55": {
+      "sha512": "ZBEZ7qP5IUi+1eqphYuybBA+vmPD+EbcLzA6RVgyJG9XQEm9e6jb1T5UPlSTb9XcoarwWSHHambBp63iV02VOw==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfcalendar/18.4.0.41",
+      "path": "syncfusion.xamarin.sfcalendar/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1887,14 +2127,14 @@
         "lib/uap10.0/Syncfusion.SfCalendar.XForms.UWP/Themes/Generic.xbf",
         "lib/uap10.0/Syncfusion.SfCalendar.XForms.dll",
         "lib/uap10.0/Syncfusion.SfCalendar.XForms.xml",
-        "syncfusion.xamarin.sfcalendar.18.4.0.41.nupkg.sha512",
+        "syncfusion.xamarin.sfcalendar.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.sfcalendar.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfListView/18.4.0.41": {
-      "sha512": "DfzC3+WtgvwmSnP2q9BXFJdGNHNbg28NIccV63hSDG1u7cLaGUx+IwDrpzUBUyBsYDbbizGH7jGnJfp391LtUw==",
+    "Syncfusion.Xamarin.SfListView/19.1.0.55": {
+      "sha512": "KfyeWrvJdC+FUvr0ocbmBO4FGs+OIwQCzOXNJgnPIg4bbfDJTsMAnJBB5iuSKwEmqv8I5uFvbG9Q0UGPPFOp/g==",
       "type": "package",
-      "path": "syncfusion.xamarin.sflistview/18.4.0.41",
+      "path": "syncfusion.xamarin.sflistview/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1917,14 +2157,14 @@
         "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
         "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
-        "syncfusion.xamarin.sflistview.18.4.0.41.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.sflistview.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.SfPopupLayout/18.4.0.42": {
-      "sha512": "4CfH6wryFNy5y6bBaiNhemtf0iWlPJEkxnRRXNYE9mrtFscLQXcJNZGpZ/cX73Jbb6LYJvlheP6SqE71NsbFqg==",
+    "Syncfusion.Xamarin.SfPopupLayout/19.1.0.55": {
+      "sha512": "hTP/M9N6OJiOfYeLmgva+J7v1+R00zFhOOZZ2dk2EXhtvoOnJC+2Rfe0ATkUNscVPPrr8lDRbHrGmlo0i87P6Q==",
       "type": "package",
-      "path": "syncfusion.xamarin.sfpopuplayout/18.4.0.42",
+      "path": "syncfusion.xamarin.sfpopuplayout/19.1.0.55",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1953,7 +2193,7 @@
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.UWP/Syncfusion.SfPopupLayout.XForms.UWP/Resources/popup_forms_uwp_close_icon.png",
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.dll",
         "lib/uap10.0/Syncfusion.SfPopupLayout.XForms.xml",
-        "syncfusion.xamarin.sfpopuplayout.18.4.0.42.nupkg.sha512",
+        "syncfusion.xamarin.sfpopuplayout.19.1.0.55.nupkg.sha512",
         "syncfusion.xamarin.sfpopuplayout.nuspec"
       ]
     },
@@ -1988,18 +2228,87 @@
         "version.txt"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+    "System.Net.Http.Json/5.0.0": {
+      "sha512": "3CPSQpCzEmI9o+1G79TnPCjF40omCdnoXj2Rg76BDwGj5+LZnFPjV+t35eedlvl+uthmholk/XXxXTYgJWSexw==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "path": "system.net.http.json/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net461/System.Net.Http.Json.dll",
+        "lib/net461/System.Net.Http.Json.xml",
+        "lib/net5.0/System.Net.Http.Json.dll",
+        "lib/net5.0/System.Net.Http.Json.xml",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.xml",
+        "system.net.http.json.5.0.0.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
@@ -2012,7 +2321,9 @@
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -2066,10 +2377,10 @@
         "version.txt"
       ]
     },
-    "System.Text.Encodings.Web/4.7.1": {
-      "sha512": "3qreYFQcLnyFk1LuaNWyyWE+sfkfe5eSTaIIssYrLNUIDbgyZNQBYQSzSDo4AprpjVeVX2T4KHKii9fiSZVUow==",
+    "System.Text.Encodings.Web/5.0.0": {
+      "sha512": "EEslUvHKll1ftizbn20mX3Ix/l4Ygk/bdJ2LY6/X6FlGaP0RIhKMo9nS6JIGnKKT6KBP2PGj6JC3B9/ZF6ErqQ==",
       "type": "package",
-      "path": "system.text.encodings.web/4.7.1",
+      "path": "system.text.encodings.web/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2078,22 +2389,24 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/System.Text.Encodings.Web.dll",
         "lib/net461/System.Text.Encodings.Web.xml",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.dll",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.xml",
         "lib/netstandard1.0/System.Text.Encodings.Web.dll",
         "lib/netstandard1.0/System.Text.Encodings.Web.xml",
         "lib/netstandard2.0/System.Text.Encodings.Web.dll",
         "lib/netstandard2.0/System.Text.Encodings.Web.xml",
         "lib/netstandard2.1/System.Text.Encodings.Web.dll",
         "lib/netstandard2.1/System.Text.Encodings.Web.xml",
-        "system.text.encodings.web.4.7.1.nupkg.sha512",
+        "system.text.encodings.web.5.0.0.nupkg.sha512",
         "system.text.encodings.web.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+    "System.Text.Json/5.0.1": {
+      "sha512": "/UM3UK1dXKl8Ybysg/21gM4S8DJgkR+yLU8JwqCVbuNqQNImelntgYFAN5QxR8sJJ1kMx//hOUdf0lltosi8cQ==",
       "type": "package",
-      "path": "system.text.json/4.7.2",
+      "path": "system.text.json/5.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2106,43 +2419,8 @@
         "lib/netcoreapp3.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
+        "system.text.json.5.0.1.nupkg.sha512",
         "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Threading.Tasks.Extensions/4.5.2": {
-      "sha512": "BG/TNxDFv0svAzx8OiMXDlsHfGw623BZ8tCXw4YLhDFDvDhNUEV58jKYMGRnkbJNm7c3JNNJDiN7JBMzxRBR2w==",
-      "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.2.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -2168,10 +2446,52 @@
         "xam.forms.videoplayer.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.5.3.2": {
-      "sha512": "BSLgDJUOPFRwTpQaftM+s4qb/MsTjrqXulEYDOcK6KF3i0Orf75zo3RwRfqnQ8WfpoEFxW/v0jgcPWCvOMgHxg==",
+    "Xamarin.CommunityToolkit/1.1.0": {
+      "sha512": "GJiaXaPLrM1qn1HYxDPKlECYAzX5CI6FKtv4NXCq8K7SJTscmFo79RcwZoj1o3de+4V0aiJAVZMCpbMIF/sZVA==",
       "type": "package",
-      "path": "xamarin.essentials/1.5.3.2",
+      "path": "xamarin.communitytoolkit/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/PreserveXamarinCommunityToolkit.cs",
+        "build/Xamarin.CommunityToolkit.targets",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
+        "lib/net471/Xamarin.CommunityToolkit.dll",
+        "lib/net471/Xamarin.CommunityToolkit.xml",
+        "lib/net472/Xamarin.CommunityToolkit.dll",
+        "lib/net472/Xamarin.CommunityToolkit.xml",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
+        "lib/tizen40/Xamarin.CommunityToolkit.dll",
+        "lib/tizen40/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
+        "xamarin.communitytoolkit.1.1.0.nupkg.sha512",
+        "xamarin.communitytoolkit.nuspec"
+      ]
+    },
+    "Xamarin.Essentials/1.6.1": {
+      "sha512": "gG1Bp4j4bpJQ0dp9MeBJQJ9c8xULauIlhc7Cx5Qw4J2K1c+4Glq5n+gkb9Pm0UA/CevXVqLK5ZXmZkuYI52FgA==",
+      "type": "package",
+      "path": "xamarin.essentials/1.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2205,6 +2525,9 @@
         "lib/xamarinios10/Xamarin.Essentials.dll",
         "lib/xamarinios10/Xamarin.Essentials.pdb",
         "lib/xamarinios10/Xamarin.Essentials.xml",
+        "lib/xamarinmac20/Xamarin.Essentials.dll",
+        "lib/xamarinmac20/Xamarin.Essentials.pdb",
+        "lib/xamarinmac20/Xamarin.Essentials.xml",
         "lib/xamarintvos10/Xamarin.Essentials.dll",
         "lib/xamarintvos10/Xamarin.Essentials.pdb",
         "lib/xamarintvos10/Xamarin.Essentials.xml",
@@ -2212,25 +2535,19 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.5.3.2.nupkg.sha512",
+        "xamarin.essentials.1.6.1.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.8.0.1451": {
-      "sha512": "3RUzBpcaBxOjufLLqJnuZRGLhzAbVyfe/Pyp0AFY/H1MkCHYxXIRzgB8h6yC9NTs39NLK2SgGiaMbvC4TJ/zFA==",
+    "Xamarin.Forms/5.0.0.2012": {
+      "sha512": "Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
       "type": "package",
-      "path": "xamarin.forms/4.8.0.1451",
+      "path": "xamarin.forms/5.0.0.2012",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Assets/xamarin_128x128.png",
         "build/MonoAndroid10/proguard.cfg",
-        "build/XCODE10/Xamarin.Forms.Platform.iOS.dll",
-        "build/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
-        "build/XCODE10/Xamarin.Forms.Platform.macOS.dll",
-        "build/XCODE11/Xamarin.Forms.Platform.iOS.dll",
-        "build/XCODE11/Xamarin.Forms.Platform.iOS.pdb",
-        "build/XCODE11/Xamarin.Forms.Platform.macOS.dll",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
         "build/Xamarin.Forms.props",
@@ -2252,12 +2569,6 @@
         "build/netstandard2.0/Xamarin.Forms.Core.dll",
         "build/netstandard2.0/Xamarin.Forms.Xaml.dll",
         "buildTransitive/MonoAndroid10/proguard.cfg",
-        "buildTransitive/XCODE10/Xamarin.Forms.Platform.iOS.dll",
-        "buildTransitive/XCODE10/Xamarin.Forms.Platform.iOS.pdb",
-        "buildTransitive/XCODE10/Xamarin.Forms.Platform.macOS.dll",
-        "buildTransitive/XCODE11/Xamarin.Forms.Platform.iOS.dll",
-        "buildTransitive/XCODE11/Xamarin.Forms.Platform.iOS.pdb",
-        "buildTransitive/XCODE11/Xamarin.Forms.Platform.macOS.dll",
         "buildTransitive/Xamarin.Forms.DefaultItems.props",
         "buildTransitive/Xamarin.Forms.DefaultItems.targets",
         "buildTransitive/Xamarin.Forms.props",
@@ -2291,63 +2602,11 @@
         "lib/MonoAndroid10.0/Xamarin.Forms.Xaml.dll",
         "lib/MonoAndroid10.0/Xamarin.Forms.Xaml.pdb",
         "lib/MonoAndroid10.0/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/de/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/de/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/es/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/es/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/fr/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/fr/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/it/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/it/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/ja/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/ja/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/ko/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/pt-BR/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/ru/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/ru/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/zh-Hans/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/zh-Hans/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid10.0/zh-Hant/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid10.0/zh-Hant/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/Design/Xamarin.Forms.Core.Design.dll",
-        "lib/MonoAndroid90/Design/Xamarin.Forms.Xaml.Design.dll",
-        "lib/MonoAndroid90/FormsViewGroup.dll",
-        "lib/MonoAndroid90/FormsViewGroup.pdb",
-        "lib/MonoAndroid90/Xamarin.Forms.Core.dll",
-        "lib/MonoAndroid90/Xamarin.Forms.Core.pdb",
-        "lib/MonoAndroid90/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid90/Xamarin.Forms.Platform.Android.pdb",
-        "lib/MonoAndroid90/Xamarin.Forms.Platform.dll",
-        "lib/MonoAndroid90/Xamarin.Forms.Xaml.dll",
-        "lib/MonoAndroid90/Xamarin.Forms.Xaml.pdb",
-        "lib/MonoAndroid90/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/de/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/de/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/es/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/es/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/fr/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/fr/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/it/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/it/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/ja/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/ja/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/ko/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/ko/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/pt-BR/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/ru/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/ru/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/zh-Hans/Xamarin.Forms.Xaml.xml",
-        "lib/MonoAndroid90/zh-Hant/Xamarin.Forms.Core.xml",
-        "lib/MonoAndroid90/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.Mac/Design/Xamarin.Forms.Core.Design.dll",
         "lib/Xamarin.Mac/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Core.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Platform.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Platform.macOS.dll",
         "lib/Xamarin.Mac/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/Xamarin.iOS10/Design/Xamarin.Forms.Xaml.Design.dll",
@@ -2355,6 +2614,8 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.xml",
@@ -2362,43 +2623,27 @@
         "lib/Xamarin.iOS10/ca/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/cs/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/da/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/de/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/de/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/de/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/el/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/es/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/es/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/es/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/fi/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/fr/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/fr/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/he/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hi/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hr/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/hu/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/id/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/it/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/it/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/it/Xamarin.Forms.Xaml.xml",
-        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ja/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ja/Xamarin.Forms.Xaml.xml",
-        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ko/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ko/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/ms/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nb/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/nl/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/pl/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/pt-BR/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/pt/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/ro/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/ru/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/ru/Xamarin.Forms.Xaml.xml",
         "lib/Xamarin.iOS10/sk/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/sv/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/th/Xamarin.Forms.Platform.iOS.resources.dll",
@@ -2406,12 +2651,8 @@
         "lib/Xamarin.iOS10/uk/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/vi/Xamarin.Forms.Platform.iOS.resources.dll",
         "lib/Xamarin.iOS10/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Xaml.xml",
-        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll",
-        "lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/netstandard1.0/Design/Xamarin.Forms.Core.Design.dll",
         "lib/netstandard1.0/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/netstandard1.0/Xamarin.Forms.Core.dll",
@@ -2430,26 +2671,6 @@
         "lib/netstandard2.0/Xamarin.Forms.Xaml.dll",
         "lib/netstandard2.0/Xamarin.Forms.Xaml.pdb",
         "lib/netstandard2.0/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/de/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/de/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/es/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/es/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/fr/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/fr/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/it/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/it/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/ja/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/ja/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/ko/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/ko/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/pt-BR/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/ru/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/ru/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/zh-Hans/Xamarin.Forms.Xaml.xml",
-        "lib/netstandard2.0/zh-Hant/Xamarin.Forms.Core.xml",
-        "lib/netstandard2.0/zh-Hant/Xamarin.Forms.Xaml.xml",
         "lib/tizen40/Design/Xamarin.Forms.Core.Design.dll",
         "lib/tizen40/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/tizen40/Xamarin.Forms.Core.dll",
@@ -2471,6 +2692,7 @@
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP.pdb",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP.pri",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/CollectionView/ItemsViewStyles.xaml",
+        "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/FlyoutPageControlStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/FormsAutoSuggestBoxStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/FormsCheckBoxStyle.xaml",
         "lib/uap10.0.14393/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xaml",
@@ -2504,6 +2726,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP.pri",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/CollectionView/ItemsViewStyles.xaml",
+        "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/FlyoutPageControlStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/FormsAutoSuggestBoxStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/FormsCheckBoxStyle.xaml",
         "lib/uap10.0.16299/Xamarin.Forms.Platform.UAP/FormsCommandBarStyle.xaml",
@@ -2528,7 +2751,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.8.0.1451.nupkg.sha512",
+        "xamarin.forms.5.0.0.2012.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -2560,15 +2783,17 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
-      "Plugin.MediaManager.Forms >= 1.0.0",
-      "Syncfusion.Xamarin.Buttons >= 18.4.0.42",
-      "Syncfusion.Xamarin.Core >= 18.4.0.42",
-      "Syncfusion.Xamarin.SfCalendar >= 18.4.0.41",
-      "Syncfusion.Xamarin.SfListView >= 18.4.0.41",
-      "Syncfusion.Xamarin.SfPopupLayout >= 18.4.0.42",
+      "Plugin.MediaManager.Forms >= 1.0.8",
+      "Refit >= 6.0.38",
+      "Syncfusion.Xamarin.Buttons >= 19.1.0.55",
+      "Syncfusion.Xamarin.Core >= 19.1.0.55",
+      "Syncfusion.Xamarin.SfCalendar >= 19.1.0.55",
+      "Syncfusion.Xamarin.SfListView >= 19.1.0.55",
+      "Syncfusion.Xamarin.SfPopupLayout >= 19.1.0.55",
       "Xam.Forms.VideoPlayer >= 1.0.8",
-      "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.8.0.1451",
+      "Xamarin.CommunityToolkit >= 1.1.0",
+      "Xamarin.Essentials >= 1.6.1",
+      "Xamarin.Forms >= 5.0.0.2012",
       "YoutubeExplode >= 5.1.9",
       "mobile >= 1.0.0"
     ]
@@ -2617,39 +2842,47 @@
         "dependencies": {
           "Plugin.MediaManager.Forms": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.8, )"
+          },
+          "Refit": {
+            "target": "Package",
+            "version": "[6.0.38, )"
           },
           "Syncfusion.Xamarin.Buttons": {
             "target": "Package",
-            "version": "[18.4.0.42, )"
+            "version": "[19.1.0.55, )"
           },
           "Syncfusion.Xamarin.Core": {
             "target": "Package",
-            "version": "[18.4.0.42, )"
+            "version": "[19.1.0.55, )"
           },
           "Syncfusion.Xamarin.SfCalendar": {
             "target": "Package",
-            "version": "[18.4.0.41, )"
+            "version": "[19.1.0.55, )"
           },
           "Syncfusion.Xamarin.SfListView": {
             "target": "Package",
-            "version": "[18.4.0.41, )"
+            "version": "[19.1.0.55, )"
           },
           "Syncfusion.Xamarin.SfPopupLayout": {
             "target": "Package",
-            "version": "[18.4.0.42, )"
+            "version": "[19.1.0.55, )"
           },
           "Xam.Forms.VideoPlayer": {
             "target": "Package",
             "version": "[1.0.8, )"
           },
+          "Xamarin.CommunityToolkit": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.5.3.2, )"
+            "version": "[1.6.1, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.8.0.1451, )"
+            "version": "[5.0.0.2012, )"
           },
           "YoutubeExplode": {
             "target": "Package",

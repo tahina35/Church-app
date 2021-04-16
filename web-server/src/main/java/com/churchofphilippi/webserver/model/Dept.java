@@ -45,15 +45,5 @@ public class Dept {
 
     @Column(nullable = false)
     private LocalDate creationDate;
-
-    public Dept(String name, LocalDate creationDate, Dept parentDept) {
-        this.parentDept = parentDept;
-        this.name = name;
-        this.creationDate = creationDate;
-    }
-
-    public Dept(String name) {
-        this.name = name;
-    }
     
 }

@@ -1,3 +1,5 @@
+import { Member } from "./Member"
+
 export class Dept {
 
     deptId:number

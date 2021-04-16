@@ -83,7 +83,6 @@ public class Member implements UserDetails {
 
     private String accessToken;
 
-
     public Member(String fname, String lname, String email, String password, char gender, LocalDate memberDate, String streetAddressLine1, String streetAddressLine2, String city, String state, int zipCode, String phoneNumber) {
         this.fname = fname;
         this.lname = lname;

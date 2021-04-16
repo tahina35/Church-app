@@ -42,6 +42,11 @@ public class DepartmentController {
         return ResponseEntity.ok(deptService.getAll());
     }
 
+    @GetMapping("/parent-dept")
+    public ResponseEntity<?> getDeptsParentDept() {
+        return ResponseEntity.ok(deptService.findDeptsWithoutParent());
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")Long id) {
         deptService.deleteById(id);

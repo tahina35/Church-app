@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Dept } from '../model/Dept';
 import { BaseService } from './base.service';
 
@@ -15,6 +14,10 @@ export class DepartmentService extends BaseService {
 
   findPaginated(page: number) {
     return this.http.get(this.baseUrl + '/api/department/page/' + page);
+  }
+
+  findParentDepts() {
+    return this.http.get(this.baseUrl + '/api/department/parent-dept');
   }
 
   search(searchValue: string, page: number) {

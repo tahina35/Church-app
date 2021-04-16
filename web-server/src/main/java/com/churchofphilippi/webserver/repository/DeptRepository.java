@@ -16,4 +16,6 @@ public interface DeptRepository extends JpaRepository<Dept, Long>, JpaSpecificat
     )
     List<Dept> findDeptsMemberNotBelongTo(Long id);
 
+    List<Dept> findAllByParentDeptNull();
+
 }

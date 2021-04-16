@@ -55,13 +55,6 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
             Claims body = claimsJws.getBody();
             String username = body.getSubject();
 
-            Member member = (Member) memberService.loadUserByUsername(username);
-
-            if(member.getAccessToken().compareTo(token) != 0) {
-                handlerExceptionResolver.resolveException(request, response, null, new TokenNotTrustedException("Token invalid or expired"));
-                return;
-            }
-
             Authentication authentication = new UsernamePasswordAuthenticationToken(
                 username,
                 null,

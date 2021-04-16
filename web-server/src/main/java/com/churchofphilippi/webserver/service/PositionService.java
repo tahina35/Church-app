@@ -29,7 +29,7 @@ public class PositionService implements BaseService<Position> {
     public Page<Position> findPaginated(int pageNo, int pageSize) {
         Sort sort = Sort.by("positionId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-        return positionRepository.findAll(pageable);
+        return positionRepository.findAllByEditableTrue(pageable);
     }
 
     public List<Position> findPositionsMemberNotAssignedTo(Long id) {
@@ -42,7 +42,6 @@ public class PositionService implements BaseService<Position> {
         } catch (Exception e) {
             throw new ForeignKeyConstraintException("Some members are still assigned to this position. Please remove them before proceeding to this action.");
         }
-
     }
 
     @Override

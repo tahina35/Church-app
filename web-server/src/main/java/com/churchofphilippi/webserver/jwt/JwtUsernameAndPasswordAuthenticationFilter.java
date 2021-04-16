@@ -63,10 +63,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .signWith(secretKey)
                 .compact();
 
-        Member member = (Member) memberService.loadUserByUsername(authResult.getName());
-        member.setAccessToken(token);
-        memberService.save(member);
-
         response.addHeader(jwtConfig.getAuthorizationHeader(), jwtConfig.getTokenPrefix() + token);
     }
 

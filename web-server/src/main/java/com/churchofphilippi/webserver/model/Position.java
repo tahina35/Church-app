@@ -30,8 +30,6 @@ public class Position {
     @Column(nullable = false)
     private String name;
 
-    public Position(String name) {
-        this.name = name;
-    }
-
+    @Column(nullable = false)
+    private boolean editable = true;
 }

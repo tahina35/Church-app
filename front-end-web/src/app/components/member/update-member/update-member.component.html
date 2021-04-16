@@ -53,7 +53,7 @@
                             <th>Name</th>
                             <th>Start date</th>
                             <th class="w270">Remark</th>
-                            <th class="align-center">Action</th>
+                            <th class="text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -61,7 +61,9 @@
                             <td>{{dept.department.name}}</td>
                             <td>{{dept.startDate}}</td>
                             <td class="w270">{{dept.remark}}</td>
-                            <td class="align-center"><a class="danger" (click)="removeFromDept(dept)" ngbTooltip="Remove"><i class="fas fa-trash "></i></a></td>
+                            <td class="text-center">
+                              <a class="btn btn-danger pointer" (click)="removeFromDept(dept)" ngbTooltip="remove"><i class="fas fa-trash "></i></a>
+                            </td>  
                           </tr>
                         </tbody>
                     </table>
@@ -80,7 +82,7 @@
                             <th>Name</th>
                             <th>Start date</th>
                             <th class="w270">Remark</th>
-                            <th class="align-center">Action</th>
+                            <th class="text-center">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -88,7 +90,9 @@
                             <td>{{position.position.name}}</td>
                             <td>{{position.startDate}}</td>
                             <td class="w270">{{position.remark}}</td>
-                            <td class="align-center"><a class="danger" (click)="removePosition(position)" ngbTooltip="Remove"><i class="fas fa-trash "></i></a></td>
+                            <td class="text-center">
+                              <a class="btn btn-danger pointer" (click)="removePosition(position)" ngbTooltip="remove"><i class="fas fa-trash "></i></a>
+                            </td>
                           </tr>
                         </tbody>
                     </table>

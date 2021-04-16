@@ -15,7 +15,7 @@ export class DisplayDepartmentComponent implements OnInit {
 
   totalPages:number;
   departments: Dept[];
-  AllDepts: Dept[];
+  parentDepts: Dept[];
   error?: string;
   currentPage: number = 1;
   searchValue:string = '';
@@ -27,6 +27,7 @@ export class DisplayDepartmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllDepts();
+    this.findParentDepts();
   }
 
   findAllDepts() {
@@ -35,12 +36,22 @@ export class DisplayDepartmentComponent implements OnInit {
         this.totalPages = data.totalPages;
         this.totalItems = data.totalItems;
         this.departments = data.content;
-        this.AllDepts = data.content;
       },
       (err) => {
         this.error = err;
       }
     )
+  }
+
+  findParentDepts() {
+    this.deptService.findParentDepts().subscribe(
+      (data: Dept[]) => {
+        this.parentDepts = data;
+      },
+      (err) => {
+        this.error = err;
+      }
+    )  
   }
 
   findAllDeptsPaginated() {

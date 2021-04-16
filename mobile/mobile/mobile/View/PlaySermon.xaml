@@ -7,7 +7,7 @@
 
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-        <MediaElement  ShowsPlaybackControls="True"  x:Name="MyMediaElement" MediaOpened="MyMediaElement_MediaOpened"/>
+        <MediaElement ShowsPlaybackControls="True"  x:Name="MyMediaElement" MediaOpened="MyMediaElement_MediaOpened"/>
         <ActivityIndicator  x:Name="MyActivityIndicator"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"

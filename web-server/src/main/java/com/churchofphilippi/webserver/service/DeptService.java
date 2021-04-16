@@ -60,4 +60,8 @@ public class DeptService implements BaseService<Dept>{
         return deptRepository.findDeptsMemberNotBelongTo(id);
     }
 
+    public List<Dept> findDeptsWithoutParent() {
+        return deptRepository.findAllByParentDeptNull();
+    }
+
 }

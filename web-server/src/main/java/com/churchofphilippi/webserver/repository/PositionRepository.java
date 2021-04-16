@@ -1,6 +1,9 @@
 package com.churchofphilippi.webserver.repository;
 
 import com.churchofphilippi.webserver.model.Position;
+import com.churchofphilippi.webserver.model.specification.PositionSpecification;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
@@ -11,8 +14,10 @@ public interface PositionRepository extends JpaRepository<Position, Long>, JpaSp
 
     //All positions that member is not assigned to
     @Query(
-            value = "select * from position p where p.position_id NOT IN (select r.position_id from  role r where r.member_id = ?1 AND r.end_date IS NULL)",
+            value = "select * from position p where p.position_id NOT IN (select r.position_id from  role r where r.member_id = ?1 AND r.end_date IS NULL) AND p.editable = true",
             nativeQuery = true
     )
     List<Position> findPositionsMemberNotAssignedTo(Long id);
+
+    Page<Position> findAllByEditableTrue(Pageable pageable);
 }
