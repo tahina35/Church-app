@@ -29,7 +29,7 @@ public class PositionService implements BaseService<Position> {
     public Page<Position> findPaginated(int pageNo, int pageSize) {
         Sort sort = Sort.by("positionId").ascending();
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
-        return positionRepository.findAllByEditableTrue(pageable);
+        return positionRepository.findAll(pageable);
     }
 
     public List<Position> findPositionsMemberNotAssignedTo(Long id) {

@@ -12,8 +12,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.WeekFields;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 @AllArgsConstructor
@@ -45,6 +48,11 @@ public class EarlyMorningServicesService implements BaseService<EarlyMorningServ
     @Transactional
     public void deleteByDate(LocalDate date) {
         earlyMorningServicesRepository.deleteByDate(date);
+    }
+
+    public List<EarlyMorningServices> findLast5() {
+        LocalDate sunday = LocalDate.now().with(DayOfWeek.SUNDAY);
+        return earlyMorningServicesRepository.findLast5(sunday);
     }
 
 }

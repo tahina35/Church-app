@@ -16,6 +16,13 @@ public interface DeptRepository extends JpaRepository<Dept, Long>, JpaSpecificat
     )
     List<Dept> findDeptsMemberNotBelongTo(Long id);
 
-    List<Dept> findAllByParentDeptNull();
+    @Query( value = "SELECT d FROM Dept d WHERE d.isParent = true")
+    List<Dept> findParentDept();
+
+    @Query( value = "SELECT d FROM Dept d INNER JOIN DeptMember dm ON d.deptId = dm.department.deptId WHERE dm.member.memberId = ?1")
+    List<Dept> findByMember(Long id);
+
+    @Query( value = "SELECT d FROM Dept d WHERE d.parentDept.deptId = ?1")
+    List<Dept> findSubDepts(Long id);
 
 }

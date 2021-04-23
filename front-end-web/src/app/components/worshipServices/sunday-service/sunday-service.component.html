@@ -124,13 +124,37 @@
                 </ng-select2>
               </div>
               <div class="form-group">
+                <label>Worship And Praise</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': worshipAndPraise.touched && !worshipAndPraise.valid}" #worshipAndPraise="ngModel"  [(ngModel)]="sundayService.worshipAndPraise" placeholder="Worship And Praise" name="worshipAndPraise" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Confession Of Faith</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': confessionOfFaith.touched && !confessionOfFaith.valid}" #confessionOfFaith="ngModel"  [(ngModel)]="sundayService.confessionOfFaith" placeholder="Confession Of Faith" name="confessionOfFaith" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Church News</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': churchNews.touched && !churchNews.valid}" #churchNews="ngModel"  [(ngModel)]="sundayService.churchNews" placeholder="Church News" name="churchNews" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Offering</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': offering.touched && !offering.valid}" #offering="ngModel"  [(ngModel)]="sundayService.offering" placeholder="Offering" name="offering" required>
+                </div>
+              </div>
+              <div class="form-group">
                   <label>Hymn</label>
                   <div class="input-group">
                       <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="sundayService.hymn" placeholder="Hymn" name="hymn" required>
                   </div>
               </div>
-            </div>
-            <div class="col-sm-6">
               <div class="form-group">
                   <label>Main verse</label>
                   <div class="input-group">
@@ -186,13 +210,37 @@
                 </ng-select2>
               </div>
               <div class="form-group">
+                <label>Worship And Praise</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': worshipAndPraise.touched && !worshipAndPraise.valid}" #worshipAndPraise="ngModel"  [(ngModel)]="sundayService.worshipAndPraise" placeholder="Worship And Praise" name="worshipAndPraise" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Confession Of Faith</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': confessionOfFaith.touched && !confessionOfFaith.valid}" #confessionOfFaith="ngModel"  [(ngModel)]="sundayService.confessionOfFaith" placeholder="Confession Of Faith" name="confessionOfFaith" required>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Church News</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': churchNews.touched && !churchNews.valid}" #churchNews="ngModel"  [(ngModel)]="sundayService.churchNews" placeholder="Church News" name="churchNews" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Offering</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" [ngClass]="{'is-invalid': offering.touched && !offering.valid}" #offering="ngModel"  [(ngModel)]="sundayService.offering" placeholder="Offering" name="offering" required>
+                </div>
+              </div>
+              <div class="form-group">
                   <label>Hymn</label>
                   <div class="input-group">
                       <input type="text" class="form-control" [ngClass]="{'is-invalid': hymn.touched && !hymn.valid}" #hymn="ngModel"  [(ngModel)]="sundayService.hymn" placeholder="Hymn" name="hymn" required>
                   </div>
               </div>
-            </div>
-            <div class="col-sm-6">
               <div class="form-group">
                   <label>Main verse</label>
                   <div class="input-group">

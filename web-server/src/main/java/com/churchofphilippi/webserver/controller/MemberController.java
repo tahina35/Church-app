@@ -3,7 +3,6 @@ package com.churchofphilippi.webserver.controller;
 import com.churchofphilippi.webserver.config.PageConfig;
 import com.churchofphilippi.webserver.model.DeptMember;
 import com.churchofphilippi.webserver.model.Member;
-import com.churchofphilippi.webserver.model.Position;
 import com.churchofphilippi.webserver.model.Role;
 import com.churchofphilippi.webserver.model.customModels.MemberDetails;
 import com.churchofphilippi.webserver.model.customModels.MemberFilters;
@@ -35,6 +34,10 @@ public class MemberController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getMemberById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(memberService.getById(id));
+    }
+    @GetMapping("/department/{id}")
+    public ResponseEntity<?> getMemberByDept(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(memberService.getByDepartment(id));
     }
 
     @GetMapping("/username/{username}")

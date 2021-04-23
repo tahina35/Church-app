@@ -9,7 +9,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 @Table(name = "sunday_service")
@@ -27,6 +26,18 @@ public class SundayService {
     @Id
     @Column(nullable = false)
     private LocalDate date;
+
+    @Column(nullable = false)
+    private String worshipAndPraise;
+
+    @Column(nullable = false)
+    private String confessionOfFaith;
+
+    @Column(nullable = false)
+    private String churchNews;
+
+    @Column(nullable = false)
+    private String offering;
 
     @Column(
             nullable = false,

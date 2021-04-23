@@ -98,8 +98,14 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="deptname">Parent department (optional)</label>
-            <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department">
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" id="parentDept" [(ngModel)]="isParentDept" name="parentDept">
+                <label for="parentDept" class="custom-control-label">Parent department</label>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="!isParentDept">
+            <label for="deptname">Select a parent department</label>
+            <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department" required>
               <option></option>
               <option *ngFor="let dept of parentDepts" [value]="dept.deptId">{{ dept.name }}</option>
             </select>
@@ -126,12 +132,17 @@
               <input type="text" id="deptname" class="form-control" [ngClass]="{'is-invalid': name.touched && !name.valid}" #name="ngModel"  [(ngModel)]="dept.name" placeholder="Department name" name="name" required>
             </div>
           </div>
-          <div class="form-group">
-            <label for="deptname">Parent department (optional)</label>
-            <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department">
+          <div class="form-group" *ngIf="!isParentDept">
+            <label for="deptname">Select a parent department</label>
+            <select type="text" class="custom-select" [ngClass]="{'is-invalid': parent.touched && !parent.valid}" name="parent" #parent="ngModel" [(ngModel)]="selectedDept" placeholder="Parent department" required>
               <option></option>
               <option *ngFor="let dept of parentDepts" [value]="dept.deptId">{{ dept.name }}</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label>Department Leader</label>
+            <ng-select2 [(ngModel)]="dept.leader.memberId" [data]="departmentMembers" [placeholder]="'Department Leader'" name="leader" #leader="ngModel" >		
+            </ng-select2>
           </div>
         </div>
         <div class="modal-footer">

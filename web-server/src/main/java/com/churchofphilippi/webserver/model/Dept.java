@@ -1,19 +1,19 @@
 package com.churchofphilippi.webserver.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "dept")
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 public class Dept {
     @Id
@@ -32,11 +32,6 @@ public class Dept {
     )
     private Long deptId;
 
-    @ManyToOne
-    @JoinColumn(name="parent_dept_id")
-    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
-    private Dept parentDept;
-
     @Column(
             nullable = false,
             length = 50
@@ -45,5 +40,18 @@ public class Dept {
 
     @Column(nullable = false)
     private LocalDate creationDate;
+
+    @Column(name = "is_parent")
+    private boolean isParent;
+
+    @ManyToOne
+    @JoinColumn(name="parent_dept_id")
+    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
+    private Dept parentDept;
+
+    @ManyToOne
+    @JoinColumn(name="member_id")
+    @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
+    private Member leader;
     
 }

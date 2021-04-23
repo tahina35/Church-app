@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -47,4 +48,8 @@ public class WednesdayServiceService implements BaseService<WednesdayService> {
         wednesdayServiceRepository.deleteByDate(date);
     }
 
+    public WednesdayService findLast() {
+        LocalDate sunday = LocalDate.now().with(DayOfWeek.SUNDAY);
+        return wednesdayServiceRepository.findLast(sunday);
+    }
 }

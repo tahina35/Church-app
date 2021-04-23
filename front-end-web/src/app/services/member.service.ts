@@ -60,4 +60,8 @@ export class MemberService extends BaseService {
     return this.http.post(this.baseUrl + '/api/member/remove-position', role)
   }
 
+  getByDepartment(id: number) {
+    return this.http.get(this.baseUrl + '/api/member/department/' + id);
+  }
+
 }

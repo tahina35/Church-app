@@ -22,11 +22,6 @@ public class PositionSpecification implements Specification<Position> {
 
     @Override
     public Predicate toPredicate(Root<Position> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
-        List<Predicate> predicates = new ArrayList<>();
-
-        predicates.add(builder.isTrue(root.get("editable")));
-        predicates.add(builder.like(builder.lower(root.get("name")), "%" + getSearchValue().toLowerCase() + "%"));
-
-        return builder.and(predicates.toArray(new Predicate[0]));
+        return builder.like(builder.lower(root.get("name")), "%" + getSearchValue().toLowerCase() + "%");
     }
 }

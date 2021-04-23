@@ -41,6 +41,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ColorGithubModule } from 'ngx-color/github';
 import { NotificationComponent } from './components/notification/notification.component';
 import { FromNowPipe } from './pipe/FromNowPipe';
+import { WeekDayPipe } from './pipe/WeekDayPipe';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -65,6 +66,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     WednesdayServiceComponent,
     ServiceTypePipe,
     GenderPipe,
+    WeekDayPipe,
     FromNowPipe,
     MorningServiceComponent,
     VideoPlayerModal,

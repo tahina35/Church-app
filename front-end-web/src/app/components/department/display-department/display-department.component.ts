@@ -5,6 +5,11 @@ import { Page } from 'src/app/model/Page';
 import { DepartmentService } from 'src/app/services/department.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeleteDeptModal } from './delete-department.modal';
+import { Member } from 'src/app/model/Member';
+import { MemberService } from 'src/app/services/member.service';
+import { Select2OptionData } from 'ng-select2';
+import { Role } from 'src/app/model/Role';
+import { Position } from 'src/app/model/Position';
 
 @Component({
   selector: 'app-display-department',
@@ -13,17 +18,19 @@ import { DeleteDeptModal } from './delete-department.modal';
 })
 export class DisplayDepartmentComponent implements OnInit {
 
+  isParentDept: boolean = true;
   totalPages:number;
   departments: Dept[];
   parentDepts: Dept[];
   error?: string;
   currentPage: number = 1;
   searchValue:string = '';
-  dept: Dept = {} as Dept;
+  dept: Dept = new Dept();
   totalItems:number = 0;
   selectedDept:number = 0;
+  departmentMembers:Array<Select2OptionData> = []; 
 
-  constructor(private deptService: DepartmentService, private route: ActivatedRoute, private modalService: NgbModal) { }
+  constructor(private deptService: DepartmentService, private memberService: MemberService, private route: ActivatedRoute, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.findAllDepts();
@@ -36,6 +43,7 @@ export class DisplayDepartmentComponent implements OnInit {
         this.totalPages = data.totalPages;
         this.totalItems = data.totalItems;
         this.departments = data.content;
+        console.log(data)
       },
       (err) => {
         this.error = err;
@@ -104,7 +112,8 @@ export class DisplayDepartmentComponent implements OnInit {
 
   resetModal() {
     this.selectedDept = 0;
-    this.dept = {} as Dept;
+    this.dept = new Dept();
+    this.isParentDept = true;
   }
 
   addDept() {
@@ -118,8 +127,14 @@ export class DisplayDepartmentComponent implements OnInit {
       this.dept.creationDate = new Date();
     }
 
+    if(!this.dept.leader.memberId) {
+      this.dept.leader = null;
+    }
+
+    this.dept.parent = this.isParentDept;
+
     this.deptService.add(this.dept).subscribe(
-      (data) => {
+      (data) => {   
         this.currentPage = 1;
         this.findAllDepts();
         this.resetModal
@@ -132,22 +147,44 @@ export class DisplayDepartmentComponent implements OnInit {
   }
 
   updateDepartment(content, department: Dept) {
-    
+    this.dept.leader = new Member();
     if(department.parentDept) {
       this.selectedDept = department.parentDept.deptId;
     } else {
       this.selectedDept = 0;
     }
+
+    this.isParentDept = department.parent;
     this.dept.deptId = department.deptId;
     this.dept.creationDate = department.creationDate;
     this.dept.name = department.name;
-    console.log(this.dept)
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
-      () => {},
-      (reason) => {
-        this.resetModal();
+    if(department.leader) {
+      this.dept.leader.memberId = department.leader.memberId;
+    }
+  
+    this.memberService.getByDepartment(department.deptId).subscribe(
+      (data: Member[]) => {
+        const members = data.map(
+          (member: Member) => {
+            return ({id: member.memberId.toString(), text: member.fname + ' ' + member.lname});
+          }
+        );
+
+        this.departmentMembers = members;
+
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+          () => {},
+          (reason) => {
+            this.resetModal();
+          }
+        )
+
+      },
+      (err) => {
+        this.error = err;
       }
     )
+
   }
 
   deleteDepartment(dept: Dept) {

@@ -80,4 +80,14 @@ body {
 
 .ck-editor__editable_inline {
     min-height: 270px;
+//     padding: 11px 9px !important;
+//     p {
+//         margin: 0 !important; 
+//     }
 }
+
+// :host ::ng-deep .ck-editor__editable_inline p {
+//     margin: 0 !important;
+// }
+
+

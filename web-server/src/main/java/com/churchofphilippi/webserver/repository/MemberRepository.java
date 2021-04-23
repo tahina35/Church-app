@@ -42,4 +42,10 @@ public interface MemberRepository extends JpaRepository<Member, Long>, JpaSpecif
             nativeQuery = true
     )
     List<Member> getPreachers();
+
+    @Query(
+            value = "SELECT m.* FROM member m INNER JOIN dept_member dm ON m.member_id = dm.member_id WHERE dm.dept_id = ?1",
+            nativeQuery = true
+    )
+    List<Member> findByDepartemnt(Long deptId);
 }

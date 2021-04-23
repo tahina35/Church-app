@@ -93,4 +93,8 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
     public List<Member> getPreachers() {
         return memberRepository.getPreachers();
     }
+
+    public List<Member> getByDepartment(Long deptid) {
+        return memberRepository.findByDepartemnt(deptid);
+    }
 }

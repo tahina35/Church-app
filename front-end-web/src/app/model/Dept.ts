@@ -6,5 +6,7 @@ export class Dept {
     name:string
     creationDate:Date
     parentDept:Dept
+    leader:Member = new Member()
+    parent:boolean = true;
 
 }

@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                           <tr *ngFor="let service of services; let i = index">
-                            <td>{{service.date}}</td>
+                            <td>{{service.date | weekDay}}</td>
                             <td>{{service.sermon.mainVerse}}</td>
                             <td>{{service.sermon.preacher.fname}} {{service.sermon.preacher.lname}}</td>
                             <td *ngIf="!service.sermon.isUploaded" class="disabled">video not available</td>

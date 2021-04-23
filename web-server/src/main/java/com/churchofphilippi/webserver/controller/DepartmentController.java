@@ -44,7 +44,7 @@ public class DepartmentController {
 
     @GetMapping("/parent-dept")
     public ResponseEntity<?> getDeptsParentDept() {
-        return ResponseEntity.ok(deptService.findDeptsWithoutParent());
+        return ResponseEntity.ok(deptService.findParentDept());
     }
 
     @DeleteMapping("/delete/{id}")
@@ -52,4 +52,10 @@ public class DepartmentController {
         deptService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/member/{id}")
+    public ResponseEntity<?> getMemberDeptData(@PathVariable("id")Long id) {
+        return ResponseEntity.ok(deptService.getMemberDeptData(id));
+    }
+
 }

@@ -13,7 +13,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 
 @RestController
@@ -42,6 +41,11 @@ public class WorshipServiceController {
         return ResponseEntity.ok(page);
     }
 
+    @GetMapping("/sunday-service/last")
+    public ResponseEntity<?> getLastSundayService() {
+        return ResponseEntity.ok(sundayServiceService.findLast());
+    }
+
     @PostMapping("/sunday-service")
     public ResponseEntity<?> addSundayService(@RequestBody SundayService service) {
         return ResponseEntity.ok(sundayServiceService.save(service));
@@ -61,6 +65,11 @@ public class WorshipServiceController {
         Page<WednesdayService> paginated = wednesdayServiceService.findAllPaginated(pageNo, pageConfig.getSize());
         CustomPage<WednesdayService> page = new CustomPage<WednesdayService>(pageNo, paginated.getTotalPages(), paginated.getTotalElements(), paginated.getContent());
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/wednesday-service/last")
+    public ResponseEntity<?> getLastWednesdayService() {
+        return ResponseEntity.ok(wednesdayServiceService.findLast());
     }
 
     @PostMapping("/wednesday-service")
@@ -84,6 +93,11 @@ public class WorshipServiceController {
         return ResponseEntity.ok(page);
     }
 
+    @GetMapping("/youth-service/last")
+    public ResponseEntity<?> getLastYouthService() {
+        return ResponseEntity.ok(youthServiceService.findLast());
+    }
+
     @PostMapping("/youth-service")
     public ResponseEntity<?> addYouthService(@RequestBody YouthService service) {
         return ResponseEntity.ok(youthServiceService.save(service));
@@ -103,6 +117,11 @@ public class WorshipServiceController {
         Page<EarlyMorningServices> paginated = earlyMorningServicesService.findAllPaginated(pageNo, pageConfig.getSize());
         CustomPage<EarlyMorningServices> page = new CustomPage<EarlyMorningServices>(pageNo, paginated.getTotalPages(), paginated.getTotalElements(), paginated.getContent());
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/morning-service/last5")
+    public ResponseEntity<?> getLast5() {
+        return ResponseEntity.ok(earlyMorningServicesService.findLast5());
     }
 
     @PostMapping("/morning-service")
