@@ -33,6 +33,14 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(FCMCredentialNotFoundException.class)
+    public final ResponseEntity<ErrorResponse> handleFCMCredentialsNotFoundException
+            (FCMCredentialNotFoundException ex, WebRequest request) {
+        String message = ex.getLocalizedMessage();
+        ErrorResponse error = new ErrorResponse(NOT_FOUND, RESOURCE_NOT_FOUND, message);
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(EmailTakenException.class)
     public final ResponseEntity<ErrorResponse> handleEmailTakenException
             (EmailTakenException ex, WebRequest request) {

@@ -15,6 +15,7 @@ import java.util.List;
 public class DeptMemberService implements BaseService<DeptMember> {
 
     private final DeptMemberRepository deptMemberRepository;
+    private final FCMTokenService fcmTokenService;
 
     public List<DeptMember> findByMemberId(Long id) {
         return deptMemberRepository.findDeptsByMemberId(id);
@@ -27,11 +28,26 @@ public class DeptMemberService implements BaseService<DeptMember> {
 
     @Override
     public DeptMember save(DeptMember entity) {
-        return deptMemberRepository.save(entity);
+        DeptMember deptMember = deptMemberRepository.save(entity);
+        Dept parent = deptMember.getDepartment().getParentDept();
+        String topicName = fcmTokenService.getTopicFromDept(deptMember.getDepartment());
+        fcmTokenService.subscribeToTopic(deptMember.getMember(), topicName);
+        if(parent != null && parent.getDeptId() != null ) {
+            topicName = fcmTokenService.getTopicFromDept(parent);
+            fcmTokenService.subscribeToTopic(deptMember.getMember(), topicName);
+        }
+        return deptMember;
     }
 
     @Override
-    public void delete(DeptMember entity) {
-        deptMemberRepository.delete(entity);
+    public void delete(DeptMember deptMember) {
+        deptMemberRepository.delete(deptMember);
+        String topicName = fcmTokenService.getTopicFromDept(deptMember.getDepartment());
+        fcmTokenService.unsubscribeFromTopic(deptMember.getMember(), topicName);
+        Dept parent = deptMember.getDepartment().getParentDept();
+        if(parent != null && parent.getDeptId() != null ) {
+            topicName = fcmTokenService.getTopicFromDept(parent);
+            fcmTokenService.unsubscribeFromTopic(deptMember.getMember(), topicName);
+        }
     }
 }

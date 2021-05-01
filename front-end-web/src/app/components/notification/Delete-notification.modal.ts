@@ -5,7 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'delete-notification-modal',
   template: `
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-title">Delete service</h4>
+    <h4 class="modal-title" id="modal-title">Delete notification</h4>
     <button type="button" class="close" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>

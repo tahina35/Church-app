@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="cop_mobile.View.MemberDetailPage"
+             Title="cop_mobile Info">
+    
+    <StackLayout>
+        <Frame HeightRequest="80">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <sfavatar:SfAvatarView ContentType="Initials"
+                                InitialsType="DoubleCharacter"
+                                AvatarName="{Binding Member.fullName}"
+                                AvatarSize="ExtraLarge"
+                                InitialsColor="#000"                     
+                                WidthRequest="80"
+                                FontAttributes="Bold"                     
+                                HeightRequest="80"                                                      
+                                BackgroundColor="#c0deed" 
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                CornerRadius="40" />
+
+                <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                    <Label Text="{Binding Member.fullName}" FontAttributes="Bold" FontSize="16" FontFamily="source" TextColor="Black"/>
+                    <Label Text="Church Of Philippi" FontFamily="sourceregular" />
+                </StackLayout>
+            </Grid>
+
+        </Frame>
+        <Frame HeightRequest="80" Padding="5,5">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="email_btn"  Image="at.png" Style="{StaticResource IconButton}" HeightRequest="200" Clicked="email_btn_Clicked"/>
+                <Label Grid.Column="1" Text="{Binding Member.username}" VerticalOptions="Center" FontFamily="sourceregular" FontSize="16" TextColor="Black"/>
+            </Grid>
+        </Frame>
+        <Frame HeightRequest="80"  Padding="5,5">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="address_btn"  Image="maplocator.png" Style="{StaticResource IconButton}" HeightRequest="200" Clicked="address_btn_Clicked"/>
+                <Label Grid.Column="1" Text="{Binding Member.fullAddress}" FontFamily="sourceregular" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
+            </Grid>
+            
+        </Frame>
+        <Frame HeightRequest="80"  Padding="5,5">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="phone_btn"  Image="phonecall.png" Style="{StaticResource IconButton}" HeightRequest="200" Clicked="phone_btn_Clicked"/>
+                <Label Text="{Binding Member.phone}"  Grid.Column="1"  VerticalOptions="Center" FontFamily="sourceregular" FontSize="16" TextColor="Black"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.resetErrors();
     this.loginservice.login(this.credentials).subscribe(
       (res: HttpResponse<any>) => {
         let token = res.headers.get('Authorization');
@@ -61,6 +62,11 @@ export class LoginComponent implements OnInit {
         this.error = err;
       }
     );
+  }
+
+  resetErrors() {
+    this.error = "";
+    this.success = "";
   }
 
 }

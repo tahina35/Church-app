@@ -48,4 +48,10 @@ public interface MemberRepository extends JpaRepository<Member, Long>, JpaSpecif
             nativeQuery = true
     )
     List<Member> findByDepartemnt(Long deptId);
+
+    @Query(
+            value = "SELECT m.* FROM member m INNER JOIN dept_member dm ON m.member_id = dm.member_id WHERE dm.dept_id = ?1",
+            nativeQuery = true
+    )
+    Page<Member> findByDepartemntPaginated(long deptId, Pageable pageable);
 }

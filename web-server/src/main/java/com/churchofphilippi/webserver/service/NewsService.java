@@ -1,11 +1,12 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.config.MobileConfig;
 import com.churchofphilippi.webserver.model.News;
 import com.churchofphilippi.webserver.repository.NewsRepository;
+import com.google.firebase.messaging.Message;
+import com.google.firebase.messaging.Notification;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,6 +21,8 @@ import java.util.Locale;
 public class NewsService implements BaseService<News> {
 
     private final NewsRepository newsRepository;
+    private final FCMTokenService tokenService;
+    private final MobileConfig mobileConfig;
 
     @Override
     public List<News> getAll() {
@@ -28,7 +31,14 @@ public class NewsService implements BaseService<News> {
 
     @Override
     public News save(News entity) {
-        return newsRepository.save(entity);
+        News news = newsRepository.save(entity);
+        String topic = tokenService.setTopic(news.getDepartment());
+        String content = news.getContent().replaceAll("(?s)<[^>]*>(\\s*<[^>]*>)*", " ");
+        content = (content.length() > 150) ? content.substring(0,150) + "..." : content;
+        String title = "News";
+        String body = content;
+        tokenService.sendNotification(title, body, topic);
+        return news;
     }
 
     @Override
@@ -62,6 +72,11 @@ public class NewsService implements BaseService<News> {
             }
         }
         return res;
+    }
+
+    public List<News> getNews() {
+        LocalDate today = LocalDate.now();
+        return newsRepository.getNews(today);
     }
 
 }

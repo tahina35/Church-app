@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             x:Class="cop_mobile.Pages.WorshipService"
+             Title="Worship Service">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="key">
+                <Setter Property="FontFamily" Value="source"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Label"  x:Key="value">
+                <Setter Property="FontFamily" Value="sourceregular"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="3" DisplayMode="Text" EnableSwiping="true" OverflowMode="Scroll" SelectionChanging="SfTabView_SelectionChanging">
+        <tabView:SfTabView.SelectionIndicatorSettings>
+            <tabView:SelectionIndicatorSettings
+                    Color="Transparent" 
+                    Position="Bottom"/>
+        </tabView:SfTabView.SelectionIndicatorSettings>
+        <tabView:SfTabItem Title="SUNDAY" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="2" DisplayMode="Text">
+                    <tabView:SfTabView.SelectionIndicatorSettings>
+                        <tabView:SelectionIndicatorSettings
+                            Color="{StaticResource quaternary}" 
+                            Position="Fill"/>
+                    </tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SfTabItem Title="{Binding SundayServiceData.EnglishService.stringDate, StringFormat='ENGLISH SERVICE ({0})' }" SelectionColor="Black" >
+                        <tabView:SfTabItem.Content>
+                            <StackLayout>
+                                <Frame Padding="0" Margin="11" HasShadow="True" >
+                                    <StackLayout>
+
+                                        <Grid RowSpacing="0" Padding="20,5">
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Worship and praise" Style="{StaticResource key}"></Label>
+                                            <Label Text="Confession of faith" Grid.Row="1" Style="{StaticResource key}"></Label>
+                                            <Label Text="Prayer"  Grid.Row="2" Style="{StaticResource key}"></Label>
+                                            <Label Text="Church news"  Grid.Row="3" Style="{StaticResource key}"></Label>
+                                            <Label Text="Offering"  Grid.Row="4" Style="{StaticResource key}"></Label>
+                                            <Label Text="Word of the Day"  Grid.Row="5" Style="{StaticResource key}"></Label>
+                                            <Label Text="Hymn"  Grid.Row="6" Style="{StaticResource key}"></Label>
+                                            <Label Text="Bendiction"  Grid.Row="7" Style="{StaticResource key}"></Label>
+
+                                            <Label Text="{Binding SundayServiceData.EnglishService.worshipAndPraise, FallbackValue='-'}" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                                            <Label Text="{Binding SundayServiceData.EnglishService.confessionOfFaith, FallbackValue='-'}" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.EnglishService.prayerFullName, FallbackValue='-'}" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}" />
+                                            <Label Text="{Binding SundayServiceData.EnglishService.churchNews, FallbackValue='-'}" Grid.Row="3" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.EnglishService.offering, FallbackValue='-'}" Grid.Row="4" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.EnglishService.sermon.mainVerse, FallbackValue='-'}" Grid.Row="5" Grid.Column="1" Style="{StaticResource value}"     />
+                                            <Label Text="{Binding SundayServiceData.EnglishService.hymn, FallbackValue='-'}" Grid.Row="6" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.EnglishService.preacherFullName, FallbackValue='-'}" Grid.Row="7" Grid.Column="1" Style="{StaticResource value}"/>
+
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                    <tabView:SfTabItem Title="{Binding SundayServiceData.KoreanService.stringDate, StringFormat='KOREAN SERVICE ({0})', FallbackValue='KOREAN SERVICE' }" SelectionColor="Black">
+                        <tabView:SfTabItem.Content>
+                            <StackLayout>
+                                <Frame Padding="0" Margin="11" HasShadow="True" >
+                                    <StackLayout>
+
+                                        <Grid RowSpacing="0" Padding="20,5">
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Worship and praise" Style="{StaticResource key}"></Label>
+                                            <Label Text="Confession of faith" Grid.Row="1" Style="{StaticResource key}"></Label>
+                                            <Label Text="Prayer"  Grid.Row="2" Style="{StaticResource key}"></Label>
+                                            <Label Text="Church news"  Grid.Row="3" Style="{StaticResource key}"></Label>
+                                            <Label Text="Offering"  Grid.Row="4" Style="{StaticResource key}"></Label>
+                                            <Label Text="Word of the Day"  Grid.Row="5" Style="{StaticResource key}"></Label>
+                                            <Label Text="Hymn"  Grid.Row="6" Style="{StaticResource key}"></Label>
+                                            <Label Text="Bendiction"  Grid.Row="7" Style="{StaticResource key}"></Label>
+
+                                            <Label Text="{Binding SundayServiceData.KoreanService.worshipAndPraise, FallbackValue='-'}" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                                            <Label Text="{Binding SundayServiceData.KoreanService.confessionOfFaith, FallbackValue='-'}" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.KoreanService.prayerFullName, FallbackValue='-'}" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}" />
+                                            <Label Text="{Binding SundayServiceData.KoreanService.churchNews, FallbackValue='-'}" Grid.Row="3" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.KoreanService.offering, FallbackValue='-'}" Grid.Row="4" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.KoreanService.sermon.mainVerse, FallbackValue='-'}" Grid.Row="5" Grid.Column="1" Style="{StaticResource value}"     />
+                                            <Label Text="{Binding SundayServiceData.KoreanService.hymn, FallbackValue='-'}" Grid.Row="6" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding SundayServiceData.KoreanService.preacherFullName, FallbackValue='-'}" Grid.Row="7" Grid.Column="1" Style="{StaticResource value}"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="WEDNESDAY" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="1" DisplayMode="Text">
+                    <tabView:SfTabView.SelectionIndicatorSettings>
+                        <tabView:SelectionIndicatorSettings
+                            Color="{StaticResource quaternary}" 
+                            Position="Fill"/>
+                    </tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SfTabItem Title="{Binding WednesdayService.stringDate, StringFormat='WEDNESDAY SERVICE ({0})', FallbackValue='WEDNESDAY SERVICE' }" SelectionColor="Black">
+                        <tabView:SfTabItem.Content>
+                            <StackLayout>
+                                <Frame Padding="0" Margin="10">
+                                    <StackLayout>
+                                        <Grid RowSpacing="0" Padding="10,5" >
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Word of the Day" Style="{StaticResource key}"></Label>
+                                            <Label Text="Hymn"  Grid.Row="1" Style="{StaticResource key}"></Label>
+                                            <Label Text="Sermon"  Grid.Row="2" Style="{StaticResource key}"></Label>
+
+                                            <Label Text="{Binding WednesdayService.sermon.mainVerse, FallbackValue='-'}" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                                            <Label Text="{Binding WednesdayService.hymn, FallbackValue='-'}" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding WednesdayService.preacherFullName, FallbackValue='-'}" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}"></Label>
+
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="YOUTH" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="1" DisplayMode="Text">
+                    <tabView:SfTabView.SelectionIndicatorSettings>
+                        <tabView:SelectionIndicatorSettings
+                            Color="{StaticResource quaternary}" 
+                            Position="Fill"/>
+                    </tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SfTabItem Title="{Binding YouthService.stringDate, StringFormat='YOUTH SERVICE ({0})', FallbackValue='YOUTH SERVICE' }" SelectionColor="Black">
+                        <tabView:SfTabItem.Content>
+                            <StackLayout>
+                                <Frame Padding="0" Margin="10">
+                                    <StackLayout>
+                                        <Grid RowSpacing="0" Padding="10,5" >
+                                            <Grid.RowDefinitions >
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+                                                <RowDefinition Height="59"/>
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="Word of the Day" Style="{StaticResource key}"></Label>
+                                            <Label Text="Hymn"  Grid.Row="1" Style="{StaticResource key}"></Label>
+                                            <Label Text="Sermon"  Grid.Row="2" Style="{StaticResource key}"></Label>
+
+                                            <Label Text="{Binding YouthService.sermon.mainVerse, FallbackValue='-'}" Grid.Column="1" Style="{StaticResource value}" ></Label>
+                                            <Label Text="{Binding YouthService.hymn, FallbackValue='-'}" Grid.Row="1" Grid.Column="1"  Style="{StaticResource value}"></Label>
+                                            <Label Text="{Binding YouthService.preacherFullName, FallbackValue='-'}" Grid.Row="2" Grid.Column="1" Style="{StaticResource value}"></Label>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="EARLY MORNING" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="1" DisplayMode="Text">
+                    <tabView:SfTabView.SelectionIndicatorSettings>
+                        <tabView:SelectionIndicatorSettings
+                            Color="{StaticResource quaternary}" 
+                            Position="Fill"/>
+                    </tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SfTabItem Title="EARLY MORNING SERVICES" SelectionColor="Black">
+                        <tabView:SfTabItem.Content>
+                            <StackLayout>
+                                <Frame Padding="0" Margin="10">
+                                    <ListView ItemsSource="{Binding MorningServices}" SeparatorVisibility="None" RowHeight="100">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ViewCell>
+                                                    <Grid RowSpacing="0" Padding="11,5">
+                                                        <Grid.RowDefinitions >
+                                                            <RowDefinition Height="59"/>
+
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="150"/>
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Label Text="{Binding stringDate, FallbackValue='-'}" Style="{StaticResource key}"></Label>
+
+                                                        <StackLayout Grid.Column="1" Padding="0" >
+                                                            <Label Text="{Binding sermon.mainVerse, FallbackValue='-'}"  Style="{StaticResource value}" ></Label>
+                                                            <Label Text="{Binding preacherFullName, FallbackValue='-'}"  Style="{StaticResource value}" ></Label>
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </ViewCell>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </Frame>
+                            </StackLayout>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+    </tabView:SfTabView>
+
+</ContentPage>

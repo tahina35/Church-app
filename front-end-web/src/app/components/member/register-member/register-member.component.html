@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label>Phone number</label>
-                            <input type="number" class="form-control" [ngClass]="{'is-invalid': phonenumber.touched && !phonenumber.valid}" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="member.phoneNumber" placeholder="Phone number" required>
+                            <input type="number" class="form-control" [ngClass]="{'is-invalid': phonenumber.touched && !phonenumber.valid}" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="member.phoneNumber" placeholder="Phone number" pattern="^\d{10}$" required>
                         </div>           
                       </div>
                   </div>

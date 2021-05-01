@@ -80,12 +80,16 @@ export class YouthServiceComponent implements OnInit {
     );
   }
 
+  resetModal() {
+      this.selectedDate = null;
+      this.youthService = new YouthService();
+  }
+
   open(content) {
     this.modalService.open(content, { size: 'lg' }).result.then(
       () => {},
       (reason) => {
-        this.selectedDate = null;
-        this.youthService = new YouthService();
+        this.resetModal(); 
       }
     )
   }
@@ -94,7 +98,12 @@ export class YouthServiceComponent implements OnInit {
     let date = new Date(service.date);
     this.selectedDate = {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() + 1};
     this.youthService = service;
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg' }).result.then(
+      () => {},
+      (reason) => {
+        this.resetModal(); 
+      }
+    )
   }
 
   deleteService(service: YouthService) {

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+             xmlns:vm="clr-namespace:cop_mobile.ViewModel" xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             x:Class="cop_mobile.Pages.Sermons"
+             Title="Sermons">
+
+    <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="3" DisplayMode="Text" EnableSwiping="true" OverflowMode="Scroll" SelectionChanging="SfTabView_SelectionChanging">
+        <tabView:SfTabView.SelectionIndicatorSettings>
+            <tabView:SelectionIndicatorSettings
+                    Color="Transparent" 
+                    Position="Bottom"/>
+        </tabView:SfTabView.SelectionIndicatorSettings>
+        <tabView:SfTabItem Title="SUNDAY" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <tabView:SfTabView BackgroundColor="White" VisibleHeaderCount="2" DisplayMode="Text" SelectionChanging="SfTabView_SelectionChanging_1">
+                    <tabView:SfTabView.SelectionIndicatorSettings>
+                        <tabView:SelectionIndicatorSettings
+                            Color="{StaticResource quaternary}" 
+                            Position="Fill"/>
+                    </tabView:SfTabView.SelectionIndicatorSettings>
+                    <tabView:SfTabItem Title="ENGLISH" SelectionColor="Black" >
+                        <tabView:SfTabItem.Content>                                
+                            <syncfusion:SfListView ItemsSource="{Binding English}" x:Name="EnglishSermons" ItemSize="120" ItemTapped="listView_ItemTapped"
+                                                   LoadMoreOption="AutoOnScroll"
+                                                   LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                                   LoadMoreCommandParameter="{Binding Source={x:Reference Name=EnglishSermons}}">
+                                <syncfusion:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame x:Name="frame" HasShadow="True" Padding="5,5" Margin="5">
+                                            <Grid >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.6*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image Source="{Binding sermon.thumbnail}" HorizontalOptions="Start"/>
+                                                <StackLayout Grid.Column="1">
+                                                    <Label  Text="{Binding sermon.pastorName}" FontFamily="source" FontSize="16"/>
+                                                    <Label  Text="{Binding sermon.mainVerse}" FontFamily="sourceregular" FontSize="14"/>
+                                                    <Label  Text="{Binding stringDate}" FontFamily="sourceregular" FontSize="14"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </syncfusion:SfListView.ItemTemplate>
+                            </syncfusion:SfListView>
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                    <tabView:SfTabItem Title="KOREAN" SelectionColor="Black">
+                        <tabView:SfTabItem.Content>
+                            <syncfusion:SfListView ItemsSource="{Binding Korean}" x:Name="KoreanSermons" ItemSize="120" ItemTapped="listView_ItemTapped"
+                                                   LoadMoreOption="AutoOnScroll"
+                                                   LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                                   LoadMoreCommandParameter="{Binding Source={x:Reference Name=KoreanSermons}}">
+                                <syncfusion:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame x:Name="frame" HasShadow="True" Padding="5,5" Margin="5">
+                                            <Grid >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.6*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image Source="{Binding sermon.thumbnail}" HorizontalOptions="Start"/>
+                                                <StackLayout Grid.Column="1">
+                                                    <Label  Text="{Binding sermon.pastorName}" FontFamily="source" FontSize="16"/>
+                                                    <Label  Text="{Binding sermon.mainVerse}" FontFamily="sourceregular" FontSize="14"/>
+                                                    <Label  Text="{Binding stringDate}" FontFamily="sourceregular" FontSize="14"/>
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </syncfusion:SfListView.ItemTemplate>
+                            </syncfusion:SfListView>    
+                        </tabView:SfTabItem.Content>
+                    </tabView:SfTabItem>
+                </tabView:SfTabView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="WEDNESDAY" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <syncfusion:SfListView ItemsSource="{Binding Wednesday}" x:Name="WednesdaySermons" ItemSize="120" ItemTapped="listView_ItemTapped"
+                                       LoadMoreOption="AutoOnScroll"
+                                       LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                       LoadMoreCommandParameter="{Binding Source={x:Reference Name=WednesdaySermons}}">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame x:Name="frame" HasShadow="True" Padding="5,5" Margin="5">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.6*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding sermon.thumbnail}" HorizontalOptions="Start"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Label  Text="{Binding sermon.pastorName}" FontFamily="source" FontSize="16"/>
+                                        <Label  Text="{Binding sermon.mainVerse}" FontFamily="sourceregular" FontSize="14"/>
+                                        <Label  Text="{Binding stringDate}" FontFamily="sourceregular" FontSize="14"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="YOUTH" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <syncfusion:SfListView ItemsSource="{Binding Youth}" x:Name="YouthSermons" ItemSize="120" ItemTapped="listView_ItemTapped"
+                                       LoadMoreOption="AutoOnScroll"
+                                       LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                       LoadMoreCommandParameter="{Binding Source={x:Reference Name=YouthSermons}}">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame x:Name="frame" HasShadow="True" Padding="5,5" Margin="5">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.6*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding sermon.thumbnail}" HorizontalOptions="Start"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Label  Text="{Binding sermon.pastorName}" FontFamily="source" FontSize="16"/>
+                                        <Label  Text="{Binding sermon.mainVerse}" FontFamily="sourceregular" FontSize="14"/>
+                                        <Label  Text="{Binding stringDate}" FontFamily="sourceregular" FontSize="14"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem Title="EARLY MORNING" SelectionColor="{StaticResource secondary}">
+            <tabView:SfTabItem.Content>
+                <syncfusion:SfListView ItemsSource="{Binding Morning}" x:Name="MorningSermons" ItemSize="120" ItemTapped="listView_ItemTapped"
+                                       LoadMoreOption="AutoOnScroll"
+                                       LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                       LoadMoreCommandParameter="{Binding Source={x:Reference Name=MorningSermons}}">
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame x:Name="frame" HasShadow="True" Padding="5,5" Margin="5">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.6*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding sermon.thumbnail}" HorizontalOptions="Start"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Label  Text="{Binding sermon.pastorName}" FontFamily="source" FontSize="16"/>
+                                        <Label  Text="{Binding sermon.mainVerse}" FontFamily="sourceregular" FontSize="14"/>
+                                        <Label  Text="{Binding stringDate}" FontFamily="sourceregular" FontSize="14"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+    </tabView:SfTabView>
+
+    
+
+</ContentPage>

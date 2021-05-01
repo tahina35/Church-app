@@ -1,7 +1,10 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.config.MobileConfig;
 import com.churchofphilippi.webserver.model.Event;
 import com.churchofphilippi.webserver.repository.EventRepository;
+import com.google.firebase.messaging.Message;
+import com.google.firebase.messaging.Notification;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -16,6 +20,8 @@ import java.util.List;
 public class EventService implements BaseService<Event> {
 
     private final EventRepository eventRepository;
+    private final FCMTokenService tokenService;
+    private final MobileConfig mobileConfig;
 
     @Override
     public List<Event> getAll() {
@@ -24,7 +30,12 @@ public class EventService implements BaseService<Event> {
 
     @Override
     public Event save(Event entity) {
-        return eventRepository.save(entity);
+        Event event = eventRepository.save(entity);
+        String topic = tokenService.setTopic(event.getDepartment());
+        String title = "New event shared";
+        String body = event.getTitle();
+        tokenService.sendNotification(title, body, topic);
+        return event;
     }
 
     @Override
@@ -37,7 +48,7 @@ public class EventService implements BaseService<Event> {
     }
 
     public List<Event> getUpcomingEvents() {
-        LocalDateTime monthStart = LocalDateTime.now().withDayOfMonth(1).plusDays(1);
+        LocalDateTime monthStart = LocalDateTime.now().minusMonths(6);
         return eventRepository.getUpcomingEvents(monthStart);
     }
 

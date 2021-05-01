@@ -85,12 +85,16 @@ export class SundayServiceComponent implements OnInit {
     );
   }
 
+  resetModal() {
+      this.selectedDate = null;
+      this.sundayService = new SundayService();
+  }
+
   open(content) {
     this.modalService.open(content, { size: 'lg' }).result.then(
       () => {},
       (reason) => {
-        this.selectedDate = null;
-        this.sundayService = new SundayService();
+        this.resetModal();  
       }
     )
   }
@@ -99,7 +103,12 @@ export class SundayServiceComponent implements OnInit {
     let date = new Date(service.date);
     this.selectedDate = {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() + 1};
     this.sundayService = service;
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, { size: 'lg' }).result.then(
+      () => {},
+      (reason) => {
+        this.resetModal();  
+      }  
+    )
   }
 
   deleteService(service: SundayService) {

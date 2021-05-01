@@ -65,7 +65,7 @@
                     <!-- /.card-body -->
 
                     <div  class="card-footer clearfix">
-                      <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Add Position</button>
+                      <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Add a position</button>
                       <div *ngIf="totalPages > 1" class="custompagination">
                         <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
                       </div>
@@ -83,7 +83,7 @@
     <ng-template #content let-modal>
       <form (ngSubmit)="addPosition()" #positionForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Add position</h4>
+          <h4 class="modal-title" id="modal-basic-title">Add a position</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -105,7 +105,7 @@
     <ng-template #updatePos let-modal>
       <form (ngSubmit)="addPosition()" #positionForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Update position</h4>
+          <h4 class="modal-title" id="modal-basic-title">Edit position</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,7 +119,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-primary" [disabled]="!positionForm.form.valid">Update</button>
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!positionForm.form.valid">Save</button>
         </div>
       </form>
     </ng-template>

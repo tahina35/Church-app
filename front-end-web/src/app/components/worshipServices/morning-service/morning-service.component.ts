@@ -80,12 +80,16 @@ export class MorningServiceComponent implements OnInit {
     );
   }
 
+  resetModal() {
+      this.selectedDate = null;
+      this.prayerMeeting = new MorningService();
+  }
+
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
       () => {},
       (reason) => {
-        this.selectedDate = null;
-        this.prayerMeeting = new MorningService();
+        this.resetModal();  
       }
     )
   }
@@ -94,7 +98,12 @@ export class MorningServiceComponent implements OnInit {
     let date = new Date(service.date);
     this.selectedDate = {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() + 1};
     this.prayerMeeting = service;
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then(
+      () => {},
+      (reason) => {
+        this.resetModal();  
+      }
+    )
   }
 
   deleteService(service: MorningService) {

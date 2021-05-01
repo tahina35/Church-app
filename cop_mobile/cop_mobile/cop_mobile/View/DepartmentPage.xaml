@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             x:Class="cop_mobile.View.DepartmentPage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:SfPicker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:effectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+             Title="Department">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AvatarViewStyle"  TargetType="sfavatar:SfAvatarView">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="ContentType" Value="Custom"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Grid RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0" IsVisible="{Binding HasDept}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout>
+                <SfPicker:SfPicker x:Name="picker" HeaderText="Select a Department" ShowFooter="false"  PickerMode="Dialog" ItemsSource="{Binding Depts}" DisplayMemberPath="name" SelectedItemTextColor="{StaticResource Key=primary}" PickerHeight="300" PickerWidth="300" SelectedItemFontSize="Title" SelectionChanged="picker_SelectionChanged" HeaderBackgroundColor="{StaticResource Key=secondary}"/>
+                <buttons:SfButton x:Name="select_dept" Text="{Binding SelectedDept.name}" Clicked="select_dept_Clicked" VerticalOptions="FillAndExpand" FontSize="18" BackgroundColor="{StaticResource Key=quaternary}" TextColor="Black"/>
+            </StackLayout>
+
+            <syncfusion:SfListView Grid.Row="1" x:Name="listView"  AutoFitMode="Height"  ItemsSource="{Binding Members}"
+                                   LoadMoreOption="AutoOnScroll"
+                                   LoadMoreCommand="{Binding LoadMoreItemsCommand}"
+                                   LoadMoreCommandParameter="{Binding Source={x:Reference Name=listView}}"
+                                   ItemTapped="listView_ItemTapped" SelectionBackgroundColor="Transparent">
+                
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="grid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <sfavatar:SfAvatarView ContentType="Initials" BorderColor="LightGray" AvatarShape="Circle" AvatarSize="Large" Grid.Row="0" Style="{StaticResource AvatarViewStyle}" InitialsType="DoubleCharacter" AvatarName="{Binding fullName}" AvatarColorMode="LightBackground"/>
+                            <Grid Grid.Column="1" VerticalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding fullName}" TextColor="Black" FontSize="Medium"/>
+                                <Label Grid.Row="1" Text="{Binding email}" TextColor="Black"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+        </Grid>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding HasNoDept}">
+            <Label Text="You do not belong to any department!" HorizontalOptions="Center" VerticalOptions="Center" FontSize="16"/>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

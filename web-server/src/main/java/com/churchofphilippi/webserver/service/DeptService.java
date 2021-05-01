@@ -87,8 +87,6 @@ public class DeptService implements BaseService<Dept>{
 
             data.setDepts(depts);
             data.setMembers(members);
-        } else {
-            return null;
         }
 
         return data;

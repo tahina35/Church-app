@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:toolKit="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="cop_mobile.View.PlaySermon"
+             NavigationPage.HasNavigationBar="False"
+             Title="Play Sermon">
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <toolKit:MediaElement ShowsPlaybackControls="True"  x:Name="videoPlayer" MediaOpened="MyMediaElement_MediaOpened" />
+        <ActivityIndicator  x:Name="MyActivityIndicator"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Color="Red"
+                            IsRunning="True"
+                            BackgroundColor="Transparent">
+        </ActivityIndicator>
+        <ImageButton Source="xblack.png"  Grid.Row="0" Clicked="closeButton_Clicked"  BackgroundColor="white"   HorizontalOptions="End" Margin="0,0,0,0" VerticalOptions="Start"/>
+    </Grid>
+
+</ContentPage>

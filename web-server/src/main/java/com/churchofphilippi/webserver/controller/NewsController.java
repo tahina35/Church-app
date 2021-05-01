@@ -24,6 +24,11 @@ public class NewsController {
         return ResponseEntity.ok(newsService.getNews(timeRange));
     }
 
+    @GetMapping("/mobile")
+    public ResponseEntity<?> getNews() {
+        return ResponseEntity.ok(newsService.getNews());
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")Long id) {
         newsService.deleteById(id);

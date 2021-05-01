@@ -67,7 +67,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer clearfix">
-                      <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Add Department</button>
+                      <button type="button" class="btn bg-gradient-primary" (click)="open(content)">Add a Department</button>
                       <div *ngIf="totalPages > 1" class="custompagination">
                         <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
                       </div>
@@ -85,7 +85,7 @@
     <ng-template #content let-modal>
       <form (ngSubmit)="addDept()" #newDeptForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Add department</h4>
+          <h4 class="modal-title" id="modal-basic-title">Add a department</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -120,7 +120,7 @@
     <ng-template #updateDept let-modal>
       <form (ngSubmit)="addDept()" #updateDeptForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Update department</h4>
+          <h4 class="modal-title" id="modal-basic-title">Edit department</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -146,7 +146,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-primary" [disabled]="!updateDeptForm.form.valid">Update</button>
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!updateDeptForm.form.valid">Save</button>
         </div>
       </form>
     </ng-template>

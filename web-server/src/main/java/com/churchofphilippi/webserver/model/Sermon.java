@@ -37,8 +37,6 @@ public class Sermon {
 
     private String url;
 
-    private String thumbnail;
-
     @Column(nullable = false)
     private Boolean isUploaded = false;
 
@@ -46,12 +44,5 @@ public class Sermon {
     @JoinColumn(name="member_id")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
     private Member preacher;
-
-    public Sermon(String url, String thumbnail, String mainVerse, Member preacher) {
-        this.mainVerse = mainVerse;
-        this.url = url;
-        this.thumbnail = thumbnail;
-        this.preacher = preacher;
-    }
 
 }

@@ -74,7 +74,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer clearfix">
-                      <button type="button" class="btn bg-gradient-primary" (click)="open(addService)">Add new sunday service</button>
+                      <button type="button" class="btn bg-gradient-primary" (click)="open(addService)">Add a sunday service</button>
                       <div *ngIf="totalPages > 1" class="custompagination">
                         <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
                       </div>
@@ -92,7 +92,7 @@
     <ng-template #addService let-modal>
       <form (ngSubmit)="saveOrUpdateSundayService()" #newSundayServiceForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Add sunday service</h4>
+          <h4 class="modal-title" id="modal-basic-title">Add a sunday service</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -178,7 +178,7 @@
     <ng-template #updateService let-modal>
       <form (ngSubmit)="saveOrUpdateSundayService()" #updateSundayServiceForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Update sunday service</h4>
+          <h4 class="modal-title" id="modal-basic-title">Edit Sunday service</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -262,7 +262,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-primary" [disabled]="!updateSundayServiceForm.form.valid">Update</button>
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!updateSundayServiceForm.form.valid">Save</button>
         </div>
       </form>
     </ng-template> 

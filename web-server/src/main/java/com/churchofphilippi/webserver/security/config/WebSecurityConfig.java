@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), handlerExceptionResolver , jwtConfig, secretKey, memberService))
                 .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey, handlerExceptionResolver, memberService), JwtUsernameAndPasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/api/registration/**", "/", "/api/auth/**")
+                .antMatchers("/api/registration/**", "/", "/api/auth/**", "/api/fcmtoken/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

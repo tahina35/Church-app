@@ -43,6 +43,7 @@ public class RegistrationService {
                         )
         );
 
+
         emailSender.send(request.getEmail(), buildHtml(request.getFname(), password));
 
         return ret;

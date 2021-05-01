@@ -72,7 +72,7 @@ public class Member implements UserDetails {
     )
     private String email;
 
-    @Column(length = 30)
+    @Column(length = 10)
     private String phoneNumber;
 
     @Column(nullable = false)

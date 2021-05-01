@@ -97,4 +97,10 @@ public class MemberService implements UserDetailsService, BaseService<Member> {
     public List<Member> getByDepartment(Long deptid) {
         return memberRepository.findByDepartemnt(deptid);
     }
+
+    public Page<Member> findMemberByDeptPaginated(Long deptId, int pageNo, int pageSize) {
+        Sort sort = Sort.by("fname").ascending();
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
+        return  memberRepository.findByDept(deptId, pageable);
+    }
 }

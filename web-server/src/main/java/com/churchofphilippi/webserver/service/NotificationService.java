@@ -1,11 +1,12 @@
 package com.churchofphilippi.webserver.service;
 
+import com.churchofphilippi.webserver.config.MobileConfig;
 import com.churchofphilippi.webserver.model.Notification;
 import com.churchofphilippi.webserver.repository.NotificationRepository;
+import com.google.firebase.messaging.Message;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import java.util.List;
 public class NotificationService implements BaseService<Notification> {
 
     private final NotificationRepository notificationRepository;
+    private final FCMTokenService tokenService;
+    private final MobileConfig mobileConfig;
 
     @Override
     public List<Notification> getAll() {
@@ -22,7 +25,14 @@ public class NotificationService implements BaseService<Notification> {
 
     @Override
     public Notification save(Notification entity) {
-        return notificationRepository.save(entity);
+        Notification notif = notificationRepository.save(entity);
+        String topic = tokenService.setTopic(notif.getDepartment());
+        String content = notif.getContent().replaceAll("(?s)<[^>]*>(\\s*<[^>]*>)*", " ");
+        content = (content.length() > 150) ? content.substring(0,150) + "..." : content;
+        String title = "New message";
+        String body = content;
+        tokenService.sendNotification(title, body, topic);
+        return notif;
     }
 
     @Override

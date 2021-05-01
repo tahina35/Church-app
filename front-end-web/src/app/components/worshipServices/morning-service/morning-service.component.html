@@ -4,7 +4,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Early Morning Prayer Meeting</h1>
+              <h1>Early Morning Services</h1>
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -25,7 +25,7 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
-                      <h3 class="card-title"><strong>All Morning Prayer Meetings</strong></h3>
+                      <h3 class="card-title"><strong>All Early Morning Services</strong></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
@@ -59,7 +59,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer clearfix">
-                      <button type="button" class="btn bg-gradient-primary" (click)="open(addService)">Add new morning paryer meeting</button>
+                      <button type="button" class="btn bg-gradient-primary" (click)="open(addService)">Add an Early Morning service</button>
                       <div *ngIf="totalPages > 1" class="custompagination">
                         <ngb-pagination [(page)]="currentPage" [pageSize]="10" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [collectionSize]="totalItems" (pageChange)="onPageChange()"></ngb-pagination>
                       </div>
@@ -77,7 +77,7 @@
     <ng-template #addService let-modal>
       <form (ngSubmit)="saveOrUpdateMorningService()" #newPrayerMeetingForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Add morning prayer meeting</h4>
+          <h4 class="modal-title" id="modal-basic-title">Add an Early Morning service</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,7 +119,7 @@
     <ng-template #updateService let-modal>
       <form (ngSubmit)="saveOrUpdateMorningService()" #updatePrayerMeetingForm="ngForm">
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Update morning prayer meeting</h4>
+          <h4 class="modal-title" id="modal-basic-title">Edit Early Morning service</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -159,7 +159,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-primary" [disabled]="!updatePrayerMeetingForm.form.valid">Update</button>
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!updatePrayerMeetingForm.form.valid">Save</button>
         </div>
       </form>
     </ng-template>

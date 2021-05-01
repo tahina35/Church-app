@@ -40,6 +40,13 @@ public class MemberController {
         return ResponseEntity.ok(memberService.getByDepartment(id));
     }
 
+    @GetMapping("/department/{id}/page/{pageNo}")
+    public ResponseEntity<?> getMemberByDeptPaginated(@PathVariable("id") Long deptId, @PathVariable("pageNo") int pageNo) {
+        Page<Member> paginated = memberService.findMemberByDeptPaginated(deptId, pageNo, pageConfig.getMobileSize());
+        CustomPage<Member> page = new CustomPage<Member>(pageNo, paginated.getTotalPages(), paginated.getTotalElements(), paginated.getContent());
+        return ResponseEntity.ok(page);
+    }
+
     @GetMapping("/username/{username}")
     public ResponseEntity<?> getMemberById(@PathVariable("username") String username) {
         return ResponseEntity.ok(memberService.loadUserByUsername(username));

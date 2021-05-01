@@ -16,6 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DepartmentData {
-    List<Dept> depts;
-    CustomPage<Member> members;
+    private List<Dept> depts;
+    private CustomPage<Member> members;
 }

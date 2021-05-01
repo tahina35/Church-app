@@ -15,4 +15,7 @@ public interface NewsRepository extends JpaRepository<News, Long> {
 
     @Query("SELECT n FROM News n WHERE n.endDate >= ?1 ORDER BY n.newsId DESC")
     List<News> getByDate(LocalDate startDate);
+
+    @Query("SELECT n FROM News n WHERE n.startDate <= ?1 AND n.endDate >= ?1 ORDER BY n.newsId DESC")
+    List<News> getNews(LocalDate startDate);
 }
