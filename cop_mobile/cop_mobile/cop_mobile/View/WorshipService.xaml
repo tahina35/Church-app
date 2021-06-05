@@ -36,7 +36,7 @@
                             Color="{StaticResource quaternary}" 
                             Position="Fill"/>
                     </tabView:SfTabView.SelectionIndicatorSettings>
-                    <tabView:SfTabItem Title="{Binding SundayServiceData.EnglishService.stringDate, StringFormat='ENGLISH SERVICE ({0})' }" SelectionColor="Black" >
+                    <tabView:SfTabItem Title="{Binding SundayServiceData.EnglishService.stringDate, StringFormat='ENGLISH SERVICE ({0})', FallbackValue='ENGLISH SERVICE' }" SelectionColor="Black" >
                         <tabView:SfTabItem.Content>
                             <StackLayout>
                                 <Frame Padding="0" Margin="11" HasShadow="True" >

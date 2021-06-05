@@ -15,7 +15,7 @@ export class GenderPipe implements PipeTransform {
            break; 
         } 
         case 'F': { 
-           ret = 'female';
+           ret = 'Female';
            break; 
         } 
     } 

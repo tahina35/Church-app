@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.churchofphilippi.cop_mobile" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application android:label="Church Of Philippi" android:theme="@style/MainTheme" android:name="crc6458180e2fe12ed64c.MainApplication" android:allowBackup="true" android:icon="@mipmap/icon" android:extractNativeLibs="true">
+    <uses-library android:name="org.apache.http.legacy" android:required="false" />
+    <service android:name="crc6494e14b9856016c30.PNFirebaseMessagingService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <receiver android:name="crc6494e14b9856016c30.PushNotificationActionReceiver" />
+    <receiver android:name="crc6494e14b9856016c30.PushNotificationDeletedReceiver" />
+    <provider android:authorities="com.churchofphilippi.cop_mobile.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <receiver android:enabled="true" android:exported="false" android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" />
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="church of philippi" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc6458180e2fe12ed64c.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.churchofphilippi.cop_mobile.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

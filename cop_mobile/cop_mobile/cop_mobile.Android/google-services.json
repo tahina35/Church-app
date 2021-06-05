@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "270289939143",
-    "project_id": "churhofphilippi",
-    "storage_bucket": "churhofphilippi.appspot.com"
+    "project_number": "871810864083",
+    "project_id": "churchofphilippi-4036b",
+    "storage_bucket": "churchofphilippi-4036b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:270289939143:android:0f19280b1ea4843b06ace2",
+        "mobilesdk_app_id": "1:871810864083:android:be0d4bb3fd51b362461526",
         "android_client_info": {
           "package_name": "com.churchofphilippi.cop_mobile"
         }
       },
       "oauth_client": [
         {
-          "client_id": "270289939143-rfvk0vmg4qtmeb5kq513d5ooknpj3dt0.apps.googleusercontent.com",
+          "client_id": "871810864083-kjj8h3rh8n4lodqgskcbi5dh2svth195.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBm7cVrERp3m0V9v4zfr6ZdnBD0wcjwrbM"
+          "current_key": "AIzaSyAN-6FK3y679CWIvRoPik0jEHVrPbokru0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "270289939143-rfvk0vmg4qtmeb5kq513d5ooknpj3dt0.apps.googleusercontent.com",
+              "client_id": "871810864083-kjj8h3rh8n4lodqgskcbi5dh2svth195.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "270289939143-5b6e8uoleehgcet7eildnjg6cintvu0v.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.companyname.mobile"
-              }
             }
           ]
         }

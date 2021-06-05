@@ -20,7 +20,7 @@ namespace cop_mobile.Services
     public class BaseService
     {
         public readonly HttpClient _httpClient;
-        public readonly string _baseURL = "http://10.0.2.2:8080" ;
+        public readonly string _baseURL = "http://18.222.104.153:8081";
         private readonly ILoginService IloginService;
 
         public BaseService()

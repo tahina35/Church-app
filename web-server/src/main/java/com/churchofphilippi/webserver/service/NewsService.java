@@ -54,21 +54,24 @@ public class NewsService implements BaseService<News> {
         LocalDate today = LocalDate.now();
         List<News> res = new ArrayList<>();
         switch (timeRange) {
-            case 1 -> {
+            case 1: {
                 TemporalField fieldISO = WeekFields.of(Locale.getDefault()).dayOfWeek();
                 LocalDate firstDayOfWeek = today.with(fieldISO, 1);
                 res = newsRepository.getByDate(firstDayOfWeek);
+                break;
             }
-            case 2 -> {
+            case 2: {
                 LocalDate lastWeekStart = today.minusDays(7 + today.getDayOfWeek().getValue()-1);
                 LocalDate lastWeekEnd = today.minusDays(today.getDayOfWeek().getValue());
                 res = newsRepository.getByDate(lastWeekStart, lastWeekEnd);
+                break;
             }
-            case 3 -> {
+            case 3: {
                 LocalDate previousMonth = today.minusMonths(1);
                 LocalDate monthStart = previousMonth.withDayOfMonth(1).plusDays(1);
                 LocalDate monthEnd = previousMonth.withDayOfMonth(previousMonth.getMonth().maxLength()).plusDays(1);
                 res = newsRepository.getByDate(monthStart, monthEnd);
+                break;
             }
         }
         return res;

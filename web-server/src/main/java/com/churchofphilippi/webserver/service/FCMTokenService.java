@@ -13,9 +13,11 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.messaging.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,15 +30,19 @@ public class FCMTokenService implements BaseService<FCMToken> {
     private final MobileConfig mobileConfig;
     @Autowired
     private final DeptMemberRepository deptMemberRepository;
+    @Autowired
+    private final ResourceLoader resourceLoader;
 
 
-    public FCMTokenService(FCMTokenRepository fcmTokenRepository, MobileConfig mobileConfig, DeptMemberRepository deptMemberRepository) {
+    public FCMTokenService(FCMTokenRepository fcmTokenRepository, MobileConfig mobileConfig, DeptMemberRepository deptMemberRepository, ResourceLoader resourceLoader) {
         this.fcmTokenRepository = fcmTokenRepository;
         this.mobileConfig = mobileConfig;
         this.deptMemberRepository = deptMemberRepository;
+        this.resourceLoader = resourceLoader;
         try {
-            FileInputStream serviceAccount =
-                    new FileInputStream("./churhofphilippi-firebase-adminsdk.json");
+
+            Resource resource = this.resourceLoader.getResource("classpath:" + mobileConfig.getFcmAdminSDK());
+            InputStream serviceAccount = resource.getInputStream();
 
             FirebaseOptions.Builder builder = FirebaseOptions.builder();
             FirebaseOptions options = builder.

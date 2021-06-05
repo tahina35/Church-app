@@ -10,7 +10,6 @@ E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\cop_mobile.dll
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\ref\cop_mobile.dll
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\cop_mobile.pdb
-E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\cop_mobile.csprojAssemblyReference.cache
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\View\Calendar.xaml.g.cs
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\View\DepartmentPage.xaml.g.cs
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile\obj\Debug\netstandard2.0\View\EditProfile.xaml.g.cs

@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -47,7 +48,7 @@ public class YouthServiceService implements BaseService<YouthService> {
     }
 
 
-    public YouthService findLast() {
+    public Optional<YouthService> findLast() {
         LocalDate sunday = LocalDate.now().with(DayOfWeek.SUNDAY);
         return youthRepository.findLast(sunday);
     }

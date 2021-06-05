@@ -1,0 +1,8 @@
+cat stub.sh web-server-0.0.1-SNAPSHOT.jar > copmobile.run && chmod +x copmobile.run 
+sudo systemctl stop copmobile.service
+sudo systemctl disable copmobile.service
+sudo systemctl daemon-reload
+sudo systemctl enable copmobile.service
+sudo systemctl start copmobile.service
+
+

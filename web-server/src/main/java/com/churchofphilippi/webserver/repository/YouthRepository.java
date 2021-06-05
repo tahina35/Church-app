@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public interface YouthRepository extends JpaRepository<YouthService, Long> {
 
@@ -15,5 +16,5 @@ public interface YouthRepository extends JpaRepository<YouthService, Long> {
             value = "SELECT * FROM youth_service ys WHERE ys.date <= ?1  ORDER BY ys.date DESC LIMIT 1",
             nativeQuery = true
     )
-    YouthService findLast(LocalDate date);
+    Optional<YouthService> findLast(LocalDate date);
 }

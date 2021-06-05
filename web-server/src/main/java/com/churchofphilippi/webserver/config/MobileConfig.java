@@ -13,4 +13,5 @@ public class MobileConfig {
 
     private String notificationTopic;
     private String notificationIcon;
+    private String fcmAdminSDK;
 }

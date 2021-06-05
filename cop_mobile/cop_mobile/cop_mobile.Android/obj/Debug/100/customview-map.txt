@@ -32,9 +32,6 @@ com.google.android.material.tabs.TabLayout;E:\Tahina\Visual Studio\cop_mobile\co
 com.google.android.material.tabs.TabLayout;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\60\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\60\jl\res\layout\tabbar.xml
 com.google.android.material.tabs.TabLayout;obj\Debug\100\res\layout\tabbar.xml
-crc642e1c7a98bdb5c44a.AutoFitTextureView;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\53\jl\res\layout\camerafragment.xml
-crc643f46942d9dd1fff9.ShellFlyoutLayout;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\60\jl\res\layout\flyoutcontent.xml
-crc64720bb2db43a66fe9.FormsViewPager;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\60\jl\res\layout\rootlayout.xml
 declare-styleable;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\2\jl\res\values\attrs.xml
 declare-styleable;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\6\jl\res\values\attrs.xml
 declare-styleable;E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.Android\obj\Debug\100\lp\60\jl\res\values\attrs.xml

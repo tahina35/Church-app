@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using cop_mobile.View;
 using Foundation;
-using mobile.View;
 using Plugin.FirebasePushNotification;
 using Syncfusion.SfPicker.XForms.iOS;
 using UIKit;

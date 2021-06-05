@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>270289939143-5o8t71639ca2rcgft58qk2ibkhja7dcr.apps.googleusercontent.com</string>
+	<string>871810864083-6msp8ea21l6t6kkl02rlgrkl016hgq9s.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.270289939143-5o8t71639ca2rcgft58qk2ibkhja7dcr</string>
+	<string>com.googleusercontent.apps.871810864083-6msp8ea21l6t6kkl02rlgrkl016hgq9s</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAQX-RotC6rK4tGDWrTNBXF0GgPuL8SqWs</string>
+	<string>AIzaSyApVGLvQq0Rdun0QMbf2Y6vSiH0EkTPD1E</string>
 	<key>GCM_SENDER_ID</key>
-	<string>270289939143</string>
+	<string>871810864083</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.churchofphilippi.cop-mobile</string>
 	<key>PROJECT_ID</key>
-	<string>churhofphilippi</string>
+	<string>churchofphilippi-4036b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>churhofphilippi.appspot.com</string>
+	<string>churchofphilippi-4036b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:270289939143:ios:72cf4258f5d2079306ace2</string>
+	<string>1:871810864083:ios:53b223ded93f3bbf461526</string>
 </dict>
 </plist>

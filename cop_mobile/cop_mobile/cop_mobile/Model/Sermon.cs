@@ -20,7 +20,7 @@ namespace cop_mobile.Model
             this.sermonId = sermonId;
             this.mainVerse = mainVerse;
             this.url = url;
-            this.thumbnail = this.getThumbnail();
+            this.thumbnail = String.IsNullOrEmpty(url) ? null : this.getThumbnail();
             this.isUploaded = isUploaded;
             this.preacher = preacher;
         }

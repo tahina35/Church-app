@@ -26,7 +26,7 @@ public class WebServerApplication {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        config.setAllowedOrigins(Arrays.asList("http://cop-web-server.s3-website.us-east-2.amazonaws.com", "http://localhost:4200"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Acces-Control-Allow-Origin", "Content-Type", "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
                 "Acces-Control-Request-Method", "Acces-Control-Request-Headers"));
         config.setExposedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization", "Acces-Control-Allow-Origin", "Acces-Control-Allow-Credentials"));

@@ -48,7 +48,7 @@ public class SundayServiceService implements BaseService<SundayService> {
         LocalDate sunday = LocalDate.now().with(DayOfWeek.SUNDAY);
         SundayServiceData data = new SundayServiceData();
         data.setEnglishService(sundayServiceRepository.findLast(sunday, 2));
-        data.setEnglishService(sundayServiceRepository.findLast(sunday, 1));
+        data.setKoreanService(sundayServiceRepository.findLast(sunday, 1));
         return data;
     }
 

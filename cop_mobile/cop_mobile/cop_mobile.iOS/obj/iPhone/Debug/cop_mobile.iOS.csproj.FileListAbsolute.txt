@@ -79,3 +79,16 @@ E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\obj\iPhone\Debug\co
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\obj\iPhone\Debug\cop_mobile.iOS.csproj.CopyComplete
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\obj\iPhone\Debug\cop_mobile.iOS.exe
 E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\obj\iPhone\Debug\cop_mobile.iOS.pdb
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\AngleSharp.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\Refit.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\Syncfusion.SfPopupLayout.XForms.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\Syncfusion.SfPopupLayout.XForms.iOS.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Buffers.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Net.Http.Json.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Text.Encoding.CodePages.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Text.Encodings.Web.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\System.Text.Json.dll
+E:\Tahina\Visual Studio\cop_mobile\cop_mobile\cop_mobile.iOS\bin\iPhone\Debug\YoutubeExplode.dll
